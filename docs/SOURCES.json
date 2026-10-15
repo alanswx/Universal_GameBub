@@ -1,0 +1,46 @@
+{
+  "prepared_date": "2026-10-15",
+  "target": "gamebub_rev4",
+  "state": "preparation only; no port implementation",
+  "universal": {
+    "url": "https://github.com/RodimusFVC/Arcade-Universal_MiSTer.git",
+    "path": "upstream/Arcade-Universal_MiSTer",
+    "commit": "2a8a4515b9f0c796c79da25f8b0c49a1a8eaadaf",
+    "live_head_verified": true,
+    "mra_count": 61,
+    "mra_xml_issues": [
+      {
+        "path": "releases/Devil Zone.mra",
+        "error": "not well-formed (invalid token): line 32, column 56"
+      },
+      {
+        "path": "releases/_alternatives/_Devil Zone/Devil Zone (Easier).mra",
+        "error": "not well-formed (invalid token): line 31, column 56"
+      }
+    ],
+    "sparse_checkout": "RTL, tools, releases/*.mra, Arcade-Universal.sv, files.qip; sample archives and release bitstreams excluded"
+  },
+  "framework": {
+    "url": "https://github.com/alanswx/framework.git",
+    "path": "framework",
+    "commit": "6e5adf7ed3d8776f504d55e6dbb8d6fcc5cfa930",
+    "branch": "feature/video-rotation",
+    "upstream_base": "db9d3b0e7989db4a8edc66e47b843097d71f078c",
+    "must_use": "tested opt-in arcade rotation fork; do not substitute stock framework"
+  },
+  "reference_snapshot": {
+    "repo": "https://github.com/alanswx/MCR_GameBub",
+    "commit": "a47b413b533e750978761d52efa4fdf4c278e2cb",
+    "copied": [
+      "build launcher/env/ignore rules",
+      "framework summary and patch",
+      "offline MCR converter sources/generator/checker/catalog"
+    ]
+  },
+  "local_references": {
+    "mcr": "/home/alans/mister/mcr/MCR_GameBub",
+    "colecovision": "/home/alans/mister/adam/ColecoVision_GameBub",
+    "iigs": "/home/alans/mister/iigs/Apple-IIgs_GameBub",
+    "mra_tool": "/home/alans/mister/mcr/mra-tools-c/mra"
+  }
+}

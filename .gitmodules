@@ -1,0 +1,6 @@
+[submodule "upstream/Arcade-Universal_MiSTer"]
+	path = upstream/Arcade-Universal_MiSTer
+	url = https://github.com/RodimusFVC/Arcade-Universal_MiSTer.git
+[submodule "framework"]
+	path = framework
+	url = https://github.com/alanswx/framework.git
