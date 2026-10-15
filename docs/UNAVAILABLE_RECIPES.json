@@ -1,0 +1,22 @@
+[
+  {
+    "mra": "upstream/Arcade-Universal_MiSTer/releases/_alternatives/_Do! Run Run/Run Run (Do! Run Run Bootleg).mra",
+    "name": "Run Run (Do! Run Run Bootleg)",
+    "reason": "Missing chip CRC 9f23896b, ZIPs ['runrun.zip', 'dorunrun.zip']"
+  },
+  {
+    "mra": "upstream/Arcade-Universal_MiSTer/releases/_alternatives/_Indoor Soccer/Indoor Soccer (Tecfri).mra",
+    "name": "Indoor Soccer (Tecfri)",
+    "reason": "Missing chip CRC 1fa5ad7d, ZIPs ['idsoccert.zip', 'idsoccer.zip']"
+  },
+  {
+    "mra": "upstream/Arcade-Universal_MiSTer/releases/_alternatives/_Space Panic/Space Panic (Bootleg).mra",
+    "name": "Space Panic (Bootleg)",
+    "reason": "Missing chip CRC e1efa292, ZIPs ['panicbl.zip', 'panic.zip']"
+  },
+  {
+    "mra": "upstream/Arcade-Universal_MiSTer/releases/_alternatives/_Space Panic/Space Panic (Set 4).mra",
+    "name": "Space Panic (Set 4)",
+    "reason": "Missing chip CRC 3208f7da, ZIPs ['panic4.zip', 'panic.zip']"
+  }
+]

@@ -1,0 +1,567 @@
+{
+  "target": "gamebub_rev4",
+  "core_id": "alanswx.Universal",
+  "version": "0.2.0-test1",
+  "universal_pin": "2a8a4515b9f0c796c79da25f8b0c49a1a8eaadaf",
+  "framework_pin": "6e5adf7ed3d8776f504d55e6dbb8d6fcc5cfa930",
+  "tool": "Vivado 2025.2",
+  "timing": {
+    "setup_wns_ns": 0.291,
+    "hold_whs_ns": 0.039,
+    "setup_failing_endpoints": 0,
+    "hold_failing_endpoints": 0,
+    "coverage_warning": "Inherited framework audioClock and external I/O timing coverage warnings; see PORT_PLAN.md"
+  },
+  "resources": {
+    "LUTs": 31341,
+    "FFs": 13489,
+    "BRAM36_tiles": 132.5,
+    "BRAM36_available": 135,
+    "DSPs": 66
+  },
+  "bitstream_sha256": "bd12ea30b1042c164aaad6f815d90fb0d1753ae4f954c7ba7fc1a91998ffb838",
+  "source_sha256": {
+    "build.mill": "8e8f979c1b825492cd76f27e4f09e811ed2828e2a0498caa78705100ca094560",
+    "chisel/src/Universal.scala": "009c3b298d5249376ccf9d7812bd0c33323b88742c607705109b3f3450ff942d",
+    "rtl/gamebub/dpram_dc.sv": "c30313708770ab0fe481c598fe81df4aeb7ebefe8b958b93ad97d245b922f429",
+    "rtl/gamebub/game_catalog.sv": "8804b0ed79928f94ca722a3c967b077f5cc5951bbd1ae927a1af8280767893c8",
+    "rtl/gamebub/gb_clocks.sv": "ed96b70bc0e31d84afd63d863b211311d4a1c0d64c0959f94b415807cf0718c9",
+    "rtl/gamebub/gb_universal_host.sv": "cc859faf908f3c2ab53c8f76824f9fbbbcff2efdcceeade8c14b7bf88bef34cb",
+    "rtl/gamebub/gb_universal_inputs.sv": "84aaa8e4d2d4428cb957b5f16c06ec27981ae5bb7cf3225e02166ae16be648ad",
+    "rtl/gamebub/gb_universal_video.sv": "abc563bae21fed95fdbeca8d05ea5cd33b488dfbbcce31fc3abc5f6a2526aa3f",
+    "rtl/gamebub/universal_gamebub.sv": "9f32d2f4320f10d6395557c5176d17c005aa1302b1d99e46fcceb05c273fe13e",
+    "rtl/universal/cheekyms/cheekyms_board.sv": "93f34f8683460be2489217fbde9498477f3f88f68b17b4d25096e04b74ed3bcc",
+    "rtl/universal/cheekyms/cheekyms_sound.sv": "f41d4f62795c54921df6e131eb838dec4f0f0ff7a4e6967dbdf98cbd159cdd0b",
+    "rtl/universal/cosmic/cosmic_board.sv": "643187fbf256d4d0671f68c33c4c0e78e7fd0209ce2ccd0edb580e4ad95d0e69",
+    "rtl/universal/cosmic/cosmica_sound.sv": "a59b0477d56804dd1508503c138e1c8f1e78d466f33fe86dd887972eca9e7358",
+    "rtl/universal/cosmic/magspot_sound.sv": "88e3d1572d1bf0c03c15749323afe9d66a28d04e76ef98382dc7c8f2cdb68f6c",
+    "rtl/universal/cosmic/nomnlnd_sound.sv": "c222fe30a8fbf9dd2731d1456a964601ac42f1249a0d09394acdf7e29326751e",
+    "rtl/universal/cosmic/panic_sound.sv": "ea325655f477c22d337729f8d36c6a5632295dce5129611cf2a8bb8ccb22cc95",
+    "rtl/universal/cpu/T80/T80.vhdl": "32d86ea8a440647a104ed7efd305523de6ebd83cd5acfd1333219aaa05ad7947",
+    "rtl/universal/cpu/T80/T80_ALU.vhdl": "823a062b8be873505ac16e627351a5105101243a11483bf8f2446214893b739e",
+    "rtl/universal/cpu/T80/T80_MCode.vhdl": "78454892dea4cb2ea7ded844329d590160435d340b58e3bd39452645c513f45d",
+    "rtl/universal/cpu/T80/T80_Pack.vhdl": "646954fa24baa028c3b349cc20ed87e79aee3fcc0f82de3426df59d7c0cd268c",
+    "rtl/universal/cpu/T80/T80_Reg.vhdl": "b40f92eb96fc55fa0adc8ca1bbb20d99133ae1dfe3728b146e37ee00ef588783",
+    "rtl/universal/cpu/T80/T80pa.vhdl": "9100e7e610eea0fe18be6bc81b147da9ed4e53bdd7684586ecbdc98ea33e4a26",
+    "rtl/universal/docastle/docastle_board.sv": "48c5be491a67d372a32a80138e6652763e08fb8c6b48796158141b3e0771afaa",
+    "rtl/universal/ladybug/crt_flip_fb.sv": "0bd64be8c41b9ee2af3393b09f52b770c4ab67d01fbe8656eac0894a03496fe3",
+    "rtl/universal/ladybug/ladybug_addr_dec.sv": "961ddbe4c3eb58975949b0e6f09662595280b72f7d7caefa0c0649a15465d5c9",
+    "rtl/universal/ladybug/ladybug_char.sv": "cb7fbe2feebb86ef4c83d66885e2eafa8cd459837539c99cf3506b48aa7fbb2f",
+    "rtl/universal/ladybug/ladybug_chute.sv": "2649d1276b8c43b87435013c32c43e29c827b45899e5e005481171c14ca5e954",
+    "rtl/universal/ladybug/ladybug_chutes.sv": "1fc38b62bc4dd1e1db921b17e16d7c61e708f68c2c73d483b9b633ced02bf2ad",
+    "rtl/universal/ladybug/ladybug_clk.sv": "686c95a08d2d7dfd64c5b9535f12ded971becd5a906a91f9b97283974ccb228b",
+    "rtl/universal/ladybug/ladybug_counter.sv": "ee69f997123a6e2d5b10f3c50a6cb97cd858c0b5e039f8435da31b15c8075005",
+    "rtl/universal/ladybug/ladybug_cpu_unit.sv": "b247d9a6511f1adeaf95d0299a7e90a97bf617684714bd72d70dc5cf24d1a97d",
+    "rtl/universal/ladybug/ladybug_gpio.sv": "d1d0e45b03c79a0bf977e75dc7e8d73e36479d848338667fa18520b1c1fce56a",
+    "rtl/universal/ladybug/ladybug_machine.sv": "23ed5e048564667b8e5c463398568c3cfbfdbdb77422b6d560c2a0d6c83eed1e",
+    "rtl/universal/ladybug/ladybug_rams.sv": "f614844a079491792753e1c10aef41c1ed082bbd6ed4d72bcebe72c5c61cf01e",
+    "rtl/universal/ladybug/ladybug_res.sv": "233e6014bd1899027bb708faf44eb55b8038822e3d4c96270ad902aa7e0aef65",
+    "rtl/universal/ladybug/ladybug_rgb.sv": "05da86c542966249c72e7ac3205e45c6bb8502eaebcec6f58a9862cb85c0e4bd",
+    "rtl/universal/ladybug/ladybug_sound_unit.sv": "9c70041aa1b54f73e4a48d99c668d33f7969561129c54ece28fbb344702c3423",
+    "rtl/universal/ladybug/ladybug_sprite.sv": "b78a6f834d27d3c3fa29d484491c3a0d8e7c4ac349abe51ed9841cae0c9e5fe2",
+    "rtl/universal/ladybug/ladybug_sprite_ctrl.sv": "225e1534f9c8cc19aaa1f7210045e9dd6eec8642268a58d3c2d2239e09d62d74",
+    "rtl/universal/ladybug/ladybug_video_timing.sv": "ef93419b26e403816367417ef75d533c3ccd7c94e5a22ef0112923e9f14ffa64",
+    "rtl/universal/ladybug/ladybug_video_unit.sv": "17c0ceeada6dfd381b7ab525b539867abf4f42e7b263f91b529b03ab080dd82b",
+    "rtl/universal/ladybug/sraider_overlay.sv": "c47638e8498900cbd7d512ccada9e33b780d4a49bd50e1945ebaf13dafb64627",
+    "rtl/universal/ladybug/sraider_sub.sv": "833a6dfab8ba793939ded1537665bbd3f594ddb0a2aa99c0b07823e871adec00",
+    "rtl/universal/ladybug/ttl_175.sv": "5decf893b7135df1f2b9efec6d51db692c0bbd418e4b5e7aae07d5be26d254f6",
+    "rtl/universal/ladybug/ttl_393.sv": "c725f0ab952ee4193de24e924091a2feac74af3b5b310651534560d606460614",
+    "rtl/universal/mrdo/mrdo_board.sv": "080dfd72965d7404fc816d0ab594c1fce2b8d97b5f18701987d7b6f3d34bb1ea",
+    "rtl/universal/sound/jt89/hdl/jt89.v": "998e1bab42ba2912a5d4ea906bd66ef90c813996c72f44883f677ce6ca49e975",
+    "rtl/universal/sound/jt89/hdl/jt89_mixer.v": "183e8f0e62dc144b7ab641bcc1574c55eb137ad079a6be929fdcc06ee6603bad",
+    "rtl/universal/sound/jt89/hdl/jt89_noise.v": "a91b398aefc5c0df6d0b67724b96fd5e7bc7c4150f39117d0bf105987ccdc206",
+    "rtl/universal/sound/jt89/hdl/jt89_tone.v": "9130222c9f9a77e69f00fe39944659faa9fb5e1107c31db1458ac9ec6fdbd96a",
+    "rtl/universal/sound/jt89/hdl/jt89_vol.v": "8cd408247294b4e0d58898e4185f96ca4367dc15273504831cbb1c447aabb0ca",
+    "rtl/universal/sound/msm5205.sv": "901b2e6aea2c7e8e039432f792d142b284256ce698a7fd786c55b85d44b19abf",
+    "rtl/universal/universal_board.sv": "7b9d6b1682bd3eb6cdd867c6ada1ff8becadca729af84e2ae746e787753b8390",
+    "rtl/universal/video/mc6845.vhdl": "40a4dc7457ebedc2bd19d64b4e0c7b2fd7e1dd54d66befcdcef8880f50d8a041",
+    "rtl/universal/z80_socket.sv": "97abd89d0eb693362853e46590bf5a81f855a6fabc6056db577705a0a406752d",
+    "rtl/universal/zerohour/zerohour_board.sv": "c6164b8621a3c2752aed4ef14c451ea1a60266a89299dc315056a8ec5ca7c809",
+    "rtl/universal/zerohour/zerohour_sound.sv": "81120016bc76d3cd4a0cb6ab5be7ed38679d39f2269c182a494b4898d0263571"
+  },
+  "device_tested": true,
+  "device_confirmed_combined": {
+    "game": "Mr. Do!",
+    "version": "0.2.0-test1",
+    "owner_report": "mr do played",
+    "exact_set": null,
+    "sound_confirmed": false
+  },
+  "device_confirmed_baseline": {
+    "game": "ladybug",
+    "version": "0.1.0-test2",
+    "owner_report": "works very well; sound works"
+  },
+  "validation": {
+    "ROM_images": "57 independent MRA CLI byte comparisons pass",
+    "offline_builder": "57 Node and Chrome native Deflate/SHA, file uploads, SD ZIP button/path/CRC round trips pass",
+    "input_maps": "57 idle/DIP defaults; two-frame coin impulse, focus filtering and Soccer twin-stick/P2-start tests pass",
+    "simulation_model": "Actual platform and board RTL; T80/mc6845 converted by GHDL; simulation-only quiescing of inactive family engines; FPGA retains original clocks"
+  },
+  "simulation_results": {
+    "dorodon2": {
+      "variant": 0,
+      "frames": 16,
+      "writes": 419130,
+      "m1_address_changes": 93997,
+      "colored_pixels_total": 119249,
+      "nonzero_audio_cycles": 2846972
+    },
+    "mrlo": {
+      "variant": 5,
+      "frames": 361,
+      "writes": 1048689,
+      "m1_address_changes": 1296263,
+      "colored_pixels_total": 3847283,
+      "nonzero_audio_cycles": 24208237
+    },
+    "sraider": {
+      "variant": 1,
+      "frames": 60,
+      "writes": 125848,
+      "m1_address_changes": 396991,
+      "colored_pixels_total": 432224,
+      "nonzero_audio_cycles": 0
+    },
+    "mrdofix": {
+      "variant": 4,
+      "frames": 16,
+      "writes": 146615,
+      "m1_address_changes": 100021,
+      "colored_pixels_total": 181449,
+      "nonzero_audio_cycles": 1935600
+    },
+    "cavenger": {
+      "variant": 0,
+      "frames": 60,
+      "writes": 336183,
+      "m1_address_changes": 469423,
+      "colored_pixels_total": 186803,
+      "nonzero_audio_cycles": 11763395
+    },
+    "mrdot": {
+      "variant": 4,
+      "frames": 60,
+      "writes": 241311,
+      "m1_address_changes": 216978,
+      "colored_pixels_total": 1457185,
+      "nonzero_audio_cycles": 12400158
+    },
+    "nomnlnd": {
+      "variant": 17,
+      "frames": 60,
+      "writes": 188109,
+      "m1_address_changes": 336790,
+      "colored_pixels_total": 270509,
+      "nonzero_audio_cycles": 0
+    },
+    "dowild": {
+      "variant": 8,
+      "frames": 16,
+      "writes": 135521,
+      "m1_address_changes": 110725,
+      "colored_pixels_total": 150877,
+      "nonzero_audio_cycles": 1920895
+    },
+    "redclash": {
+      "variant": 11,
+      "frames": 60,
+      "writes": 32768,
+      "m1_address_changes": 493284,
+      "colored_pixels_total": 107705,
+      "nonzero_audio_cycles": 0
+    },
+    "cosmica23": {
+      "variant": 14,
+      "frames": 16,
+      "writes": 169512,
+      "m1_address_changes": 53196,
+      "colored_pixels_total": 6888,
+      "nonzero_audio_cycles": 0
+    },
+    "zerohoura": {
+      "variant": 10,
+      "frames": 16,
+      "writes": 24502,
+      "m1_address_changes": 120008,
+      "colored_pixels_total": 5643,
+      "nonzero_audio_cycles": 3596067
+    },
+    "cheekyms": {
+      "variant": 12,
+      "frames": 60,
+      "writes": 24286,
+      "m1_address_changes": 36924,
+      "colored_pixels_total": 10458,
+      "nonzero_audio_cycles": 19816935
+    },
+    "idsoccera": {
+      "variant": 9,
+      "frames": 16,
+      "writes": 31866,
+      "m1_address_changes": 143426,
+      "colored_pixels_total": 236280,
+      "nonzero_audio_cycles": 0
+    },
+    "devzone2": {
+      "variant": 16,
+      "frames": 16,
+      "writes": 102481,
+      "m1_address_changes": 55482,
+      "colored_pixels_total": 43,
+      "nonzero_audio_cycles": 0
+    },
+    "yankeedo": {
+      "variant": 3,
+      "frames": 16,
+      "writes": 145496,
+      "m1_address_changes": 99834,
+      "colored_pixels_total": 179785,
+      "nonzero_audio_cycles": 1935984
+    },
+    "spiero": {
+      "variant": 8,
+      "frames": 16,
+      "writes": 116809,
+      "m1_address_changes": 116853,
+      "colored_pixels_total": 89522,
+      "nonzero_audio_cycles": 2289167
+    },
+    "asoccer": {
+      "variant": 9,
+      "frames": 16,
+      "writes": 31866,
+      "m1_address_changes": 143426,
+      "colored_pixels_total": 236280,
+      "nonzero_audio_cycles": 0
+    },
+    "cosmica22": {
+      "variant": 14,
+      "frames": 16,
+      "writes": 169475,
+      "m1_address_changes": 53196,
+      "colored_pixels_total": 6888,
+      "nonzero_audio_cycles": 0
+    },
+    "mrdo": {
+      "variant": 3,
+      "frames": 60,
+      "writes": 240363,
+      "m1_address_changes": 216791,
+      "colored_pixels_total": 1455450,
+      "nonzero_audio_cycles": 12399383
+    },
+    "douni": {
+      "variant": 7,
+      "frames": 16,
+      "writes": 80900,
+      "m1_address_changes": 122078,
+      "colored_pixels_total": 468673,
+      "nonzero_audio_cycles": 0
+    },
+    "panic": {
+      "variant": 13,
+      "frames": 60,
+      "writes": 261739,
+      "m1_address_changes": 260876,
+      "colored_pixels_total": 44686,
+      "nonzero_audio_cycles": 0
+    },
+    "devzone": {
+      "variant": 16,
+      "frames": 60,
+      "writes": 266175,
+      "m1_address_changes": 250832,
+      "colored_pixels_total": 37158,
+      "nonzero_audio_cycles": 0
+    },
+    "dorunrunca": {
+      "variant": 7,
+      "frames": 16,
+      "writes": 121440,
+      "m1_address_changes": 117069,
+      "colored_pixels_total": 160674,
+      "nonzero_audio_cycles": 2119421
+    },
+    "dorunrunc": {
+      "variant": 7,
+      "frames": 16,
+      "writes": 121575,
+      "m1_address_changes": 117056,
+      "colored_pixels_total": 160674,
+      "nonzero_audio_cycles": 2119421
+    },
+    "cosmica": {
+      "variant": 14,
+      "frames": 60,
+      "writes": 369521,
+      "m1_address_changes": 202005,
+      "colored_pixels_total": 41205,
+      "nonzero_audio_cycles": 0
+    },
+    "redclashs": {
+      "variant": 11,
+      "frames": 16,
+      "writes": 24825,
+      "m1_address_changes": 127820,
+      "colored_pixels_total": 9152,
+      "nonzero_audio_cycles": 0
+    },
+    "mrdofabr": {
+      "variant": 4,
+      "frames": 16,
+      "writes": 146615,
+      "m1_address_changes": 100021,
+      "colored_pixels_total": 182487,
+      "nonzero_audio_cycles": 1935600
+    },
+    "magspot2": {
+      "variant": 15,
+      "frames": 16,
+      "writes": 92611,
+      "m1_address_changes": 87813,
+      "colored_pixels_total": 34,
+      "nonzero_audio_cycles": 0
+    },
+    "dorodon": {
+      "variant": 0,
+      "frames": 60,
+      "writes": 505160,
+      "m1_address_changes": 487109,
+      "colored_pixels_total": 450304,
+      "nonzero_audio_cycles": 15035582
+    },
+    "magspot": {
+      "variant": 15,
+      "frames": 60,
+      "writes": 278883,
+      "m1_address_changes": 333966,
+      "colored_pixels_total": 47181,
+      "nonzero_audio_cycles": 0
+    },
+    "docastle": {
+      "variant": 7,
+      "frames": 60,
+      "writes": 322464,
+      "m1_address_changes": 488071,
+      "colored_pixels_total": 1864267,
+      "nonzero_audio_cycles": 0
+    },
+    "redclasht": {
+      "variant": 11,
+      "frames": 16,
+      "writes": 24900,
+      "m1_address_changes": 127813,
+      "colored_pixels_total": 9401,
+      "nonzero_audio_cycles": 0
+    },
+    "snapjack": {
+      "variant": 0,
+      "frames": 60,
+      "writes": 235683,
+      "m1_address_changes": 464687,
+      "colored_pixels_total": 329129,
+      "nonzero_audio_cycles": 14161270
+    },
+    "mrsdyna": {
+      "variant": 2,
+      "frames": 60,
+      "writes": 158730,
+      "m1_address_changes": 395863,
+      "colored_pixels_total": 356610,
+      "nonzero_audio_cycles": 0
+    },
+    "dorunrun": {
+      "variant": 8,
+      "frames": 60,
+      "writes": 481113,
+      "m1_address_changes": 459602,
+      "colored_pixels_total": 1629252,
+      "nonzero_audio_cycles": 16616189
+    },
+    "mrdu": {
+      "variant": 4,
+      "frames": 16,
+      "writes": 146615,
+      "m1_address_changes": 100021,
+      "colored_pixels_total": 175566,
+      "nonzero_audio_cycles": 1935600
+    },
+    "zerohour": {
+      "variant": 10,
+      "frames": 60,
+      "writes": 35292,
+      "m1_address_changes": 485377,
+      "colored_pixels_total": 107617,
+      "nonzero_audio_cycles": 17542243
+    },
+    "idsoccer": {
+      "variant": 9,
+      "frames": 60,
+      "writes": 151196,
+      "m1_address_changes": 519324,
+      "colored_pixels_total": 794506,
+      "nonzero_audio_cycles": 0
+    },
+    "panich": {
+      "variant": 13,
+      "frames": 16,
+      "writes": 111422,
+      "m1_address_changes": 69105,
+      "colored_pixels_total": 0,
+      "nonzero_audio_cycles": 0
+    },
+    "ladybugb2": {
+      "variant": 0,
+      "frames": 16,
+      "writes": 189417,
+      "m1_address_changes": 84767,
+      "colored_pixels_total": 47520,
+      "nonzero_audio_cycles": 0
+    },
+    "redclashta": {
+      "variant": 11,
+      "frames": 16,
+      "writes": 24917,
+      "m1_address_changes": 127813,
+      "colored_pixels_total": 9401,
+      "nonzero_audio_cycles": 0
+    },
+    "panic3": {
+      "variant": 13,
+      "frames": 16,
+      "writes": 111422,
+      "m1_address_changes": 69105,
+      "colored_pixels_total": 0,
+      "nonzero_audio_cycles": 0
+    },
+    "mrdoy": {
+      "variant": 3,
+      "frames": 16,
+      "writes": 145202,
+      "m1_address_changes": 98960,
+      "colored_pixels_total": 179466,
+      "nonzero_audio_cycles": 1935600
+    },
+    "jjack": {
+      "variant": 8,
+      "frames": 16,
+      "writes": 148987,
+      "m1_address_changes": 113292,
+      "colored_pixels_total": 236378,
+      "nonzero_audio_cycles": 1592593
+    },
+    "mrdobl": {
+      "variant": 6,
+      "frames": 60,
+      "writes": 245939,
+      "m1_address_changes": 215848,
+      "colored_pixels_total": 1451824,
+      "nonzero_audio_cycles": 12402144
+    },
+    "cosmica1": {
+      "variant": 14,
+      "frames": 16,
+      "writes": 187563,
+      "m1_address_changes": 53419,
+      "colored_pixels_total": 6987,
+      "nonzero_audio_cycles": 0
+    },
+    "docastle2": {
+      "variant": 7,
+      "frames": 16,
+      "writes": 80900,
+      "m1_address_changes": 122078,
+      "colored_pixels_total": 480997,
+      "nonzero_audio_cycles": 0
+    },
+    "dorunrun2": {
+      "variant": 8,
+      "frames": 16,
+      "writes": 121575,
+      "m1_address_changes": 117056,
+      "colored_pixels_total": 160674,
+      "nonzero_audio_cycles": 2119421
+    },
+    "panicger": {
+      "variant": 13,
+      "frames": 16,
+      "writes": 111422,
+      "m1_address_changes": 69105,
+      "colored_pixels_total": 0,
+      "nonzero_audio_cycles": 0
+    },
+    "docastleo": {
+      "variant": 7,
+      "frames": 16,
+      "writes": 80900,
+      "m1_address_changes": 122078,
+      "colored_pixels_total": 468673,
+      "nonzero_audio_cycles": 0
+    },
+    "ladybugb": {
+      "variant": 0,
+      "frames": 16,
+      "writes": 189417,
+      "m1_address_changes": 84767,
+      "colored_pixels_total": 47520,
+      "nonzero_audio_cycles": 0
+    },
+    "kickridr": {
+      "variant": 8,
+      "frames": 16,
+      "writes": 124597,
+      "m1_address_changes": 110283,
+      "colored_pixels_total": 285603,
+      "nonzero_audio_cycles": 1598615
+    },
+    "panic2": {
+      "variant": 13,
+      "frames": 16,
+      "writes": 111422,
+      "m1_address_changes": 69105,
+      "colored_pixels_total": 0,
+      "nonzero_audio_cycles": 0
+    },
+    "zerohouri": {
+      "variant": 10,
+      "frames": 16,
+      "writes": 25342,
+      "m1_address_changes": 119974,
+      "colored_pixels_total": 6525,
+      "nonzero_audio_cycles": 3596062
+    },
+    "nomnlndg": {
+      "variant": 17,
+      "frames": 16,
+      "writes": 145479,
+      "m1_address_changes": 83145,
+      "colored_pixels_total": 43350,
+      "nonzero_audio_cycles": 0
+    },
+    "cosmica2a": {
+      "variant": 14,
+      "frames": 16,
+      "writes": 169475,
+      "m1_address_changes": 53196,
+      "colored_pixels_total": 6888,
+      "nonzero_audio_cycles": 0
+    },
+    "ladybug": {
+      "variant": 0,
+      "frames": 361,
+      "writes": 882121,
+      "m1_address_changes": 3100961,
+      "colored_pixels_total": 1110366,
+      "nonzero_audio_cycles": 7514725
+    }
+  },
+  "gaps": [
+    "New families require on-device gameplay and sound validation",
+    "Most games have short bootstrap/raster checks; colored/audio counts do not prove full gameplay",
+    "No independent MAME/upstream full-frame comparison",
+    "Physical HDMI/dock and each grip remain to be tested",
+    "Four missing-data alternative MRAs excluded explicitly",
+    "TMS variants 18/19 have no pinned recipes and are not enabled"
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "url": "https://github.com/RodimusFVC/Arcade-Universal_MiSTer",
+  "commit": "2a8a4515b9f0c796c79da25f8b0c49a1a8eaadaf",
+  "live_head_checked": "2026-10-15",
+  "patches": [
+    {
+      "path": "scripts/adaptations/disable_unadvertised_tms.json",
+      "sha256": "ac238970890c39a636766bc7cb9ae459f69421b72c4eec2cb7bf69545f485813"
+    }
+  ],
+  "files": [
+    {
+      "source": "rtl/universal_board.sv",
+      "destination": "rtl/universal/universal_board.sv",
+      "sha256": "8adb058bc8b2f20793efe61dc250b01c48703ce73953d43f4a1d780810dc65fb",
+      "imported_sha256": "7b9d6b1682bd3eb6cdd867c6ada1ff8becadca729af84e2ae746e787753b8390"
+    },
+    {
+      "source": "rtl/z80_socket.sv",
+      "destination": "rtl/universal/z80_socket.sv",
+      "sha256": "97abd89d0eb693362853e46590bf5a81f855a6fabc6056db577705a0a406752d",
+      "imported_sha256": "97abd89d0eb693362853e46590bf5a81f855a6fabc6056db577705a0a406752d"
+    },
+    {
+      "source": "rtl/ladybug/crt_flip_fb.sv",
+      "destination": "rtl/universal/ladybug/crt_flip_fb.sv",
+      "sha256": "0bd64be8c41b9ee2af3393b09f52b770c4ab67d01fbe8656eac0894a03496fe3",
+      "imported_sha256": "0bd64be8c41b9ee2af3393b09f52b770c4ab67d01fbe8656eac0894a03496fe3"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_addr_dec.sv",
+      "destination": "rtl/universal/ladybug/ladybug_addr_dec.sv",
+      "sha256": "961ddbe4c3eb58975949b0e6f09662595280b72f7d7caefa0c0649a15465d5c9",
+      "imported_sha256": "961ddbe4c3eb58975949b0e6f09662595280b72f7d7caefa0c0649a15465d5c9"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_char.sv",
+      "destination": "rtl/universal/ladybug/ladybug_char.sv",
+      "sha256": "cb7fbe2feebb86ef4c83d66885e2eafa8cd459837539c99cf3506b48aa7fbb2f",
+      "imported_sha256": "cb7fbe2feebb86ef4c83d66885e2eafa8cd459837539c99cf3506b48aa7fbb2f"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_chute.sv",
+      "destination": "rtl/universal/ladybug/ladybug_chute.sv",
+      "sha256": "2649d1276b8c43b87435013c32c43e29c827b45899e5e005481171c14ca5e954",
+      "imported_sha256": "2649d1276b8c43b87435013c32c43e29c827b45899e5e005481171c14ca5e954"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_chutes.sv",
+      "destination": "rtl/universal/ladybug/ladybug_chutes.sv",
+      "sha256": "1fc38b62bc4dd1e1db921b17e16d7c61e708f68c2c73d483b9b633ced02bf2ad",
+      "imported_sha256": "1fc38b62bc4dd1e1db921b17e16d7c61e708f68c2c73d483b9b633ced02bf2ad"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_clk.sv",
+      "destination": "rtl/universal/ladybug/ladybug_clk.sv",
+      "sha256": "686c95a08d2d7dfd64c5b9535f12ded971becd5a906a91f9b97283974ccb228b",
+      "imported_sha256": "686c95a08d2d7dfd64c5b9535f12ded971becd5a906a91f9b97283974ccb228b"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_counter.sv",
+      "destination": "rtl/universal/ladybug/ladybug_counter.sv",
+      "sha256": "ee69f997123a6e2d5b10f3c50a6cb97cd858c0b5e039f8435da31b15c8075005",
+      "imported_sha256": "ee69f997123a6e2d5b10f3c50a6cb97cd858c0b5e039f8435da31b15c8075005"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_cpu_unit.sv",
+      "destination": "rtl/universal/ladybug/ladybug_cpu_unit.sv",
+      "sha256": "b247d9a6511f1adeaf95d0299a7e90a97bf617684714bd72d70dc5cf24d1a97d",
+      "imported_sha256": "b247d9a6511f1adeaf95d0299a7e90a97bf617684714bd72d70dc5cf24d1a97d"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_gpio.sv",
+      "destination": "rtl/universal/ladybug/ladybug_gpio.sv",
+      "sha256": "d1d0e45b03c79a0bf977e75dc7e8d73e36479d848338667fa18520b1c1fce56a",
+      "imported_sha256": "d1d0e45b03c79a0bf977e75dc7e8d73e36479d848338667fa18520b1c1fce56a"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_machine.sv",
+      "destination": "rtl/universal/ladybug/ladybug_machine.sv",
+      "sha256": "23ed5e048564667b8e5c463398568c3cfbfdbdb77422b6d560c2a0d6c83eed1e",
+      "imported_sha256": "23ed5e048564667b8e5c463398568c3cfbfdbdb77422b6d560c2a0d6c83eed1e"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_rams.sv",
+      "destination": "rtl/universal/ladybug/ladybug_rams.sv",
+      "sha256": "f614844a079491792753e1c10aef41c1ed082bbd6ed4d72bcebe72c5c61cf01e",
+      "imported_sha256": "f614844a079491792753e1c10aef41c1ed082bbd6ed4d72bcebe72c5c61cf01e"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_res.sv",
+      "destination": "rtl/universal/ladybug/ladybug_res.sv",
+      "sha256": "233e6014bd1899027bb708faf44eb55b8038822e3d4c96270ad902aa7e0aef65",
+      "imported_sha256": "233e6014bd1899027bb708faf44eb55b8038822e3d4c96270ad902aa7e0aef65"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_rgb.sv",
+      "destination": "rtl/universal/ladybug/ladybug_rgb.sv",
+      "sha256": "05da86c542966249c72e7ac3205e45c6bb8502eaebcec6f58a9862cb85c0e4bd",
+      "imported_sha256": "05da86c542966249c72e7ac3205e45c6bb8502eaebcec6f58a9862cb85c0e4bd"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_sound_unit.sv",
+      "destination": "rtl/universal/ladybug/ladybug_sound_unit.sv",
+      "sha256": "9c70041aa1b54f73e4a48d99c668d33f7969561129c54ece28fbb344702c3423",
+      "imported_sha256": "9c70041aa1b54f73e4a48d99c668d33f7969561129c54ece28fbb344702c3423"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_sprite.sv",
+      "destination": "rtl/universal/ladybug/ladybug_sprite.sv",
+      "sha256": "b78a6f834d27d3c3fa29d484491c3a0d8e7c4ac349abe51ed9841cae0c9e5fe2",
+      "imported_sha256": "b78a6f834d27d3c3fa29d484491c3a0d8e7c4ac349abe51ed9841cae0c9e5fe2"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_sprite_ctrl.sv",
+      "destination": "rtl/universal/ladybug/ladybug_sprite_ctrl.sv",
+      "sha256": "225e1534f9c8cc19aaa1f7210045e9dd6eec8642268a58d3c2d2239e09d62d74",
+      "imported_sha256": "225e1534f9c8cc19aaa1f7210045e9dd6eec8642268a58d3c2d2239e09d62d74"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_video_timing.sv",
+      "destination": "rtl/universal/ladybug/ladybug_video_timing.sv",
+      "sha256": "ef93419b26e403816367417ef75d533c3ccd7c94e5a22ef0112923e9f14ffa64",
+      "imported_sha256": "ef93419b26e403816367417ef75d533c3ccd7c94e5a22ef0112923e9f14ffa64"
+    },
+    {
+      "source": "rtl/ladybug/ladybug_video_unit.sv",
+      "destination": "rtl/universal/ladybug/ladybug_video_unit.sv",
+      "sha256": "17c0ceeada6dfd381b7ab525b539867abf4f42e7b263f91b529b03ab080dd82b",
+      "imported_sha256": "17c0ceeada6dfd381b7ab525b539867abf4f42e7b263f91b529b03ab080dd82b"
+    },
+    {
+      "source": "rtl/ladybug/sraider_overlay.sv",
+      "destination": "rtl/universal/ladybug/sraider_overlay.sv",
+      "sha256": "c47638e8498900cbd7d512ccada9e33b780d4a49bd50e1945ebaf13dafb64627",
+      "imported_sha256": "c47638e8498900cbd7d512ccada9e33b780d4a49bd50e1945ebaf13dafb64627"
+    },
+    {
+      "source": "rtl/ladybug/sraider_sub.sv",
+      "destination": "rtl/universal/ladybug/sraider_sub.sv",
+      "sha256": "833a6dfab8ba793939ded1537665bbd3f594ddb0a2aa99c0b07823e871adec00",
+      "imported_sha256": "833a6dfab8ba793939ded1537665bbd3f594ddb0a2aa99c0b07823e871adec00"
+    },
+    {
+      "source": "rtl/ladybug/ttl_175.sv",
+      "destination": "rtl/universal/ladybug/ttl_175.sv",
+      "sha256": "5decf893b7135df1f2b9efec6d51db692c0bbd418e4b5e7aae07d5be26d254f6",
+      "imported_sha256": "5decf893b7135df1f2b9efec6d51db692c0bbd418e4b5e7aae07d5be26d254f6"
+    },
+    {
+      "source": "rtl/ladybug/ttl_393.sv",
+      "destination": "rtl/universal/ladybug/ttl_393.sv",
+      "sha256": "c725f0ab952ee4193de24e924091a2feac74af3b5b310651534560d606460614",
+      "imported_sha256": "c725f0ab952ee4193de24e924091a2feac74af3b5b310651534560d606460614"
+    },
+    {
+      "source": "rtl/mrdo/mrdo_board.sv",
+      "destination": "rtl/universal/mrdo/mrdo_board.sv",
+      "sha256": "080dfd72965d7404fc816d0ab594c1fce2b8d97b5f18701987d7b6f3d34bb1ea",
+      "imported_sha256": "080dfd72965d7404fc816d0ab594c1fce2b8d97b5f18701987d7b6f3d34bb1ea"
+    },
+    {
+      "source": "rtl/docastle/docastle_board.sv",
+      "destination": "rtl/universal/docastle/docastle_board.sv",
+      "sha256": "48c5be491a67d372a32a80138e6652763e08fb8c6b48796158141b3e0771afaa",
+      "imported_sha256": "48c5be491a67d372a32a80138e6652763e08fb8c6b48796158141b3e0771afaa"
+    },
+    {
+      "source": "rtl/zerohour/zerohour_board.sv",
+      "destination": "rtl/universal/zerohour/zerohour_board.sv",
+      "sha256": "c6164b8621a3c2752aed4ef14c451ea1a60266a89299dc315056a8ec5ca7c809",
+      "imported_sha256": "c6164b8621a3c2752aed4ef14c451ea1a60266a89299dc315056a8ec5ca7c809"
+    },
+    {
+      "source": "rtl/zerohour/zerohour_sound.sv",
+      "destination": "rtl/universal/zerohour/zerohour_sound.sv",
+      "sha256": "81120016bc76d3cd4a0cb6ab5be7ed38679d39f2269c182a494b4898d0263571",
+      "imported_sha256": "81120016bc76d3cd4a0cb6ab5be7ed38679d39f2269c182a494b4898d0263571"
+    },
+    {
+      "source": "rtl/cheekyms/cheekyms_board.sv",
+      "destination": "rtl/universal/cheekyms/cheekyms_board.sv",
+      "sha256": "93f34f8683460be2489217fbde9498477f3f88f68b17b4d25096e04b74ed3bcc",
+      "imported_sha256": "93f34f8683460be2489217fbde9498477f3f88f68b17b4d25096e04b74ed3bcc"
+    },
+    {
+      "source": "rtl/cheekyms/cheekyms_sound.sv",
+      "destination": "rtl/universal/cheekyms/cheekyms_sound.sv",
+      "sha256": "f41d4f62795c54921df6e131eb838dec4f0f0ff7a4e6967dbdf98cbd159cdd0b",
+      "imported_sha256": "f41d4f62795c54921df6e131eb838dec4f0f0ff7a4e6967dbdf98cbd159cdd0b"
+    },
+    {
+      "source": "rtl/cosmic/cosmic_board.sv",
+      "destination": "rtl/universal/cosmic/cosmic_board.sv",
+      "sha256": "643187fbf256d4d0671f68c33c4c0e78e7fd0209ce2ccd0edb580e4ad95d0e69",
+      "imported_sha256": "643187fbf256d4d0671f68c33c4c0e78e7fd0209ce2ccd0edb580e4ad95d0e69"
+    },
+    {
+      "source": "rtl/cosmic/cosmica_sound.sv",
+      "destination": "rtl/universal/cosmic/cosmica_sound.sv",
+      "sha256": "a59b0477d56804dd1508503c138e1c8f1e78d466f33fe86dd887972eca9e7358",
+      "imported_sha256": "a59b0477d56804dd1508503c138e1c8f1e78d466f33fe86dd887972eca9e7358"
+    },
+    {
+      "source": "rtl/cosmic/magspot_sound.sv",
+      "destination": "rtl/universal/cosmic/magspot_sound.sv",
+      "sha256": "88e3d1572d1bf0c03c15749323afe9d66a28d04e76ef98382dc7c8f2cdb68f6c",
+      "imported_sha256": "88e3d1572d1bf0c03c15749323afe9d66a28d04e76ef98382dc7c8f2cdb68f6c"
+    },
+    {
+      "source": "rtl/cosmic/nomnlnd_sound.sv",
+      "destination": "rtl/universal/cosmic/nomnlnd_sound.sv",
+      "sha256": "c222fe30a8fbf9dd2731d1456a964601ac42f1249a0d09394acdf7e29326751e",
+      "imported_sha256": "c222fe30a8fbf9dd2731d1456a964601ac42f1249a0d09394acdf7e29326751e"
+    },
+    {
+      "source": "rtl/cosmic/panic_sound.sv",
+      "destination": "rtl/universal/cosmic/panic_sound.sv",
+      "sha256": "ea325655f477c22d337729f8d36c6a5632295dce5129611cf2a8bb8ccb22cc95",
+      "imported_sha256": "ea325655f477c22d337729f8d36c6a5632295dce5129611cf2a8bb8ccb22cc95"
+    },
+    {
+      "source": "rtl/sound/msm5205.sv",
+      "destination": "rtl/universal/sound/msm5205.sv",
+      "sha256": "901b2e6aea2c7e8e039432f792d142b284256ce698a7fd786c55b85d44b19abf",
+      "imported_sha256": "901b2e6aea2c7e8e039432f792d142b284256ce698a7fd786c55b85d44b19abf"
+    },
+    {
+      "source": "rtl/video/mc6845.vhd",
+      "destination": "rtl/universal/video/mc6845.vhdl",
+      "sha256": "40a4dc7457ebedc2bd19d64b4e0c7b2fd7e1dd54d66befcdcef8880f50d8a041",
+      "imported_sha256": "40a4dc7457ebedc2bd19d64b4e0c7b2fd7e1dd54d66befcdcef8880f50d8a041"
+    },
+    {
+      "source": "rtl/cpu/T80/T80_Pack.vhd",
+      "destination": "rtl/universal/cpu/T80/T80_Pack.vhdl",
+      "sha256": "646954fa24baa028c3b349cc20ed87e79aee3fcc0f82de3426df59d7c0cd268c",
+      "imported_sha256": "646954fa24baa028c3b349cc20ed87e79aee3fcc0f82de3426df59d7c0cd268c"
+    },
+    {
+      "source": "rtl/cpu/T80/T80_ALU.vhd",
+      "destination": "rtl/universal/cpu/T80/T80_ALU.vhdl",
+      "sha256": "823a062b8be873505ac16e627351a5105101243a11483bf8f2446214893b739e",
+      "imported_sha256": "823a062b8be873505ac16e627351a5105101243a11483bf8f2446214893b739e"
+    },
+    {
+      "source": "rtl/cpu/T80/T80_MCode.vhd",
+      "destination": "rtl/universal/cpu/T80/T80_MCode.vhdl",
+      "sha256": "78454892dea4cb2ea7ded844329d590160435d340b58e3bd39452645c513f45d",
+      "imported_sha256": "78454892dea4cb2ea7ded844329d590160435d340b58e3bd39452645c513f45d"
+    },
+    {
+      "source": "rtl/cpu/T80/T80_Reg.vhd",
+      "destination": "rtl/universal/cpu/T80/T80_Reg.vhdl",
+      "sha256": "b40f92eb96fc55fa0adc8ca1bbb20d99133ae1dfe3728b146e37ee00ef588783",
+      "imported_sha256": "b40f92eb96fc55fa0adc8ca1bbb20d99133ae1dfe3728b146e37ee00ef588783"
+    },
+    {
+      "source": "rtl/cpu/T80/T80.vhd",
+      "destination": "rtl/universal/cpu/T80/T80.vhdl",
+      "sha256": "32d86ea8a440647a104ed7efd305523de6ebd83cd5acfd1333219aaa05ad7947",
+      "imported_sha256": "32d86ea8a440647a104ed7efd305523de6ebd83cd5acfd1333219aaa05ad7947"
+    },
+    {
+      "source": "rtl/cpu/T80/T80pa.vhd",
+      "destination": "rtl/universal/cpu/T80/T80pa.vhdl",
+      "sha256": "9100e7e610eea0fe18be6bc81b147da9ed4e53bdd7684586ecbdc98ea33e4a26",
+      "imported_sha256": "9100e7e610eea0fe18be6bc81b147da9ed4e53bdd7684586ecbdc98ea33e4a26"
+    },
+    {
+      "source": "rtl/sound/jt89/hdl/jt89.v",
+      "destination": "rtl/universal/sound/jt89/hdl/jt89.v",
+      "sha256": "998e1bab42ba2912a5d4ea906bd66ef90c813996c72f44883f677ce6ca49e975",
+      "imported_sha256": "998e1bab42ba2912a5d4ea906bd66ef90c813996c72f44883f677ce6ca49e975"
+    },
+    {
+      "source": "rtl/sound/jt89/hdl/jt89_noise.v",
+      "destination": "rtl/universal/sound/jt89/hdl/jt89_noise.v",
+      "sha256": "a91b398aefc5c0df6d0b67724b96fd5e7bc7c4150f39117d0bf105987ccdc206",
+      "imported_sha256": "a91b398aefc5c0df6d0b67724b96fd5e7bc7c4150f39117d0bf105987ccdc206"
+    },
+    {
+      "source": "rtl/sound/jt89/hdl/jt89_vol.v",
+      "destination": "rtl/universal/sound/jt89/hdl/jt89_vol.v",
+      "sha256": "8cd408247294b4e0d58898e4185f96ca4367dc15273504831cbb1c447aabb0ca",
+      "imported_sha256": "8cd408247294b4e0d58898e4185f96ca4367dc15273504831cbb1c447aabb0ca"
+    },
+    {
+      "source": "rtl/sound/jt89/hdl/jt89_mixer.v",
+      "destination": "rtl/universal/sound/jt89/hdl/jt89_mixer.v",
+      "sha256": "183e8f0e62dc144b7ab641bcc1574c55eb137ad079a6be929fdcc06ee6603bad",
+      "imported_sha256": "183e8f0e62dc144b7ab641bcc1574c55eb137ad079a6be929fdcc06ee6603bad"
+    },
+    {
+      "source": "rtl/sound/jt89/hdl/jt89_tone.v",
+      "destination": "rtl/universal/sound/jt89/hdl/jt89_tone.v",
+      "sha256": "9130222c9f9a77e69f00fe39944659faa9fb5e1107c31db1458ac9ec6fdbd96a",
+      "imported_sha256": "9130222c9f9a77e69f00fe39944659faa9fb5e1107c31db1458ac9ec6fdbd96a"
+    }
+  ]
+}

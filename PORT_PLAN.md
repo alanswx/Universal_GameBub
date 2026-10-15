@@ -3,8 +3,7 @@
 Prepared 2026-10-15. The user asked for this separate project, dependencies
 and a plan, then a stop so a fresh LLM can take over. They also explicitly
 requested that the next LLM know about our framework for arcade ports and
-adapt our HTML ROM creator. **Preparation is complete; implementation has
-not started.**
+adapt our HTML ROM creator. **Historical preparation snapshot; see section 8 for the implemented Lady Bug baseline.**
 
 ## 1. Inputs and intended result
 
@@ -251,16 +250,231 @@ sources and a generator/checker under tools/. This file does not exist yet.
   After implementation, the intended build is
   `./mill root.buildCore --target gamebub_rev4`. It is not runnable yet.
 
-## 7. Prepared state / next action
+## 7. Handoff state / next action
 
-The source and framework pins, sparse source checkout, build launcher,
-working rules, converter reference and this plan are present. No Universal
-RTL has been imported into the active rtl/ tree; no wrapper, generated game
-catalog, working Universal converter, simulation or FPGA build exists yet.
-No GitHub project or release was created. A local initial commit records
-the handoff.
+Lady Bug test2 is owner-confirmed, including sound. The combined expansion
+now enables 57 sets across all 22 main games represented by pinned MRAs.
+See sections 8–9 and docs/BUILD_TEST_RESULT.json for exact validation and gaps.
+The next step is owner gameplay/sound testing of the new families. Four
+missing-data alternatives and the undocumented TMS boards remain excluded.
+Public repository/release publication is now requested; see section 10.
 
-**First action for the next LLM:** read the pinned Lady Bug MRA, MiSTer input
-configuration loader, universal_board ROM map, dual-port RAM implementation
-and video timing. Then implement and validate the smallest Lady Bug import
-plus the ROM/configuration contract and converter before expanding families.
+## 8. Lady Bug implementation — 2026-10-15
+
+The first rev 4 hardware-test bitstream now exists. This does not establish
+on-device Universal support; owner testing is still required.
+
+### Implemented
+
+- `scripts/import_universal.py` imports 32 dependencies from the original pin,
+  with source SHA256s in `docs/IMPORT_MANIFEST.json`; `--check` detects edits.
+  Live public HEAD was rechecked on 2026-10-15 and remains the pinned commit.
+  Imported source bytes are checked against pinned Git blobs and unchanged;
+  VHDL filenames become `.vhdl`. No `define/undef/include` macros occur in
+  this Lady Bug dependency subset; later families still need scoped audits.
+- The first binding instantiates upstream `ladybug_machine` and shared T80pa
+  directly, mirroring the variant-0 portion of `universal_board`. It imports
+  the required inactive 8203 submodule dependency but enables only Lady Bug.
+  No other families, Intel PLL/RAM, MiSTer wrappers or CRT flip store are
+  active. A future combined core still needs measured family memory gating.
+- `dpram_dc.sv` replaces Intel RAM. It preserves synchronous read latency,
+  write-first own-port reads, default inactive inputs and byte enables, zero
+  initialization and the original wrapper's actual use of outdata_reg_a on
+  both outputs. Mixed-port same-address read/write is unspecified; callers
+  must avoid simultaneous writes to one address. No init-file use is supported.
+- MMCM: 50 MHz * 20 = 1000 MHz VCO; /50.875 = 19.656019656 MHz board clock
+  (+1 ppm), /35 = 28.571428 MHz LCD, /5 = 200 MHz SPI. `clk_dpi` retained.
+- Stored raster is 240x192, 2 bits/channel, 312x262 total, pixel CE /4. The
+  source DAC codes are preserved; framework 2-bit expansion approximates the
+  analog resistor weights with 0/85/170/255 rather than 0/81/174/255.
+- Same system domain for host, RAM and machine; framework handles LCD/HDMI
+  and audio CDC. Signed 16-bit mono, selectable saturated gain, muted in menu.
+- ROM format remains exact MRA index 0 (no header/config trailer): Lady Bug
+  World, 49248 bytes, CRC32 3b3bfa7e, SHA256
+  1f537ada7b9bc68fb82de77aa23381b26b37f79a0b70cfcd4e3cbccfeb0b41f5.
+  Full 64-byte index-1 config and DF/FF DIP defaults are preserved in the
+  canonical generated catalog. Only this image is recognized. Host tracks
+  sequential writes, drains posted writes before commands, checks size/CRC,
+  and holds reset on unknown/damaged/incomplete files.
+- Offline `web/Universal-ROM-Builder.html` adapts our MCR ZIP/CRC/UI code;
+  maintainable JS/template and generator/checker are included. Matches CRC
+  plus chip length, preserves embedded PROM regions, exports individual ROM
+  or `roms/Universal/Lady Bug.rom` in an SD-folder ZIP. No SSIO PROM requirement.
+- P1 and alternating P2, Select coin, Start P1, R P2; generated input polarity
+  and 4-way filtering. Lady Bug uses held coins (its MRA does not request the
+  two-frame impulse flag). No high-score saving. Grip rotation requests are
+  270/180/0 degrees clockwise for upright/CW/CCW, derived from Lady Bug ROT270;
+  D-pad follows grip. Configuration changes are not exposed as arbitrary DIPs.
+
+### Verified so far
+
+- Independent `mra-tools-c` index-0 output matches the generated ROM byte for
+  byte. Catalog and offline builder reproducibility checks pass.
+- Node checks: byte-identical conversion, renamed/missing/corrupt/wrong-length
+  chips, malformed/encrypted/unsupported/oversized/ZIP64/truncated ZIPs, and
+  SD ZIP round trips. Headless Chrome passes actual native Deflate/CRC/SHA
+  and file-upload UI, offline via file://.
+- Portable RAM test passes zero init, both ports, synchronous read/write-first
+  behavior, byte lanes and optional additional output register.
+- Platform simulation loads real ROM through HostV0, rejects a corrupt image,
+  compares program and graphics RAM bytes, checks default DIP/input polarity
+  and all three rotation requests. Frames measure 240x192; captured text is
+  upright after ROT270 and the game reaches ROM OK / RAM OK. The corrected six-second
+  run passes coin interrupt/start and signed audio activity, reaching the
+  PART 1 / GOOD LUCK screen, then halt and recognized-image reload. The
+  original 5 ms test press was below the source chute filter threshold of
+  470000 clocks (about 24 ms); a realistic 50 ms press passes. Captures remain
+  in ignored scratch/sim. Actual maze movement remains a hardware check;
+  this simulation checks its port mapping rather than player displacement.
+- First Vivado 2025.2 rev 4 route: 4655 LUTs, 3275 FFs, 43.5/135 BRAM tiles,
+  zero DSPs; WNS +0.265 ns, WHS +0.032 ns, zero setup/hold failing endpoints.
+  All user-specified timing constraints pass. The framework still reports
+  40 no-clock pins under its generated `audioClock` and 46 unconstrained
+  internal endpoints, plus external I/O delay warnings; these are a timing
+  coverage limitation, not proof that every path is constrained.
+- Framework and upstream submodules, sibling MCR repository remain unchanged.
+
+### Remaining and test artifacts
+
+- Extended boot/coin/start/audio/halt/reload simulation is complete and passes.
+- No independent upstream-board/MAME frame comparison yet. The simulation
+  converts T80 with GHDL and normalizes generated alias artifacts; Vivado
+  builds the original VHDL. MMCM and physical LCD/HDMI/audio are not simulated.
+- Test on the actual rev 4: orientation/text/borders, all directions, coin/P1/P2,
+  sound, menu/resume, Reset, reload, all grips. No Universal device test yet.
+- `python3 scripts/package.py --private` makes the local owned-ROM test ZIP;
+  without the flag it makes a ROM-free test ZIP. Both are ignored build output,
+  require passing routed timing and refuse a bitstream older than its sources.
+  See `docs/TEST_INSTALL.txt`. No public repository/release/push is authorized.
+- Expand remaining variant-0 games only after this baseline is confirmed.
+  Other families, multi-config identity collisions, Devil Zone XML correction,
+  alternate RAM/grid uses, twin-stick mapping and SRAM scheduling remain planned.
+
+### Test2 packaging correction — owner launch report
+
+The owner reports test1 stays in or returns to the menu when Run Core is
+pressed. `metadata/files.json` used the 24-byte label `Universal ROM (Lady Bug)`,
+but the firmware `CoreFile.label` is `ArrayString<16>`. The v1.1-beta source
+parses files.json in `get_core` and aborts launch on a deserialize error,
+before FPGA programming. Official reference-metadata confirms the 16-character
+limit: https://docs.gamebub.net/developing-cores/reference-metadata/ .
+
+Test2 changes this label to `Universal ROM` (13 bytes) and adds
+`scripts/check_metadata.py`, called by packaging, to enforce bounded fields
+using UTF-8 byte counts. A regression check rejects the actual test1 bundle's
+metadata and accepts test2. The routed bitstream and ROM bytes are unchanged;
+no new synthesis, route or gameplay simulation is needed for this metadata fix.
+The first bundle's RTL simulation did not exercise firmware JSON parsing;
+that was a validation gap. Test2 launch on hardware is not yet confirmed.
+
+The small `build/Universal-LadyBug-test2-metadata-fix.zip` replaces only core.json
+and files.json under cores/alanswx.Universal; full test2 bundles are also built.
+
+## 9. Combined-game expansion in progress
+
+Owner confirms test2 Lady Bug works very well and sound works on the Game Bub.
+This establishes Lady Bug picture/gameplay/sound hardware confirmation only;
+it does not confirm HDMI, the other grips or newly added families.
+
+Live upstream HEAD rechecked before expansion: still
+2a8a4515b9f0c796c79da25f8b0c49a1a8eaadaf. Framework pin remains unchanged.
+All families represented by pinned MRAs are being integrated via universal_board,
+with 57 distinct images assembled from owned local collections and independently
+byte-compared with mra-tools-c. Four alternatives lack matching chips; see
+`docs/UNAVAILABLE_RECIPES.json`. No data is downloaded. The extra owned local
+reference directory is ~/Downloads/mame-merged/mame-merged.
+
+The checked source adaptations disable the undocumented TMS18/19 boundary,
+which has no recipes. Full original notices are preserved. The AST macros in
+Zero Hour, Cheeky Mouse, Magical Spot and No Man's Land are scoped and undefined
+at each file end; retained deliberately. Devil Zone's two malformed XML
+attributes receive an exact checked `&` to `&amp;` correction outside upstream.
+No upstream submodule or sibling repository is modified.
+
+The builder supports verified offset/length ROM slices, CRC+length matching,
+merged parents, and SD ZIP exports. Node checks and native Chrome Deflate/SHA
+and upload UI tests pass for all 57 images. No image identity collisions found.
+
+The combined source raster is centered in a fixed 256x192 frame using two small
+line buffers. 240-wide families get 8-pixel side borders; 256-wide families
+retain the whole raster. RGB is 3 bits per channel. Lady Bug now shares this
+canvas and may appear slightly smaller than the first 240x192 build. Source
+board clocks/enables and game sound cadence are retained. Output refresh uses
+the baseline framePeriod; Cosmic/Cheeky native 352x262 / 5.408 MHz differs from
+Lady Bug's 312x262 / 4.914 MHz, so framebuffer repeats/drops may occur.
+
+Initial combined synthesis fits: 135/135 BRAM tiles, about 39k LUTs, 66 DSPs.
+The tool maps the framework overlay to distributed RAM to fit. Routing and
+full-board simulation remain in progress; these are not yet acceptance results.
+
+### Integration findings
+
+The initial 135-BRAM route failed on direct system-clock to display-clock
+arcs through the framework menu after Vivado spilled that memory to LUT RAM.
+No timing exceptions were added to hide this. `dpram_dc` now infers LUT RAM
+for tiny memories with address width <=9 (palette PROMs and line stores),
+retaining synchronous latency and read/write behavior. This frees BRAM so
+the menu remains block RAM. Revised route: WNS +0.233 ns, WHS +0.014 ns,
+zero failing setup/hold endpoints. A final build also includes the separately
+validated exclusive Indoor Soccer Start+R mapping; its results supersede this
+intermediate route once recorded.
+
+All 57 input/DIP defaults, two-frame coin pulses, focus gating, Soccer twin
+stick/fire and exclusive P2 start pass `sim/tb_inputs.sv`. A six-second
+combined-board Lady Bug regression passes boot/coin/start/audio/halt/reload.
+Every catalog image is receiving a short bootstrap/raster/reload simulation,
+with longer family captures recorded separately. Simulations convert T80 and
+mc6845 VHDL with GHDL. To keep simulation practical only, unselected family
+engines are quiesced after download; all download RAM and shared CPU clocks
+continue. FPGA source clocks remain unchanged. This model is not physical
+MMCM/HDMI/LCD validation, and short runs do not establish full playability.
+
+SD output filenames are derived from the pinned MRA filenames rather than
+unsanitized titles; this avoids the question mark in Cosmic Alien's early
+version title, which FAT cannot use. Native browser tests now actually click
+SD ZIP export and verify every path and CRC. ZIP output is flattened before
+Blob creation to avoid recursive Blob-reader overflow on large catalogs in
+older Node/browser runtimes.
+
+### Final combined route and short-run results
+
+The final 0.2.0-test1 route passes: WNS +0.291 ns, WHS +0.039 ns, zero
+setup/hold failing endpoints; 31341 LUTs, 13489 FFs, 132.5/135 BRAM tiles,
+66/240 DSPs. Inherited framework audioClock/external I/O timing coverage
+warnings remain; no new exceptions were added. This supersedes the intermediate
++0.233/+0.014 route above. FPGA and ROM bytes in the staged 57-set test ZIP are
+final, with validation reports included in the packaged archives.
+
+All 57 images pass real HostV0 download, full CRC/size identity, corrupted-image
+rejection, CPU activity, complete 256x192 capture, all grip requests, halt and
+same-image reload in the combined model. Every image matches independent
+mra-tools-c output byte for byte. The browser-native and input-map tests pass.
+Twenty selected games also pass 60-frame boot checks, and Lady Bug and Mr. Lo!
+pass 361-frame runs with audio activity. Read the per-set frame/audio/color
+counts in BUILD_TEST_RESULT.json rather than treating the
+short-run success marker as proof of full playability. Mr. Lo! performs an
+extended memory clear before showing a picture; its one-second blank capture
+is not by itself a failed boot. The longer run reaches visible output.
+
+The test ZIP is build/Universal-57-games-rev4-private-test.zip; a ROM-free
+counterpart includes the offline builder and install instructions. Packaging
+checks firmware metadata bounds, source fingerprints and bitstream/report
+identity, plus every private ROM's size/CRC/SHA and ZIP round trips. The owner subsequently confirmed "mr do played" on this combined build.
+This establishes Mr. Do! gameplay only; exact set, sound, HDMI and additional
+games remain unconfirmed.
+
+## 10. Public repository and release
+
+The owner explicitly requested a public alanswx repository, push and release,
+superseding earlier preparation-only restrictions. Publish source, metadata,
+notices and the ROM-free 0.2.0-test1 bundle only. Keep all raw ROM/PROM/sample
+data, captures, local build trees and private SD ZIPs excluded. The release
+uses the already routed bitstream; no hardware source changes were made.
+Mr. Do! gameplay is now owner-confirmed; its exact set and audio were not
+specified. Remaining families need hardware gameplay/sound testing.
+
+Publication audit: parent Git history and staged source contain text sources,
+recipes, metadata and pinned submodule links only. The release has an explicit
+14-file allowlist with ZIP CRC and SHA256 manifest checks. No raw ROMs/PROMs,
+samples, screenshots, private ZIPs or credentials are included. Imported RTL
+and extracted original notices retain upstream whitespace intentionally.

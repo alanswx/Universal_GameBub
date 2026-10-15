@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Universal ROM Builder · Game Bub</title>
+<style>
+:root{color-scheme:dark;font:16px/1.5 system-ui,sans-serif;background:#101722;color:#e8eef8}body{max-width:960px;margin:3rem auto;padding:0 1.25rem}h1{line-height:1.15;margin-bottom:.5rem}h2{font-size:1.15rem}p{color:#bdcada}a{color:#99d4ff}#drop{border:2px dashed #6286b5;border-radius:14px;padding:2rem;text-align:center;background:#182538}#drop.over{background:#243e5c;border-color:#a0d4ff}button,.download{font:inherit;background:#285e96;color:white;border:0;border-radius:7px;padding:.55rem .9rem;cursor:pointer}button:disabled{opacity:.4;cursor:default}input{max-width:100%}table{border-collapse:collapse;width:100%;margin:1rem 0;table-layout:fixed}th,td{overflow-wrap:anywhere}th:nth-child(1){width:26%}th:nth-child(2){width:29%}th,td{text-align:left;padding:.65rem .5rem;border-bottom:1px solid #344256}th{color:#b8c7dc}.good{color:#9ce7b1}.missing{color:#c0cada}.error{color:#ffb4ab}small{font-size:.85rem}details p{margin:.4rem 0}#notice{min-height:1.5rem}#summary{font-weight:600}footer{margin-top:2rem;color:#a6b5c9}code{color:#cfdef4} .actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
+</style>
+<h1>Universal ROM Builder</h1><p>Prepare arcade game files for the Universal arcade core on Game Bub. Your files stay on this computer. This page works offline.</p>
+<section id="drop"><strong>Drop your MAME ZIP files here</strong><p>Choose several ZIPs together if a game needs files from a parent set.</p><input id="files" type="file" multiple accept=".zip" aria-label="Choose MAME ZIP files"></section>
+<div class="actions"><button id="save" disabled>Download SD-card ZIP</button><button id="clear">Clear files</button><span id="summary" role="status">No files added</span></div>
+<p id="notice" role="status" aria-live="polite"></p>
+<details><summary>Which ROM set do I need?</summary><p>This combined test build includes the recipes listed below. Lady Bug picture and sound are hardware-confirmed; newly added games need device testing. Four upstream alternative recipes lack matching chips in the local validation collection and are not listed. Cosmic Guerilla and Get A Way have no upstream recipes at the pinned revision.</p><p>Chips are matched by CRC and length, so renamed chips and merged/split ZIP sets work. Add parent ZIPs if needed. Missing or corrupt chips are reported beside the game.</p><p>Download individual ROMs or an SD-folder ZIP containing games under <code>roms/Universal/</code>. Extract at the SD-card root and install the core separately. Configuration and DIP defaults are built into the matching core; the image includes its game-specific PROMs. No separate sound PROM is required.</p><p>No copyrighted ROM data is included with this page.</p></details>
+<table><thead><tr><th>Game</th><th>Expected set ZIP</th><th>Result</th></tr></thead><tbody id="games"></tbody></table>
+<footer><small>Built from the project’s game catalog and official MiSTer MRA recipes. Requires a modern browser with <code>DecompressionStream("deflate-raw")</code> for compressed ZIP files. No upload, installation or network connection.</small></footer>
+<script>
+/* RECIPES */
+/* SCRIPT */
+</script></html>

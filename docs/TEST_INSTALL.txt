@@ -1,0 +1,56 @@
+Universal Arcade - combined 57-set test - Game Bub rev 4 - 0.2.0-test1
+
+Extract the ROM-free release ZIP at the root of the Game Bub SD card,
+replacing the prior cores/alanswx.Universal files. Open the included offline
+Universal-ROM-Builder.html and drop your matching MAME ZIPs onto it. Export
+an SD-folder ZIP and extract that at the SD-card root to create roms/Universal.
+Launch Universal Arcade and choose a prepared game image. No firmware update or separate
+sound PROM is needed. Existing Lady Bug ROM files still work.
+
+Lady Bug on test2 is owner-confirmed, including sound. Mr. Do! gameplay is
+owner-confirmed on the combined build; its exact set and sound were not
+specified. Other newly added families need hardware testing. Each listed
+image is independently verified against the MRA tool. See BUILD-INFO.json
+and supported-games.tsv for actual simulation scope; short boot checks do
+not establish complete gameplay or sound correctness.
+
+Select: coin (normal press; Lady Bug filters presses shorter than 24 ms).
+Start: player 1. R: player 2 start, alternating/shared handheld controls.
+D-pad: movement. A: fire/primary action. B: bomb/secondary action where used.
+Space Panic: A dig, B fill. Cosmic Avenger: A fire, B bomb. Mr. Do!: A ball.
+
+Indoor Soccer: D-pad left stick; A right, B down, X up, Y left for the right
+stick; L/R are the two fire buttons. Start+R starts player 2 exclusively.
+No second handheld or simultaneous independent player controls are provided.
+Wait for each game's startup/self-test to finish before inserting a coin; some
+sets clear/test RAM for several seconds before a picture appears.
+
+Portrait grip settings: Upright (normal handheld grip), Hold sideways CW,
+or Hold sideways CCW. D-pad follows the chosen grip. Landscape games ignore
+this setting. The firmware menu retains its normal orientation. Volume and
+Reset are available in settings. All games start with the MRA DIP defaults.
+
+The common framebuffer is 256x192. Games with a native width of 240 retain
+all their pixels with 8-pixel side borders; they may appear slightly smaller
+than the initial Lady Bug build. Native board clocks and audio cadence are
+retained. High scores are not saved.
+
+Main families: Lady Bug, Snap Jack, Cosmic Avenger, Dorodon, Mr. Do!, Space
+Raider, Mrs. Dynamite, Mr. Do's Castle, Do! Run Run/Super Pierrot, Wild Ride,
+Jumping Jack, Kick Rider, Indoor/American Soccer, Zero Hour, Red Clash,
+Cheeky Mouse, Space Panic, Cosmic Alien, Magical Spot I/II, Devil Zone,
+Sengoku No Jieitai/No Man's Land. The offline builder supports 57 exact set revisions.
+
+Not included due to missing local chips: Run Run bootleg, Indoor Soccer
+Tecfri, Space Panic bootleg, Space Panic Set 4. Cosmic Guerilla/Get A Way
+have no upstream MRA recipes at the pinned revision and are not enabled.
+
+Universal-ROM-Builder.html opens offline in a modern browser. Drop matching
+MAME ZIPs (including parent sets when needed) to make individual game images
+or an SD-folder ZIP. No upload or network connection. Unsupported revisions
+are rejected by exact size and full-image CRC32 in the core.
+
+Please check each new game's picture, controls, coin/start, sound, reset,
+menu/resume and reload. Include the game/set name with any problem report.
+The public release contains no ROM, PROM or sample data. Keep locally made
+ROM images and private SD bundles out of GitHub.

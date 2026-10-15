@@ -1,0 +1,1875 @@
+Source headers retained verbatim; full sources remain in rtl/universal.
+
+===== rtl/universal/cheekyms/cheekyms_board.sv =====
+//============================================================================
+//
+//  Universal Cheeky Mouse board (8004)
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME cheekyms.cpp (Lee Taylor, Chris Moore).
+//
+//  Z80 5 MHz / 2, video 10.816 MHz / 2 = 5.408 MHz (fractional pixel enable from 19.656 MHz), 352 x 262,
+//  visible x 0-255, y 32-223.
+//    0000-1FFF ROM, 3000-33FF RAM, 3800-3BFF video RAM
+//    I/O 00 DSW, 01 INPUTS, 20-3F sprite RAM (8 x 4, write only), 40 sound, 80 sound / scroll / palette / IRQ / flip
+//  Port 80: D0 mute, D1 coin / extra sound, D2 IRQ enable (0 clears the IRQ), D3-D5 man scroll, D6 palette
+//  bank (PROM M8), D7 flip. Coin: NMI. Vblank (both edges, as MAME's screen_vblank callback) asserts IRQ.
+//  Sprites under the playfield; the playfield's "man area" (columns 8-11, rows 6-26) is read scrolly lines lower.
+//  CRT Flip mirrors the logical raster (visible area symmetric).
+//
+//============================================================================
+
+
+===== rtl/universal/cheekyms/cheekyms_sound.sv =====
+//============================================================================
+//
+//  Universal Cheeky Mouse sound board, discrete (5 V)
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME nl_cheekyms.cpp (Vas Crabb, Couriersud): the schematic transcribed as a netlist.
+//    port 40: D7 music (straight into the mix), D6 cheese, D5 hammer, D4 mouse dies, D3 pest dies, D2 mouse, D1 pest
+//    port 80: D1 coin / extra, D0 mute (0 = Q1 shorts mix node A)
+//  cheese:     transistor B-E noise, x101 then x1000 (LM324, ~1 kHz bandwidth), clipped; IC1 sets the bias so it
+//              only swings while cheese = 1
+//  mouse:      555 1k / 68k / 0.01u, RESET = mouse, CONT from RESET through R14 4.7k || D4 (C13 10u): rising glide
+//  hammer:     free-running 555 1k / 150k / 0.01u through IC5b: out = 2 V+ - V, V+ = C16 (0.1u, R23 1M) pulled to
+//              ~1.4 V by IC1 / D5 / D6 while hammer = 1
+//  pest:       free-running 555 1k / 68k / 0.01u, CONT warbled by a 16 Hz 555 (20k / 10k / 2.2u) through D7 /
+//              R28 / R29 (C18 10u); IC5a gate as hammer (C20 0.22u, R35 1M)
+//  mouse dies: 555 1k / 33k / 0.01u, RESET = mouse dies, CONT from RESET through R38 560 (C22 47u)
+//  pest dies:  555 1k / 47k / 0.033u, RESET = pest dies;   coin / extra: 555 1k / 47k / 0.01u, RESET = coin
+//  Mix: node A (R12 / R13 / R17 / R39 / R42 100k, R24 / R34 51k, Q1) -> R43 10k -> node B (R46 100k coin,
+//  VR1 1k); solved: VB = 500 * sum(V / R) + 0.00946 * Vcoin. Output = VR1 wiper (VB / 2), MAME scale.
+//  Engine: as rtl/zerohour/zerohour_sound.sv (32 clocks per step, v += (x * a) >> 32, 1 V = 2^24).
+//
+//============================================================================
+
+
+===== rtl/universal/cosmic/cosmic_board.sv =====
+//============================================================================
+//
+//  Universal Cosmic boards (Space Panic, Cosmic Alien, Magical Spot, Devil Zone, No Man's Land)
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME cosmic.cpp / cosmic_v.cpp (Nicola Salmoria, Lee Taylor).
+//
+//  kind: 0 panic, 1 cosmica, 2 magspot, 3 devzone, 4 nomnlnd.
+//  Video 10.816 MHz / 2 = 5.408 MHz (fractional enable from 19.656 MHz), 352 x 262, visible x 0-255, y 32-223.
+//  Z80 10.816 MHz / 6 (panic, cosmica) or / 4 (magspot family).
+//    panic / cosmica: 0000-3FFF ROM, 4000-5FFF video RAM, 6000-601F sprites, 6800-6803 inputs,
+//                     7000-700B sound, 700C-700E colour registers, 700F flip, 7800-7801 sound (panic)
+//    magspot family:  0000-2FFF ROM, 3800-3807 coinage DIP bits, 4000-401F sprites, 4800 DAC (nomnlnd 480A),
+//                     4807 background enable, 480C-480D colour registers, 480F flip, 5000-5003 inputs,
+//                     6000-7FFF video RAM
+//  Interrupts: panic RST 08 at line 0 / RST 10 at line 224 (held to the acknowledge); cosmica coin = NMI;
+//  magspot / devzone coin 1 = IRQ (RST 38), coin 2 = NMI; nomnlnd coin = NMI.
+//  Picture (MAME): background (cosmica stars / devzone grid) < 1bpp bitmap coloured by the user1 map < 8
+//  sprites (16x16 / 32x32, Y flip) < nomnlnd trees and river. Game flip mirrors bitmap, grid and trees, not
+//  the sprites or stars; CRT Flip mirrors the logical raster (visible area symmetric).
+//  Stars: the IC11 map latch is the PROM byte at the last x1 = 32n crossing (closed form, mirror-safe).
+//  Grid: the RLE PROM is decoded once per frame in vblank into a frame RAM (read mirrored when flipped).
+//
+//============================================================================
+
+
+===== rtl/universal/cosmic/cosmica_sound.sv =====
+//============================================================================
+//
+//  Universal Cosmic Alien sound board (7910-S)
+//  Copyright (C) 2026 Rodimus
+//
+//  Effect structure from the Cosmic Alien manual sound schematic (p.26): pins 1-12 = 7000-700B (data != 0),
+//  pin 13 = the coin switch. Pitches and time constants fitted to recordings of the board (MAME 'cosmica'
+//  samples), as for rtl/cosmic/panic_sound.sv:
+//    background (while enabled): IC5b ~11 Hz samples the noise onto the IC5a 556 CV -> random pitch steps
+//    dive A (pin 1): 3150 Hz, falling to ~2300 Hz after 1.5 s of hold
+//    dive B (pin 3, select G.S.B / M.S.B / L.S.B on pins 4-6): one-shot sweep 5.6 kHz -> 700 Hz (tau 0.69 s);
+//      L.S.B adds noise FM, G.S.B + L.S.B adds a 7 Hz chop (IC11b)
+//    fire (pin 7): high noise burst; explosions: pin 8 loud (low noise, 2.3 s), pin 9 small (0.26 s) per the
+//      schematic labels (MAME's cosmica_sound_output_w has offsets 7 / 8 the other way round)
+//    extend (pin 10) / coin (pin 13): IC7b 556 tone, 1026 Hz 25 % pulse (as measured on the Space Panic copy
+//      of the same circuit)
+//    pin 12 sound enable: IC1 shorts the mix bus while low
+//  Engine as rtl/zerohour/zerohour_sound.sv (32 clocks per step, v += (x * a) >> 32); envelopes 1.0 = 2^24.
+//
+//============================================================================
+
+
+===== rtl/universal/cosmic/magspot_sound.sv =====
+//============================================================================
+//
+//  Universal Magical Spot / Devil Zone sound board (8013 / 8022, identical)
+//  Copyright (C) 2026 Rodimus
+//
+//  From the Magical Spot manual sound schematic (p.16) and main block diagram (p.18): two LS259s latch D7 of
+//  4800-480F; pins: 4800 music (1), 4801 BGM (2), 4802 firing (3), 4803 laser ship explosion (4), 4804 cocoon (5),
+//  4805 hit 2nd (6), 4806 UFO (7), 480E Ultramoth (8), 4809 Ultramoth (9), 480A hit 1st (10), 480B enable (11);
+//  pin 13 coin pattern = the coin switch. No reference recordings exist (MAME: 1-bit DAC only); component values
+//  from the schematic, VDD 12 V, Vref 6 V.
+//    noise: 2SC945 junction noise x100 x1000 = white (clipped); Sallen-Key 51k / 51k / 0.022u / 0.1u x11 = pink
+//    BGM: IC12b 11.8 Hz pulse samples pink onto the IC12a 556 CV (1k / 470k / 0.01u); IC11 low-pass (100k || 6800p)
+//         gated by C18 (re-armed through D1 at every sample, R21 100k): plucked random notes
+//    firing: white noise band (1-3 kHz) gated by C23 (1u, 100k / 100k)
+//    Ultramoth: IC15 555 (1k / 75k / 4700p) CV swept by C24 (2.2u, 100k), white-noise jitter (R99 510k),
+//         heard while pin 8 is high (IC9)
+//    coin pattern: IC3a starts the 4040 on the coin edge, clocked by the 11.8 Hz pulses; Q1-Q4 through
+//         100k / 51k / 24k / 12k = 4-bit CV of IC16b (1k / 51k / 0.01u), 16 notes; R53 10k (the loudest input)
+//    UFO: IC16a 556 (1k / 100k / 0.01u) CV warbled by the 5.9 Hz IC3b toggle (10k / 22u)
+//    cocoon: IC18a 556 (1k / 51k / 3300p) gated by C38 (1u)
+//    hit 1st: IC8 556 (1k / 51k / 0.047u) CV = C34 (1u, R70 100k) + pink; gated by the same voltage
+//    laser ship explosion / hit 2nd: pink noise gated by C36 (4.7u) / C40 (1u)
+//    music: the CPU's bit through 100k / 51k, low-passed (C42 read as 0.0022u: 0.022u would leave ~70 Hz)
+//           mixed at twice the R92 220k weight (HW 2026-10-12: about half as loud as it should be)
+//    enable: Q2 shorts the mix bus
+//  Engine as rtl/zerohour/zerohour_sound.sv (32 clocks per step, v += (x * a) >> 32, 1 V = 2^24).
+//
+//============================================================================
+
+
+===== rtl/universal/cosmic/nomnlnd_sound.sv =====
+//============================================================================
+//
+//  Universal No Man's Land sound board (8003)
+//  Copyright (C) 2026 Rodimus
+//
+//  From the No Man's Land manual sound schematic (p.10); latch map as the Magical Spot main board (D7 of
+//  4800-480F): 4800 attack march enable (1), 4801 L.S.B (2), 4802 G.S.B (3), 4803 tank drive (4), 4804 enemy
+//  supplement (5), 4805 round clear (6), 4806 firing (7), 480E got enemy (8), 4809 player dead (9), 480A music
+//  (10, MAME's DAC), 480B sound enable (11); pin 13 coin accept = the coin switch. No reference recordings
+//  (MAME: 1-bit DAC only); component values from the schematic, VDD 12 V.
+//    noise: 2SC945 x100 x1000 (a few kHz wide) -> R43 10k / C15 0.1u = pink (4 Vp-p)
+//    attack march: IC13a 556 (1k / 75k / 1u) tempo, CV from L.S.B / G.S.B (100k / 51k); CD4040 Q1-Q8 through
+//         eight 10k -> CV (1k / 10u) of IC13b 556 (1k / 200k / 0.01u); pin 1 low holds the 4040 in reset
+//    tank drive: IC6a 556 (1k / 470k / 0.1u) / 2 (IC7a) through 51k / 1u -> CV of IC10a 556 (1k / 100k / 0.1u)
+//         rumble, plus IC10b 556 (1k / 100k / 0.001u); both run while pin 4 is high
+//    enemy supplement / round clear: 8-step pattern of the second 4040 (Q1-Q3 ^ round clear through 51k / 100k /
+//         51k) on IC6b 556 (1k / 51k / 0.01u), clocked by IC6a
+//    firing: IC11a 556 (1k / 200k / 0.01u) CV = C12 (1u, R33 330k), gated (R38 / R39 10k) by the same voltage
+//    got enemy: IC11b 556 (1k / 100k / 0.01u) while pin 8 is high
+//    player dead / coin: pink noise x10 / x4.7 gated by C16 (2.2u, 470k + 470k) / C18 (0.47u)
+//    music: C35 / R60 straight into the bus; enable: IC16 shorts the bus after R50 / C17
+//  Engine as rtl/zerohour/zerohour_sound.sv (32 clocks per step, v += (x * a) >> 32, 1 V = 2^24).
+//
+//============================================================================
+
+
+===== rtl/universal/cosmic/panic_sound.sv =====
+//============================================================================
+//
+//  Universal Space Panic sound board (8015)
+//  Copyright (C) 2026 Rodimus
+//
+//  Effect structure from the Space Panic manual sound schematic (p.20): pins 1-12 = 7000-700B (data != 0),
+//  pin 16 player die = 7800, pin 19 enemy laugh = 7801, pin 13 coin = the coin switch, pin 11 music = 700A D7.
+//  The scan does not resolve every value, so pitches and time constants are fitted to recordings of the board
+//  (MAME 'panic' samples): 556 tones -> square voices, transistor noise -> white noise through one-pole filters,
+//  the op-amp gates -> RC envelopes. One-shot effects follow the sample lengths; held ones (falling, oxygen,
+//  escape, extend) sound while their input is high, as on the board.
+//    walk 882 Hz 25 % pulse (15 ms pulses + ~8 ms tail)      up/down 75 Hz, 35 ms        enemy die 1/2: high-pass noise 1.1 s
+//    falling 1700 -> 90 Hz (tau 0.69 s)           oxygen 130 Hz, 0.4 s on / 0.2 s off
+//    hang 280 Hz, 0.42 s                          escape low noise chopped at 3.2 Hz
+//    extend 2594 Hz                               player die low noise, up 0.4 s then down
+//    enemy laugh 1-3 kHz noise chopped at 4.4 Hz, 2.78 s                    coin 1026 Hz, 0.5 s
+//  Engine as rtl/zerohour/zerohour_sound.sv (32 clocks per step, v += (x * a) >> 32); envelopes 1.0 = 2^24.
+//
+//============================================================================
+
+
+===== rtl/universal/cpu/T80/T80.vhdl =====
+--------------------------------------------------------------------------------
+-- ****
+-- T80(c) core. Attempt to finish all undocumented features and provide
+--              accurate timings.
+-- Version 350.
+-- Copyright (c) 2018 Sorgelig
+--  Test passed: ZEXDOC, ZEXALL, Z80Full(*), Z80memptr
+--  (*) Currently only SCF and CCF instructions aren't passed X/Y flags check as
+--      correct implementation is still unclear.
+--
+-- ****
+-- T80(b) core. In an effort to merge and maintain bug fixes ....
+--
+-- Ver 303 add undocumented DDCB and FDCB opcodes by TobiFlex 20.04.2010
+-- Ver 301 parity flag is just parity for 8080, also overflow for Z80, by Sean Riddle
+-- Ver 300 started tidyup.
+--
+-- MikeJ March 2005
+-- Latest version from www.fpgaarcade.com (original www.opencores.org)
+--
+-- ****
+-- Z80 compatible microprocessor core
+--
+-- Version : 0250
+-- Copyright (c) 2001-2002 Daniel Wallner (jesus@opencores.org)
+-- All rights reserved
+--
+-- Redistribution and use in source and synthezised forms, with or without
+-- modification, are permitted provided that the following conditions are met:
+--
+-- Redistributions of source code must retain the above copyright notice,
+-- this list of conditions and the following disclaimer.
+--
+-- Redistributions in synthesized form must reproduce the above copyright
+-- notice, this list of conditions and the following disclaimer in the
+-- documentation and/or other materials provided with the distribution.
+--
+-- Neither the name of the author nor the names of other contributors may
+-- be used to endorse or promote products derived from this software without
+-- specific prior written permission.
+--
+-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+-- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+-- POSSIBILITY OF SUCH DAMAGE.
+--
+-- Please report bugs to the author, but before you do so, please
+-- make sure that this is not a derivative work and that
+-- you have the latest version of this file.
+--
+-- The latest version of this file can be found at:
+--      http://www.opencores.org/cvsweb.shtml/t80/
+--
+-- Limitations :
+--
+-- File history :
+--
+--      0208 : First complete release
+--      0210 : Fixed wait and halt
+--      0211 : Fixed Refresh addition and IM 1
+--      0214 : Fixed mostly flags, only the block instructions now fail the zex regression test
+--      0232 : Removed refresh address output for Mode > 1 and added DJNZ M1_n fix by Mike Johnson
+--      0235 : Added clock enable and IM 2 fix by Mike Johnson
+--      0237 : Changed 8080 I/O address output, added IntE output
+--      0238 : Fixed (IX/IY+d) timing and 16 bit ADC and SBC zero flag
+--      0240 : Added interrupt ack fix by Mike Johnson, changed (IX/IY+d) timing and changed flags in GB mode
+--      0242 : Added I/O wait, fixed refresh address, moved some registers to RAM
+--      0247 : Fixed bus req/ack cycle
+--      0250 : Added R800 Multiplier by TobiFlex 2017.10.15
+--
+
+
+===== rtl/universal/cpu/T80/T80_ALU.vhdl =====
+--------------------------------------------------------------------------------
+-- ****
+-- T80(c) core. Attempt to finish all undocumented features and provide
+--              accurate timings.
+-- Version 350.
+-- Copyright (c) 2018 Sorgelig
+--  Test passed: ZEXDOC, ZEXALL, Z80Full(*), Z80memptr
+--  (*) Currently only SCF and CCF instructions aren't passed X/Y flags check as
+--      correct implementation is still unclear.
+--
+-- ****
+-- T80(b) core. In an effort to merge and maintain bug fixes ....
+--
+-- Ver 301 parity flag is just parity for 8080, also overflow for Z80, by Sean Riddle
+-- Ver 300 started tidyup
+-- MikeJ March 2005
+-- Latest version from www.fpgaarcade.com (original www.opencores.org)
+--
+-- ****
+-- Z80 compatible microprocessor core
+--
+-- Version : 0247
+-- Copyright (c) 2001-2002 Daniel Wallner (jesus@opencores.org)
+-- All rights reserved
+--
+-- Redistribution and use in source and synthezised forms, with or without
+-- modification, are permitted provided that the following conditions are met:
+--
+-- Redistributions of source code must retain the above copyright notice,
+-- this list of conditions and the following disclaimer.
+--
+-- Redistributions in synthesized form must reproduce the above copyright
+-- notice, this list of conditions and the following disclaimer in the
+-- documentation and/or other materials provided with the distribution.
+--
+-- Neither the name of the author nor the names of other contributors may
+-- be used to endorse or promote products derived from this software without
+-- specific prior written permission.
+--
+-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+-- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+-- POSSIBILITY OF SUCH DAMAGE.
+--
+-- Please report bugs to the author, but before you do so, please
+-- make sure that this is not a derivative work and that
+-- you have the latest version of this file.
+--
+-- The latest version of this file can be found at:
+--      http://www.opencores.org/cvsweb.shtml/t80/
+--
+-- Limitations :
+--
+-- File history :
+--
+--      0214 : Fixed mostly flags, only the block instructions now fail the zex regression test
+--      0238 : Fixed zero flag for 16 bit SBC and ADC
+--      0240 : Added GB operations
+--      0242 : Cleanup
+--      0247 : Cleanup
+--
+
+
+===== rtl/universal/cpu/T80/T80_MCode.vhdl =====
+--------------------------------------------------------------------------------
+-- ****
+-- T80(c) core. Attempt to finish all undocumented features and provide
+--              accurate timings.
+-- Version 350.
+-- Copyright (c) 2018 Sorgelig
+--  Test passed: ZEXDOC, ZEXALL, Z80Full(*), Z80memptr
+--  (*) Currently only SCF and CCF instructions aren't passed X/Y flags check as
+--      correct implementation is still unclear.
+--
+-- ****
+-- T80(b) core. In an effort to merge and maintain bug fixes ....
+--
+-- Ver 303 add undocumented DDCB and FDCB opcodes by TobiFlex 20.04.2010
+-- Ver 300 started tidyup
+-- MikeJ March 2005
+-- Latest version from www.fpgaarcade.com (original www.opencores.org)
+--
+-- ****
+-- Z80 compatible microprocessor core
+--
+-- Version : 0250
+-- Copyright (c) 2001-2002 Daniel Wallner (jesus@opencores.org)
+-- All rights reserved
+--
+-- Redistribution and use in source and synthezised forms, with or without
+-- modification, are permitted provided that the following conditions are met:
+--
+-- Redistributions of source code must retain the above copyright notice,
+-- this list of conditions and the following disclaimer.
+--
+-- Redistributions in synthesized form must reproduce the above copyright
+-- notice, this list of conditions and the following disclaimer in the
+-- documentation and/or other materials provided with the distribution.
+--
+-- Neither the name of the author nor the names of other contributors may
+-- be used to endorse or promote products derived from this software without
+-- specific prior written permission.
+--
+-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+-- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+-- POSSIBILITY OF SUCH DAMAGE.
+--
+-- Please report bugs to the author, but before you do so, please
+-- make sure that this is not a derivative work and that
+-- you have the latest version of this file.
+--
+-- The latest version of this file can be found at:
+--      http://www.opencores.org/cvsweb.shtml/t80/
+--
+-- Limitations :
+--
+-- File history :
+--
+--      0208 : First complete release
+--      0211 : Fixed IM 1
+--      0214 : Fixed mostly flags, only the block instructions now fail the zex regression test
+--      0235 : Added IM 2 fix by Mike Johnson
+--      0238 : Added NoRead signal
+--      0238b: Fixed instruction timing for POP and DJNZ
+--      0240 : Added (IX/IY+d) states, removed op-codes from mode 2 and added all remaining mode 3 op-codes
+--      0240mj1 fix for HL inc/dec for INI, IND, INIR, INDR, OUTI, OUTD, OTIR, OTDR
+--      0242 : Fixed I/O instruction timing, cleanup
+--      0250 : Added R800 Multiplier by TobiFlex 2017.10.15
+--
+
+
+===== rtl/universal/cpu/T80/T80_Pack.vhdl =====
+-- ****
+-- T80(b) core. In an effort to merge and maintain bug fixes ....
+--
+--
+-- Ver 303 add undocumented DDCB and FDCB opcodes by TobiFlex 20.04.2010
+-- Ver 300 started tidyup
+-- MikeJ March 2005
+-- Latest version from www.fpgaarcade.com (original www.opencores.org)
+--
+-- ****
+--
+-- Z80 compatible microprocessor core
+--
+-- Version : 0250
+--
+-- Copyright (c) 2001-2002 Daniel Wallner (jesus@opencores.org)
+--
+-- All rights reserved
+--
+-- Redistribution and use in source and synthezised forms, with or without
+-- modification, are permitted provided that the following conditions are met:
+--
+-- Redistributions of source code must retain the above copyright notice,
+-- this list of conditions and the following disclaimer.
+--
+-- Redistributions in synthesized form must reproduce the above copyright
+-- notice, this list of conditions and the following disclaimer in the
+-- documentation and/or other materials provided with the distribution.
+--
+-- Neither the name of the author nor the names of other contributors may
+-- be used to endorse or promote products derived from this software without
+-- specific prior written permission.
+--
+-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+-- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+-- POSSIBILITY OF SUCH DAMAGE.
+--
+-- Please report bugs to the author, but before you do so, please
+-- make sure that this is not a derivative work and that
+-- you have the latest version of this file.
+--
+-- The latest version of this file can be found at:
+--      http://www.opencores.org/cvsweb.shtml/t80/
+--
+-- Limitations :
+--
+-- File history :
+--
+
+
+===== rtl/universal/cpu/T80/T80_Reg.vhdl =====
+--------------------------------------------------------------------------------
+-- ****
+-- T80(c) core. Attempt to finish all undocumented features and provide
+--              accurate timings.
+-- Version 350.
+-- Copyright (c) 2018 Sorgelig
+--  Test passed: ZEXDOC, ZEXALL, Z80Full(*), Z80memptr
+--  (*) Currently only SCF and CCF instructions aren't passed X/Y flags check as
+--      correct implementation is still unclear.
+--
+-- ****
+-- T80(b) core. In an effort to merge and maintain bug fixes ....
+--
+--
+-- Ver 300 started tidyup
+-- MikeJ March 2005
+-- Latest version from www.fpgaarcade.com (original www.opencores.org)
+--
+-- ****
+--
+-- T80 Registers, technology independent
+--
+-- Version : 0244
+--
+-- Copyright (c) 2002 Daniel Wallner (jesus@opencores.org)
+--
+-- All rights reserved
+--
+-- Redistribution and use in source and synthezised forms, with or without
+-- modification, are permitted provided that the following conditions are met:
+--
+-- Redistributions of source code must retain the above copyright notice,
+-- this list of conditions and the following disclaimer.
+--
+-- Redistributions in synthesized form must reproduce the above copyright
+-- notice, this list of conditions and the following disclaimer in the
+-- documentation and/or other materials provided with the distribution.
+--
+-- Neither the name of the author nor the names of other contributors may
+-- be used to endorse or promote products derived from this software without
+-- specific prior written permission.
+--
+-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+-- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+-- POSSIBILITY OF SUCH DAMAGE.
+--
+-- Please report bugs to the author, but before you do so, please
+-- make sure that this is not a derivative work and that
+-- you have the latest version of this file.
+--
+-- The latest version of this file can be found at:
+--	http://www.opencores.org/cvsweb.shtml/t51/
+--
+-- Limitations :
+--
+-- File history :
+--
+--	0242 : Initial release
+--
+--	0244 : Changed to single register file
+--
+
+
+===== rtl/universal/cpu/T80/T80pa.vhdl =====
+--
+-- Z80 compatible microprocessor core, preudo-asynchronous top level (by Sorgelig)
+--
+-- Copyright (c) 2001-2002 Daniel Wallner (jesus@opencores.org)
+--
+-- All rights reserved
+--
+-- Redistribution and use in source and synthezised forms, with or without
+-- modification, are permitted provided that the following conditions are met:
+--
+-- Redistributions of source code must retain the above copyright notice,
+-- this list of conditions and the following disclaimer.
+--
+-- Redistributions in synthesized form must reproduce the above copyright
+-- notice, this list of conditions and the following disclaimer in the
+-- documentation and/or other materials provided with the distribution.
+--
+-- Neither the name of the author nor the names of other contributors may
+-- be used to endorse or promote products derived from this software without
+-- specific prior written permission.
+--
+-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+-- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+-- POSSIBILITY OF SUCH DAMAGE.
+--
+-- Please report bugs to the author, but before you do so, please
+-- make sure that this is not a derivative work and that
+-- you have the latest version of this file.
+--
+-- The latest version of this file can be found at:
+--  http://www.opencores.org/cvsweb.shtml/t80/
+--
+-- File history :
+--
+-- v1.0: convert to preudo-asynchronous model with original Z80 timings.
+--
+-- v2.0: rewritten for more precise timings.
+--       support for both CEN_n and CEN_p set to 1. Effective clock will be CLK/2.
+--
+-- v2.1: Output Address 0 during non-bus MCycle (fix ZX contention)
+--
+-- v2.2: Interrupt acknowledge cycle has been corrected
+--       WAIT_n is broken in T80.vhd. Simulate correct WAIT_n locally.
+--
+-- v2.3: Output last used Address during non-bus MCycle seems more correct.
+--
+
+
+===== rtl/universal/docastle/docastle_board.sv =====
+//============================================================================
+//
+//  Universal 8302 board (Mr. Do's Castle, Do! Run Run, Wild Ride, Jumping Jack, Kick Rider)
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME docastle.cpp (Brad Oliver) and the Mr. Do's Castle service manual schematics.
+//
+//  Clocks: 4.000 MHz for both Z80s, 9.828 MHz video crystal / 2 = pixel clock (here 19.656 / 4),
+//  HD6845S CRTC at pixel / 8 (one character = 8 pixels). The game programs the CRTC.
+//
+//  map_mode 0 (MAME docastle_state):   main 0000-7FFF ROM, 8000-97FF RAM, 9800-99FF sprites,
+//      A000-A7FF latch, B000/B800 video RAM, B400/BC00 colour RAM, E000 sub NMI;
+//      sub 0000-3FFF ROM, 8000-87FF RAM, A000-A7FF latch, C000-C007(+C080) inputs / flip,
+//      E000/E400/E800/EC00 SN76489A.
+//  map_mode 1 (MAME dorunrun_state):   main 0000-1FFF ROM, 2000-37FF RAM, 3800-39FF sprites,
+//      4000-9FFF ROM, A000-A7FF latch, B000 video RAM, B400 colour RAM, B800 sub NMI;
+//      sub 0000-3FFF ROM, 8000-87FF RAM, A000/A400/A800/AC00 SN76489A, C000 inputs / flip,
+//      E000-E7FF latch.
+//  idsoccer (MAME idsoccer_state): main 0000-3FFF / 6000-9FFF ROM, 4000-57FF RAM, 5800-59FF sprites,
+//      A000 latch, B000/B800 video RAM, B400/BC00 colour RAM, C000 ADPCM status / control, E000 sub NMI;
+//      sub as docastle; sprite layout with tile bits 8-9 and no Y flip; MSM5205 at 384 kHz / 48;
+//      second joystick on TMS1025 port 4; sprite graphics byte-wide (8 reads per row).
+//  pri_low: tile pens 0-7 drawn over sprites (dorunrun_state), else pens 8-15 (docastle_state).
+//
+//  Main <-> sub: one bidirectional latch; a main access holds main WAIT until the sub CPU
+//  accesses the latch (MAME main_from_sub_r / main_to_sub_w).
+//  IRQs (as MAME): main IRQ = CRTC VSYNC; sub IRQ on HSYNC when MA6 rises, held until acknowledged;
+//  sub WAIT = any SN76489A not READY. Inputs through two TMS1025 multiplexers (read returns the
+//  port selected by the previous access). The sprite CPU (pass-through to the CF37201 sprite chip)
+//  is not modelled: as in MAME, the main CPU's sprite writes go straight to sprite RAM.
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/crt_flip_fb.sv =====
+//============================================================================
+//
+//  CRT Flip for the Lady Bug video unit (Lady Bug, 8203 boards)
+//  Copyright (C) 2026 Rodimus
+//
+//  The 8106-B / 8203-B sprite engine renders bands ahead of the beam from
+//  block-chained sprite RAM, so its picture cannot be mirrored by remapping
+//  coordinates (as on Mr. Do!). Instead the visible 240 x 192 picture (8-bit
+//  colour codes) is double-buffered and, with CRT Flip on, read back from the
+//  opposite corner: one frame of delay, flipped only. Off = straight through.
+//  One pixel of latency either way.
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/ladybug_addr_dec.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_addr_dec.vhd,v 1.10 2005/12/10 14:51:46 arnim Exp $
+//
+// Address decoder of the CPU Unit.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_char.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_char.vhd,v 1.18 2005/10/10 22:02:14 arnim Exp $
+//
+// Character Video Module of Lady Bug Machine.
+//
+// This unit contains most of the logic found on schematic page three.
+// Excluded parts are:
+//   * the 10 MHz and 5 MHz clock generation
+//     moved into separate module on toplevel of Lady Bug machine
+//   * the video timing circuitry
+//     moved into separate module on toplevel of video unit
+//   * the video MUX and RGB conversion unit
+//     moved into separate module at toplevel of video unit
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_chute.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_chute.vhd,v 1.3 2005/10/10 21:21:20 arnim Exp $
+//
+// Pulse shaper for a chute input.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_chutes.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_chutes.vhd,v 1.4 2005/10/10 21:21:20 arnim Exp $
+//
+// Pulse shaping for the two chute inputs.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_clk.sv =====
+//============================================================================
+//
+//  Lady Bug board clock enables
+//  Copyright (C) 2026 Rodimus
+//
+//  Video enables follow Arnim Laeuger's ladybug_clk.vhd (FPGA Lady Bug, 2005):
+//  the system clock is 4x the pixel clock, so clk_en_10mhz / clk_en_5mhz keep
+//  their original names but run at 9.828 MHz / 4.914 MHz from a 19.656 MHz clock
+//  (board: 9.828 MHz crystal / 2).
+//
+//  The CPU has its own 4 MHz crystal on the 8106-A2 board, so its enables come
+//  from a fractional accumulator instead of the video divider: 4 MHz average,
+//  cpu_cen_p = rising edge, cpu_cen_n = falling edge (T80pa), half a period apart.
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/ladybug_counter.sv =====
+//-----------------------------------------------------------------------------
+//
+// Synchronous 8-Bit Binary Counter with preset.
+//
+// $Id: ladybug_counter.vhd,v 1.9 2005/10/10 21:59:13 arnim Exp $
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+// NOTE(translation): VHDL entity name was "counter"; renamed to ladybug_counter.
+
+===== rtl/universal/ladybug/ladybug_cpu_unit.sv =====
+//============================================================================
+//
+//  Lady Bug CPU unit (Universal 8106-A2 CPU board)
+//  Copyright (C) 2026 Rodimus
+//
+//  Structure from Arnim Laeuger's ladybug_cpu_unit.vhd (FPGA Lady Bug, 2005)
+//  and its MiSTer port by Sorgelig. The Z80 is T80pa with real rising/falling
+//  half-cycles at 4 MHz (the old port used a patched T80a whose half-cycle
+//  was one 20 MHz clock).
+//
+//  Dorodon: opcode fetches (M1) go through the bp3/bp4 PROM pair (MAME
+//  init_dorodon); every other set fetches opcodes undecoded.
+//
+//  board_8203_i (Space Raider / Mrs. Dynamite, MAME sraider.cpp cpu1_map):
+//  8000-9FFF I/O (x0-x3 IN0/IN1/DSW0/DSW1, x5 PAL protection 0x3E, x6/x7 sound
+//  latches low/high), no flip latch / sound chips at A000-CFFF, IRQ on vblank
+//  held until acknowledged (MAME irq0_line_hold), no coin chutes.
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/ladybug_gpio.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_gpio.vhd,v 1.3 2005/10/10 21:21:20 arnim Exp $
+//
+// General purpose IO input for CPU Main Unit.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_machine.sv =====
+//============================================================================
+//
+//  Lady Bug machine (Universal 8106-A2 CPU board + 8106-B video board)
+//  Copyright (C) 2026 Rodimus
+//
+//  Structure from Arnim Laeuger's ladybug_machine.vhd (FPGA Lady Bug, 2005)
+//  and its MiSTer port by Sorgelig. Input ports follow MAME ladybug.cpp:
+//  IN0 9000, IN1 9001 (bits 7-5 from the video timing), DSW0 9002, DSW1 9003,
+//  IN2 E000 (bits 1-0); coin 1 -> NMI chute, coin 2 -> IRQ chute.
+//
+//  board_8203_i: Universal 8203-A/B (Space Raider, Mrs. Dynamite, MAME sraider.cpp):
+//  same video, main CPU I/O at 8000, a second Z80 with five SN76489, and the
+//  palette PROM wired to the DACs differently (mrsdyna_palette).
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/ladybug_rams.sv =====
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_char_ram.vhd,v 1.1 2005/11/06 15:42:13 arnim Exp $
+//
+// Wrapper for technology dependent video character RAM.
+//
+// Xilinx flavor.
+//
+// Instantiate 1 K x 8 synchronous RAM.
+//
+// The clock enable of the controller clock is not attached to the RAM to
+// emulate the asynchronous read behavior of the original RAM. Read data is
+// available within a clock cycle of the controller although it takes two
+// cycles of the main clock to get the data from the RAM macro.
+//
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+// -----------------------------------------------------------------------------
+// ladybug_char_ram
+//
+// NOTE(translation): work.dpram (altsyncram BIDIR_DUAL_PORT) replaced by dpram_dc.
+// -----------------------------------------------------------------------------
+
+===== rtl/universal/ladybug/ladybug_res.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_res.vhd,v 1.8 2005/10/10 20:52:04 arnim Exp $
+//
+// Reset generator for the Lady Bug machine.
+//
+// This module generates a reset signal for the whole system synchronous to
+// the main clock.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_rgb.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_rgb.vhd,v 1.4 2005/10/10 22:02:14 arnim Exp $
+//
+// RGB Generation Module of the Lady Bug Machine.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_sound_unit.sv =====
+//============================================================================
+//
+//  Lady Bug sound unit: two SN76489 at the 4 MHz CPU clock (B1 at B000, C1 at C000)
+//  Copyright (C) 2026 Rodimus
+//
+//  After Arnim Laeuger's ladybug_sound_unit.vhd: both chips' READY outputs
+//  drive the CPU WAIT line. Chips are jt89 (Jose Tejada) instead of the
+//  original VHDL SN76489 model.
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/ladybug_sprite.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_sprite.vhd,v 1.12 2005/10/10 22:02:14 arnim Exp $
+//
+// Sprite Video Module of Lady Bug Machine.
+//
+// This unit contains the whole sprite logic which is distributed on the
+// CPU and video boards.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_sprite_ctrl.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_sprite_ctrl.vhd,v 1.8 2005/10/10 22:02:14 arnim Exp $
+//
+// Control logic of the Sprite module.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_video_timing.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_video_timing.vhd,v 1.16 2006/02/07 19:27:38 arnim Exp $
+//
+// The Video Timing Module of Lady Bug Machine.
+//
+// It implements the horizontal and vertical timing signals including composite
+// sync information.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ladybug_video_unit.sv =====
+//-----------------------------------------------------------------------------
+//
+// FPGA Lady Bug
+//
+// $Id: ladybug_video_unit.vhd,v 1.22 2006/02/07 00:44:35 arnim Exp $
+//
+// The Video Unit of the Lady Bug Machine.
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/sraider_overlay.sv =====
+//============================================================================
+//
+//  Space Raider starfield + grid, mixed under the Lady Bug video
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME sraider.cpp / zerohour_stars.cpp (Frank Palazzolo):
+//  - stars: 17-bit LFSR stepped once per slot of a 256x256 raster starting at
+//    (offset & 0xFF, offset >> 8); a star where (state & 0xFF) == 0xFF and the
+//    feedback bit is 0, on pixels with bit 4 of (x + 8) == bit 0 of y (no VA bit).
+//    Two alternating fields: state 0 / 0x1FC71, offset += speed * 2 - 9 every
+//    second frame. Clipped to x <= 0xD8 (flipped: x >= 0x27).
+//  - grid: 1bpp gfx3 tilemap (bottom half = top half mirrored) plus a full-height
+//    line at every x whose grid RAM byte is non-zero, both in the grid colour.
+//  - priority: chars/sprites > grid > stars > background.
+//
+//  Output is a colour code (so the CRT Flip frame buffer stays 8 bits wide):
+//    {2'b00, r[1:0], g[1:0], b[1:0]}  Lady Bug pixel (2-bit DAC levels)
+//    {2'b01, 3'b000, r, g, b}         grid (full on / off per gun)
+//    {2'b10, 1'b0, colour[4:0]}       star (MAME sraider_palette star colours)
+//
+//  The overlay runs one pixel behind the Lady Bug output and tracks MAME screen
+//  coordinates (visible x 8-247, y 32-223) of the pixel it holds. The LFSR is
+//  advanced to the first visible slot during vblank (up to 65535 steps, one per
+//  clock) and by 16 extra steps in each hblank.
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/sraider_sub.sv =====
+//============================================================================
+//
+//  Universal 8203-A sound / video-control CPU (Space Raider, Mrs. Dynamite)
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME sraider.cpp (Frank Palazzolo) cpu2_map / cpu2_io_map:
+//    0000-5FFF ROM (H6, J6, L6)          6000-63FF RAM, mirrored at 6400 (2x 2114)
+//    8000 read sound latch low (P6)      A000 read sound latch high (R6)
+//    C000 read 556 outputs on D1-D0      E000-E0FF grid RAM (mirror 0x300), write only
+//    E800-EFFF control (LS273 D4): [2:0] star speed, [3] star enable, [6:4] grid R/G/B, [7] flip
+//    I/O 00-27 five SN76489 (8 ports each), 28-3F sound-resistor latches (not emulated, as MAME)
+//  IRQ on vblank, held until acknowledged (MAME irq0_line_hold).
+//
+//============================================================================
+
+
+===== rtl/universal/ladybug/ttl_175.sv =====
+//-----------------------------------------------------------------------------
+//
+// TTL 74175 - Quad D-Type Flip-Flops with Clear
+//
+// $Id: ttl_175.vhd,v 1.5 2005/10/10 21:59:13 arnim Exp $
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/ladybug/ttl_393.sv =====
+//-----------------------------------------------------------------------------
+//
+// TTL 74LS393 - Dual 4-Bit Binary Counter
+//
+// $Id: ttl_393.vhd,v 1.3 2005/10/10 21:59:13 arnim Exp $
+//
+//-----------------------------------------------------------------------------
+//
+// Copyright (c) 2005, Arnim Laeuger (arnim.laeuger@gmx.net)
+//
+// All rights reserved
+//
+// Redistribution and use in source and synthezised forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// Redistributions of source code must retain the above copyright notice,
+// this list of conditions and the following disclaimer.
+//
+// Redistributions in synthesized form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+//
+// Neither the name of the author nor the names of other contributors may
+// be used to endorse or promote products derived from this software without
+// specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+// PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
+//
+// Please report bugs to the author, but before you do so, please
+// make sure that this is not a derivative work and that
+// you have the latest version of this file.
+//
+//-----------------------------------------------------------------------------
+// SystemVerilog translation 2026 (Rodimus) of the MiSTer port by Sorgelig
+
+
+===== rtl/universal/mrdo/mrdo_board.sv =====
+//============================================================================
+//
+//  Universal 8201 board (Mr. Do!)
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME mrdo.cpp / mrdo_v.cpp (Nicola Salmoria), with the U001 PAL
+//  behaviour from Darren Olafson's Mr. Do! core (secret_pal.v).
+//
+//  Main Z80 8.2 MHz / 2, video 19.6 MHz / 4 (here 19.656 / 4: +0.29 %),
+//  312 x 262, visible x 8-247, y 32-223.
+//    0000-7FFF ROM            8000-87FF bg RAM (attr 000-3FF, code 400-7FF)
+//    8800-8FFF fg RAM         9000-90FF sprite RAM (write only)
+//    9800 flip (bit 0)        9801 / 9802 SN76489         9803 U001 PAL read
+//    A000-A003 P1, P2, DSW1, DSW2                         E000-EFFF RAM
+//    F000-F7FF bg scroll x    F800-FFFF bg scroll y
+//  IRQ at vblank, held until acknowledged (MAME irq0_line_hold).
+//
+//  prot_mode: 0 mrdo (PAL with feedback: Darren Olafson's state model, clocked by
+//  fg RAM writes), 1 Taito PAL (MAME mrdot_state jedutil equations), 2 none (mrlo).
+//
+//============================================================================
+
+
+===== rtl/universal/sound/jt89/hdl/jt89.v =====
+/*  This file is part of JT89.
+
+    JT89 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    JT89 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with JT89.  If not, see <http://www.gnu.org/licenses/>.
+
+    Author: Jose Tejada Gomez. Twitter: @topapate
+    Version: 1.0
+    Date: March, 8th 2017
+
+    This work was originally based in the implementation found on the
+    SMS core of MiST. Some of the changes, all according to data sheet:
+
+        -Fixed volume
+        -Fixed tone 2 rate option of noise generator
+        -Fixed rate of noise generator
+        -Fixed noise shift clear
+        -Fixed noise generator update bug by which it gets updated
+            multiple times if v='0'
+        -Added all 0's prevention circuit to noise generator
+
+    */
+
+/* verilator tracing_off */
+
+
+===== rtl/universal/sound/jt89/hdl/jt89_mixer.v =====
+/*  This file is part of JT89.
+
+    JT89 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    JT89 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with JT89.  If not, see <http://www.gnu.org/licenses/>.
+
+    Author: Jose Tejada Gomez. Twitter: @topapate
+    Version: 1.0
+    Date: December, 1st 2018
+   
+    */
+
+
+===== rtl/universal/sound/jt89/hdl/jt89_noise.v =====
+/*  This file is part of JT89.
+
+    JT89 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    JT89 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with JT89.  If not, see <http://www.gnu.org/licenses/>.
+
+    Author: Jose Tejada Gomez. Twitter: @topapate
+    Version: 1.0
+    Date: March, 8th 2017
+
+    This work was originally based in the implementation found on the
+    SMS core of MiST
+
+    */
+
+
+===== rtl/universal/sound/jt89/hdl/jt89_tone.v =====
+/*  This file is part of JT89.
+
+    JT89 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    JT89 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with JT89.  If not, see <http://www.gnu.org/licenses/>.
+
+    Author: Jose Tejada Gomez. Twitter: @topapate
+    Version: 1.0
+    Date: March, 8th 2017
+    
+    This work was originally based in the implementation found on the
+    SMS core of MiST
+    
+    */
+
+
+===== rtl/universal/sound/jt89/hdl/jt89_vol.v =====
+/*  This file is part of JT89.
+
+    JT89 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    JT89 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with JT89.  If not, see <http://www.gnu.org/licenses/>.
+
+    Author: Jose Tejada Gomez. Twitter: @topapate
+    Version: 1.0
+    Date: December, 1st 2018
+    
+    This work was originally based in the implementation found on the
+    SMS core of MiST
+    
+    */
+
+
+===== rtl/universal/sound/msm5205.sv =====
+//============================================================================
+//
+//  OKI MSM5205 ADPCM decoder
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME msm5205.cpp: 12-bit internal signal, 10-bit DAC, 49-step table
+//  floor(16 * 1.1^step), index shift {-1,-1,-1,-1,2,4,6,8}. One nibble per
+//  'step' pulse (the VCK edge at which MAME's update_adpcm runs); 'rst' is the
+//  chip's RESET input as seen at that edge (signal and step cleared).
+//
+//============================================================================
+
+
+===== rtl/universal/universal_board.sv =====
+//============================================================================
+//
+//  Universal 8-bit arcade hardware — board top
+//  Copyright (C) 2026 Rodimus
+//
+//  Variant 0: Lady Bug board (MAME ladybug.cpp: ladybug, snapjack, cavenger, dorodon)
+//  Variant 1: Space Raider (8203 board + star board, MAME sraider.cpp sraider)
+//  Variant 2: Mrs. Dynamite (8203 board, MAME sraider.cpp mrsdyna)
+//  Variant 3: Mr. Do! 8201 board, U001 PAL with feedback (mrdo, mrdoy, yankeedo)
+//  Variant 4: Mr. Do! with the Taito PAL (mrdot, mrdofix, mrdu, mrdofabr)
+//  Variant 5: Mr. Lo! (no PAL)
+//  Variant 6: Mr. Do! bootleg (mrdobl: 4.0 MHz CPU, PAL with feedback)
+//  Variant 7: Mr. Do's Castle board, docastle_state map (docastle, Do! Run Run on Castle hardware, runrun)
+//  Variant 8: Mr. Do's Castle board, dorunrun_state map (dorunrun, spiero, dowild, jjack, kickridr)
+//  Variant 9: Mr. Do's Castle board, Indoor Soccer (idsoccer_state: MSM5205 ADPCM, twin joysticks)
+//  Variant 10: Zero Hour (zerohour_state)
+//  Variant 11: Red Clash (redclash_state)
+//  Variant 12: Cheeky Mouse (cheekyms_state)
+//  Variants 13-17: Cosmic boards: Space Panic, Cosmic Alien, Magical Spot, Devil Zone, No Man's Land
+//  Variants 18-19: TMS99xx boards: Cosmic Guerilla (TMS9980A), Get A Way (TMS9900)
+//
+//  ioctl index 0 (MRA), images stored as dumped, MAME region order:
+//    0x00000 - 0x05FFF  maincpu
+//    0x08000 - 0x09FFF  gfx1   (chars: 0x8000 plane 0 = low byte, 0x9000 plane 1 = high byte)
+//    0x0A000 - 0x0BFFF  gfx2   (sprites: 0xA000 low byte, 0xB000 high byte)
+//    0x0C000 - 0x0C05F  proms  (0x00 palette K1, 0x20 sprite lookup F4, 0x40 timing C4)
+//    0x0C100 - 0x0C1FF  user1 high nibbles (Dorodon bp4, ROM_LOAD_NIB_HIGH)
+//    0x0C200 - 0x0C2FF  user1 low nibbles  (Dorodon bp3, ROM_LOAD_NIB_LOW)
+//    0x10000 - 0x15FFF  sub    (8203 sound / control CPU)
+//    0x18000 - 0x18FFF  gfx3   (Space Raider fixed grid)
+//    0x18000 - 0x19FFF  gfx3   (Mr. Do! sprites; gfx1 / gfx2 = fg / bg tiles, proms 0xC000-0xC07F)
+//  Mr. Do's Castle board:
+//    0x20000 - 0x29FFF  maincpu    0x30000 - 0x33FFF  subcpu     0x34000 - 0x37FFF  gfx1 (tiles)
+//    0x3C000 - 0x3C0FF  proms      0x40000 - 0x47FFF  gfx2 (sprites)
+//  Indoor Soccer: gfx2 0x40000 - 0x5FFFF (in the CRT Flip frame buffer RAM), adpcm 0x0000-0x7FFF -> 0x00000,
+//    0x8000-0xFFFF -> 0x10000 (in the Lady Bug / Mr. Do! CPU ROMs, unused on this board)
+//  Zero Hour / Red Clash: maincpu 0x00000, gfx1 0x08000, proms 0x0C000, gfx2 0x40000 (Castle sprite ROM lanes)
+//  Cheeky Mouse: maincpu 0x00000, chars 0x08000 / 0x09000 (cm02 / cm01), sprites 0x0A000 / 0x0B000 (cm07 / cm08),
+//    proms 0x0C000
+//  Cosmic boards: maincpu 0x00000, user1 colour map 0x08000, user2 0x09000, gfx1 0x0A000 / 0x0B000 (halves),
+//    proms 0x0C000, user3 0x0C040; Devil Zone grid frame in the CRT Flip frame buffer RAM
+//  Cosmic Guerilla: program 0x00000, colour map 0x08000
+//  Get A Way: program high bytes 0x00000, low bytes 0x02000 (ROM_LOAD16_BYTE planes), gfx 0x08000 / 0x09000
+//
+//============================================================================
+
+
+===== rtl/universal/video/mc6845.vhdl =====
+-- BBC Micro for Altera DE1
+--
+-- Copyright (c) 2011 Mike Stirling
+--
+-- All rights reserved
+--
+-- Redistribution and use in source and synthezised forms, with or without
+-- modification, are permitted provided that the following conditions are met:
+--
+-- * Redistributions of source code must retain the above copyright notice,
+--	 this list of conditions and the following disclaimer.
+--
+-- * Redistributions in synthesized form must reproduce the above copyright
+--	 notice, this list of conditions and the following disclaimer in the
+--	 documentation and/or other materials provided with the distribution.
+--
+-- * Neither the name of the author nor the names of other contributors may
+--	 be used to endorse or promote products derived from this software without
+--	 specific prior written agreement from the author.
+--
+-- * License is granted for non-commercial use only.  A fee may not be charged
+--	 for redistributions as source code or in synthesized/hardware form without
+--	 specific prior written agreement from the author.
+--
+-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+-- THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+-- PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE
+-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+-- POSSIBILITY OF SUCH DAMAGE.
+--
+-- MC6845 CRTC
+--
+-- Synchronous implementation for FPGA
+--
+-- (C) 2011 Mike Stirling
+--
+-- Corrected cursor flash rate
+-- Fixed incorrect positioning of cursor when over left most character
+-- Fixed timing of VSYNC
+-- Fixed interlaced timing (add an extra line)
+-- Implemented r05_v_total_adj
+-- Implemented delay parts of r08_interlace (see Hitacht HD6845SP datasheet)
+--
+-- (C) 2015 David Banks
+--
+
+===== rtl/universal/z80_socket.sv =====
+//============================================================================
+//
+//  z80_socket - stands in for a board's T80pa and routes its pins to a T80 shared between boards
+//  Copyright (C) 2026 Rodimus
+//
+//  Same port names as T80pa (Mode 0), so a board swaps the module name and adds two bundles. Only one board
+//  runs at a time, so universal_board.sv owns one T80pa per CPU role and muxes the boards' inputs by variant.
+//  BUSRQ_n, OUT0, R800_mode, DIRSet and DIR are tied off identically on every board and are not routed.
+//
+//    to_cpu   = {RESET_n, CEN_p, CEN_n, WAIT_n, INT_n, NMI_n, DI[7:0]}
+//    from_cpu = {M1_n, MREQ_n, IORQ_n, RD_n, WR_n, RFSH_n, A[15:0], DO[7:0]}
+//
+//============================================================================
+
+
+===== rtl/universal/zerohour/zerohour_board.sv =====
+//============================================================================
+//
+//  Universal Zero Hour / Red Clash board
+//  Copyright (C) 2026 Rodimus
+//
+//  From MAME zerohour.cpp (David Haywood, inkling) and zerohour_stars.cpp (Frank Palazzolo).
+//
+//  Z80 4 MHz, video 9.828 MHz / 2 (= 19.656 / 4), 312 x 262, visible x 8-247, y 32-223.
+//  No periodic interrupt (the game polls vblank on IN1): coin 1 holds IRQ until 7800 is written,
+//  coin 2 pulses NMI.
+//    zerohour_state                            redclash_state
+//    0000-2FFF ROM                             0000-2FFF ROM
+//    3000-37FF RAM                             3000 background, 3800 beeper frequency
+//    3800-3BFF sprite RAM                      6000-67FF RAM, 6800-6BFF sprite RAM
+//    4000-43FF video RAM (00-3F also the bullet registers), 4800-4803 IN0 IN1 DSW1 DSW2,
+//    5000-5007 / 5800-5807 LS259 latches (sound board, stars, flip), 7000 star enable, 7800 IRQ ack
+//  Latch 2: Q0 / Q5 / Q6 star speed, Q1 thrust (Zero Hour) / sprite bank (Red Clash), Q2 sound enable,
+//  Q3 1-bit DAC (Zero Hour), Q4 coin sound, Q7 flip.
+//
+//  Video in MAME screen coordinates; CRT Flip mirrors the logical raster (visible area is symmetric):
+//  stars (bottom) < Red Clash white background < bullets < sprites < chars.
+//  Bullets and sprites are drawn into a line buffer one line ahead, in MAME drawing order (overwrite).
+//
+//============================================================================
+
+
+===== rtl/universal/zerohour/zerohour_sound.sv =====
+//============================================================================
+//
+//  Universal Zero Hour sound board (8011), discrete
+//  Copyright (C) 2026 Rodimus
+//
+//  From the Zero Hour manual sound schematic (p.25). Inputs from the main board LS259s (main block diagram):
+//    latch 1 (5000) Q0-Q7 -> pins 1-8, latch 2 (5800) Q1-Q4 -> pins 10-13, VDD 12 V.
+//    pin 1  shoot:          LM3900 VCO, C16 charged while high, falling sweep (C16 0.47u, ~91 ms)
+//    pin 2  asteroid hit:   LFSR noise gated by C8 (400k * 1u); a CD4013 toggled at each end of pin 2 switches
+//                           C7 (0.01u) onto the noise node (dull / bright halves)
+//    pin 3  asteroid mod.:  phi1 + phi2 mixed into the asteroid noise (CD4016)
+//    pin 4  enemy descend:  556 (C 0.1u), CV = C14 (1u, 1M) decaying after the trigger
+//    pin 5  shield hit:     556 (C 3300p), CV = C21 (1u, 470k) charging after the trigger, phi7 warble
+//    pin 6  noise burst:    LFSR noise (R1 C1 low-pass) through IC5a while high (16 ms pulses in MAME)
+//    pin 7  enemy fire:     556 (C 2200p), CV = C9 (1u, 2.2M) rising while high, phi6 warble
+//    pin 8  bonus warn:     556 one-shot (100k, 0.01u) fired by phi2, width set by alpha (phi9 low-passed)
+//    pin 10 thrust:         LFSR stage 13 shifted through IC7 (2 stages) by an LM3900 VCO whose input is C6
+//                           (22u, 150k): ~5.4 kHz falling to ~40 Hz over 10 s
+//    pin 11 sound enable:   Q4 shorts the mix bus while low
+//    pin 12 1-bit output:   straight into the mix (C25, R87)
+//    pin 13 coin:           556 (C 3300p), CV = C24 (1u, 1M) decaying after the trigger, phi6 warble
+//    (no pin)               556 (C18 3300p) gated by C20, restarted by every phi12 falling edge (~7.4 s)
+//  Clock: CD4070 RC oscillator, 4.4 kHz (bonus warn = phi2 = f/16 = 275 Hz in the reference recording),
+//  CD4020 phi1 = Q1, phi2-phi11 = Q4-Q13, phi12 = Q14 / 2; CD4006 LFSR, feedback stage 5 ^ stage 17.
+//
+//  Analog nodes: one RC / integrator engine, 32 clocks per step (dt = 1.628 us): v += (x * a) >> 32,
+//  voltages in 2^24 units. 556s: cap between CV / 2 and CV; CV pin loading by the internal 5k divider.
+//  Mix bus: R76 1k || R72 1k, x100 (R71 / R72): source weight 50k / R, C26 high-pass, LM324 swing.
+//
+//============================================================================
+

@@ -1,0 +1,58 @@
+set	name	variant	portrait	simulation_frames	device_confirmation
+ladybug	Lady Bug	0	True	361	test2 baseline picture/sound
+asoccer	American Soccer (Japan)	9	False	16	pending
+cavenger	Cosmic Avenger	0	False	60	pending
+cheekyms	Cheeky Mouse	12	True	60	pending
+cosmica	Cosmic Alien	14	True	60	pending
+cosmica1	Cosmic Alien (First Version)	14	True	16	pending
+cosmica22	Cosmic Alien (Version II, Set 2)	14	True	16	pending
+cosmica23	Cosmic Alien (Version II, Set 3)	14	True	16	pending
+cosmica2a	Cosmic Alien (Early Version II?)	14	True	16	pending
+devzone	Devil Zone	16	True	60	pending
+devzone2	Devil Zone (Easier)	16	True	16	pending
+docastle	Mr. Do's Castle	7	True	60	pending
+docastle2	Mr. Do's Castle (Set 2)	7	True	16	pending
+docastleo	Mr. Do's Castle (Older)	7	True	16	pending
+dorodon	Dorodon	0	True	60	pending
+dorodon2	Dorodon (Set 2)	0	True	16	pending
+dorunrun	Do! Run Run	8	False	60	pending
+dorunrun2	Do! Run Run (Set 2)	8	False	16	pending
+dorunrunc	Do! Run Run (Do's Castle Hardware, Set 1)	7	False	16	pending
+dorunrunca	Do! Run Run (Do's Castle Hardware, Set 2)	7	False	16	pending
+douni	Mr. Do! Vs. Unicorns (Japan)	7	True	16	pending
+dowild	Mr. Do's Wild Ride	8	False	16	pending
+idsoccer	Indoor Soccer	9	False	60	pending
+idsoccera	Indoor Soccer (Set 2)	9	False	16	pending
+jjack	Jumping Jack	8	True	16	pending
+kickridr	Kick Rider	8	False	16	pending
+ladybugb	Lady Bug (Bootleg)	0	True	16	pending
+ladybugb2	Coccinelle (Bootleg Of Lady Bug)	0	True	16	pending
+magspot	Magical Spot	15	True	60	pending
+magspot2	Magical Spot II	15	True	16	pending
+mrdo	Mr. Do!	3	True	60	pending
+mrdobl	Mr. Do! (Bootleg)	6	True	60	pending
+mrdofabr	Mr. Do! (Fabremar Bootleg)	4	True	16	pending
+mrdofix	Mr. Do! (Bugfixed)	4	True	16	pending
+mrdot	Mr. Do! (Taito)	4	True	60	pending
+mrdoy	Mr. Do! (Prototype)	3	True	16	pending
+mrdu	Mr. Du!	4	True	16	pending
+mrlo	Mr. Lo!	5	True	361	pending
+mrsdyna	Mrs. Dynamite	2	True	60	pending
+nomnlnd	Sengoku No Jieitai	17	True	60	pending
+nomnlndg	No Man's Land (Gottlieb)	17	True	16	pending
+panic	Space Panic	13	True	60	pending
+panic2	Space Panic (Set 2)	13	True	16	pending
+panic3	Space Panic (Set 3)	13	True	16	pending
+panicger	Space Panic (German)	13	True	16	pending
+panich	Space Panic (Harder)	13	True	16	pending
+redclash	Red Clash	11	True	60	pending
+redclashs	Red Clash (Suntronics)	11	True	16	pending
+redclasht	Red Clash (Tehkan, Set 1)	11	True	16	pending
+redclashta	Red Clash (Tehkan, Set 2)	11	True	16	pending
+snapjack	Snap Jack	0	False	60	pending
+spiero	Super Pierrot (Japan)	8	False	16	pending
+sraider	Space Raider	1	True	60	pending
+yankeedo	Yankee DO!	3	True	16	pending
+zerohour	Zero Hour	10	True	60	pending
+zerohoura	Zero Hour (Set 2)	10	True	16	pending
+zerohouri	Zero Hour (Bootleg)	10	True	16	pending

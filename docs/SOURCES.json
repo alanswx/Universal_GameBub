@@ -1,7 +1,7 @@
 {
   "prepared_date": "2026-10-15",
   "target": "gamebub_rev4",
-  "state": "preparation only; no port implementation",
+  "state": "57-set combined expansion; Lady Bug test2 picture/gameplay/sound and combined-build Mr. Do! gameplay owner-confirmed; remaining coverage pending",
   "universal": {
     "url": "https://github.com/RodimusFVC/Arcade-Universal_MiSTer.git",
     "path": "upstream/Arcade-Universal_MiSTer",
@@ -18,7 +18,11 @@
         "error": "not well-formed (invalid token): line 31, column 56"
       }
     ],
-    "sparse_checkout": "RTL, tools, releases/*.mra, Arcade-Universal.sv, files.qip; sample archives and release bitstreams excluded"
+    "sparse_checkout": "RTL, tools, releases/*.mra, Arcade-Universal.sv, files.qip; sample archives and release bitstreams excluded",
+    "live_head_reverified": "2026-10-15",
+    "enabled_catalog_sets": 57,
+    "missing_data_alternative_sets": 4,
+    "xml_correction_tool": "tools/generate_catalog.py::corrected_mra"
   },
   "framework": {
     "url": "https://github.com/alanswx/framework.git",
@@ -41,6 +45,13 @@
     "mcr": "/home/alans/mister/mcr/MCR_GameBub",
     "colecovision": "/home/alans/mister/adam/ColecoVision_GameBub",
     "iigs": "/home/alans/mister/iigs/Apple-IIgs_GameBub",
-    "mra_tool": "/home/alans/mister/mcr/mra-tools-c/mra"
+    "mra_tool": "/home/alans/mister/mcr/mra-tools-c/mra",
+    "merged_mame_inputs": "/home/alans/Downloads/mame-merged/mame-merged"
+  },
+  "hardware_confirmation": {
+    "game": "Lady Bug",
+    "build": "0.1.0-test2",
+    "owner_report": "works very well and sound works",
+    "other_games": "Mr. Do! gameplay owner-confirmed on 0.2.0-test1; exact set and sound not specified; other games pending"
   }
 }

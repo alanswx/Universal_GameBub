@@ -1,37 +1,52 @@
-# Universal arcade core for Game Bub
+# Universal Arcade for Game Bub rev 4
 
-Preparation and handoff project for porting RodimusFVC's Arcade-Universal_MiSTer
-to **Game Bub rev 4**. No Game Bub core has been implemented or built yet.
+Combined hardware-test core with **57 ROM-set recipes across 22 main games**.
+Lady Bug test2 is owner-confirmed, including sound. Mr. Do! gameplay is
+owner-confirmed on the combined build; its exact set and sound were not
+specified. Other games require hardware testing; bootstrap simulations are
+not complete playability checks. See [PORT_PLAN.md](PORT_PLAN.md) section 9 for scope and
+[BUILD_TEST_RESULT.json](docs/BUILD_TEST_RESULT.json) for measured results.
 
-**Start with [PORT_PLAN.md](PORT_PLAN.md).** It contains the inspected source
-architecture, the implementation sequence, validation requirements and the
-next session's first task. See [AGENTS.md](AGENTS.md) for working rules.
+Download the ROM-free ZIP from [Releases](https://github.com/alanswx/Universal_GameBub/releases)
+and extract it at the SD-card root, replacing `cores/alanswx.Universal`.
+Open the included offline ROM builder, supply your own matching MAME ZIPs,
+then export and extract its SD-folder ZIP. Launch Universal Arcade and choose
+a prepared image under `roms/Universal`. Read the [controls/install instructions](docs/TEST_INSTALL.txt).
+The existing Lady Bug ROM format is unchanged. No firmware update is needed.
 
-## Dependencies already present
+The self-contained [offline ROM builder](web/Universal-ROM-Builder.html)
+accepts matching MAME ZIPs, including merged/split parents, and exports individual
+ROM images or an SD-folder ZIP. Configuration and DIP defaults are selected by
+exact full-image size/CRC in the core. No game bytes are embedded in the page.
+Four alternative sets lack matching local chips and are explicitly listed in
+[unavailable recipes](docs/UNAVAILABLE_RECIPES.json). TMS18/19 have no pinned
+recipes and are not enabled.
 
-- `upstream/Arcade-Universal_MiSTer`: pinned upstream source and MRA recipes,
-  with a sparse working tree excluding supplied samples and release bitstreams.
-- `framework`: **our alanswx/framework arcade rotation fork**, pinned to
-  `6e5adf7ed3d8776f504d55e6dbb8d6fcc5cfa930`. Use this fork for the port.
-- `reference/mcr-rom-builder`: existing MCR HTML converter source, generator
-  and checks to adapt for Universal. These remain reference files for now.
-- `mill`, `.mill-opts`, `build.mill`, `scripts/env.sh`: build preparation.
-  The declared `Universal` core class does not exist yet; build commands
-  become usable after the wrapper is implemented.
+Clone with `git clone --recurse-submodules https://github.com/alanswx/Universal_GameBub.git`.
+The pinned upstream checkout contains third-party project history; ROMs and
+samples from that repository are not release assets of this port.
 
-The framework changes are explained in
-[docs/FRAMEWORK_ROTATION_SUMMARY.md](docs/FRAMEWORK_ROTATION_SUMMARY.md).
-Exact pins and reference locations are recorded in [docs/SOURCES.json](docs/SOURCES.json).
+Build: `source scripts/env.sh`, then
+`./mill root.buildCore --target gamebub_rev4`.
+Package: `python3 scripts/package.py --private` (owned-ROM private bundle),
+or omit `--private` for the ROM-free test bundle.
 
-The upstream inventory contains 61 MRA descriptions covering variants 0–17.
-The RTL also declares variants 18–19, whose MRA recipes are absent at this pin.
-Do not equate upstream declarations with working Game Bub support.
+Validation entry points:
 
-## Next session
+- `python3 scripts/import_universal.py --check`
+- `python3 tools/generate_catalog.py --check` (owned local MAME inputs)
+- `python3 tools/check_mra_images.py` (independent MRA CLI comparison)
+- `python3 tools/check_rom_builder.py --browser` (Node and Chrome, offline)
+- `python3 scripts/check_metadata.py`
+- `source scripts/env.sh`, then `python3 sim/run.py --games all --frames 16`
+- `python3 sim/run.py --run-only --games ladybug --frames 361 --require-audio`
 
-Open this directory directly and ask the next LLM to read AGENTS.md and
-PORT_PLAN.md, then begin with the Lady Bug baseline. The requested deliverable
-also includes adapting our offline HTML ROM converter to Universal.
+The simulator converts original T80 and mc6845 VHDL using GHDL; inactive family
+engines are quiesced only in simulation for speed. FPGA sources retain their
+original board clocks. RAM inference puts tiny PROMs/line stores in LUT RAM so
+the framework's dual-clock menu framebuffer retains block RAM.
 
-No public repository, release, FPGA build or ROM bundle was created for this
-project. The local repository has an initial handoff commit.
+Use the pinned **alanswx/framework arcade rotation fork**, unchanged. Provenance
+is in [SOURCES.json](docs/SOURCES.json) and [IMPORT_MANIFEST.json](docs/IMPORT_MANIFEST.json).
+Component licences and full source headers are under `licenses/`; no blanket
+project licence is assigned. ROMs, private ZIPs and build products stay ignored.

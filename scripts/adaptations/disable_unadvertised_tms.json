@@ -1,0 +1,10 @@
+[
+  {
+    "before": "wire tms         = (variant == 8'd18) || (variant == 8'd19);",
+    "after": "wire tms         = 1'b0; // Game Bub: no recipes for variants 18/19 at this pin."
+  },
+  {
+    "before": "tms_board tms_b\n(\n    .clk          (clk),\n    .reset        (reset | ~tms),\n    .pause        (pause),\n    .getaway      (variant == 8'd19),\n    .crt_flip     (crt_flip),\n    .in0          (in0),\n    .in1          (in1),\n    .in2          (in2),\n    .dsw0         (dsw0),\n    .dsw1         (dsw1),\n    .h_adj        (h_adj),\n    .v_adj        (v_adj),\n    .ce_pix       (tm_ce),\n    .video_r      (tm_r),\n    .video_g      (tm_g),\n    .video_b      (tm_b),\n    .video_hs     (tm_hs),\n    .video_vs     (tm_vs),\n    .video_hblank (tm_hbl),\n    .video_vblank (tm_vbl),\n    .audio        (tm_audio),\n    .snd_out      (tm_snd),\n    .rom_cpu_a    (tm_cpu_a),\n    .rom_cpu_d    (rom_cpu_d),\n    .rom_chr_a    (tm_chr_a),\n    .rom_chr_d    (rom_char_d)\n);",
+    "after": "// Game Bub does not enable undocumented TMS variants without ROM recipes.\nassign tm_ce=0;\nassign {tm_r,tm_g,tm_b,tm_hs,tm_vs,tm_hbl,tm_vbl,tm_audio,tm_snd,tm_cpu_a,tm_chr_a}=0;"
+  }
+]

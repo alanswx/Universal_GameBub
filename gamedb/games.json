@@ -1,0 +1,11373 @@
+[
+  {
+    "key": "ladybug",
+    "name": "Lady Bug",
+    "rom_filename": "Lady Bug.rom",
+    "set": "ladybug",
+    "zips": [
+      "ladybug.zip"
+    ],
+    "size": 49248,
+    "crc32": "3b3bfa7e",
+    "sha256": "1f537ada7b9bc68fb82de77aa23381b26b37f79a0b70cfcd4e3cbccfeb0b41f5",
+    "config": [
+      0,
+      17,
+      0,
+      1,
+      255,
+      127,
+      255,
+      223,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      0,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "l1.c4",
+        "crc": "d09e0adb",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l2.d4",
+        "crc": "88bc4a0a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l3.e4",
+        "crc": "53e9efce",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l4.h4",
+        "crc": "ffc424d7",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l5.j4",
+        "crc": "ad6af809",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l6.k4",
+        "crc": "cf1acca4",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "l9.f7",
+        "crc": "77b1da1e",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l0.h7",
+        "crc": "aa82e00b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l8.l7",
+        "crc": "8b99910b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l7.m7",
+        "crc": "86a5b448",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "10-2.k1",
+        "crc": "df091e52",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-1.f4",
+        "crc": "40640d8f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-3.c4",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Lady Bug.mra",
+    "status": "test2 baseline hardware-confirmed",
+    "variant": 0,
+    "id": 0
+  },
+  {
+    "key": "asoccer",
+    "name": "American Soccer (Japan)",
+    "rom_filename": "American Soccer (Japan).rom",
+    "set": "asoccer",
+    "zips": [
+      "asoccer.zip",
+      "idsoccer.zip"
+    ],
+    "size": 393216,
+    "crc32": "8cccadde",
+    "sha256": "f4b55ca9e91231c32be03e7ab00e04af0f77898495f81a65fc9b124b2b43ec39",
+    "config": [
+      9,
+      0,
+      0,
+      0,
+      255,
+      255,
+      255,
+      255,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      38,
+      41,
+      39,
+      40,
+      42,
+      45,
+      43,
+      44,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10
+    ],
+    "dips": [
+      255,
+      255,
+      255
+    ],
+    "parts": [
+      {
+        "name": "1.ic1",
+        "crc": "3bb65dc7",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49152
+      },
+      {
+        "name": "3.ic3",
+        "crc": "27bebba3",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "4.ic4",
+        "crc": "dd5ffaa2",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "as1.e10",
+        "crc": "e9d61bbf",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "as2.f10",
+        "crc": "62b2e4c8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "as3.h10",
+        "crc": "25bbd0d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "as4.k10",
+        "crc": "8d8bdc08",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "as0.e2",
+        "crc": "05d613bf",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "as5-2.e6",
+        "crc": "430295c4",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "3-2d.d3-2",
+        "crc": "a433ff62",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "as6.p3-2",
+        "crc": "ae577023",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "as7.n3-2",
+        "crc": "a20ddd9b",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "as8.l3-2",
+        "crc": "dafad065",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "as9.j3-2",
+        "crc": "3a2ae776",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Indoor Soccer/American Soccer (Japan).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 9,
+    "id": 1
+  },
+  {
+    "key": "cavenger",
+    "name": "Cosmic Avenger",
+    "rom_filename": "Cosmic Avenger.rom",
+    "set": "cavenger",
+    "zips": [
+      "cavenger.zip"
+    ],
+    "size": 49248,
+    "crc32": "feb31b64",
+    "sha256": "1f693bc575079b6c345b186f4eedb3ca096da02661d0b7e76d3fb27b40e5dea2",
+    "config": [
+      0,
+      0,
+      0,
+      0,
+      255,
+      127,
+      255,
+      199,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      6,
+      14,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      199,
+      255
+    ],
+    "parts": [
+      {
+        "name": "1.c4",
+        "crc": "9e0cc781",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "2.d4",
+        "crc": "5ce5b950",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "3.e4",
+        "crc": "bc28218d",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "4.h4",
+        "crc": "2b32e9f5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "5.j4",
+        "crc": "d117153e",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "6.k4",
+        "crc": "c7d366cb",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "9.f7",
+        "crc": "63357785",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "0.h7",
+        "crc": "52ad1133",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "8.l7",
+        "crc": "b022bf2d",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 4096
+      },
+      {
+        "name": "10-2.k1",
+        "crc": "42a24dd5",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-1.f4",
+        "crc": "d736b8de",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-3.c4",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Cosmic Avenger.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 0,
+    "id": 2
+  },
+  {
+    "key": "cheekyms",
+    "name": "Cheeky Mouse",
+    "rom_filename": "Cheeky Mouse.rom",
+    "set": "cheekyms",
+    "zips": [
+      "cheekyms.zip"
+    ],
+    "size": 49248,
+    "crc32": "a7b94cd0",
+    "sha256": "434b93c37d4737d58181d14d63575ea235e8c492d73f2cc3d9b0b5bd3729e16b",
+    "config": [
+      12,
+      16,
+      0,
+      0,
+      255,
+      255,
+      255,
+      117,
+      255,
+      254,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      19,
+      20,
+      12,
+      11,
+      13,
+      4,
+      3,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      117
+    ],
+    "parts": [
+      {
+        "name": "cm03.c5",
+        "crc": "1ad0cb40",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "cm04.c6",
+        "crc": "2238f607",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "cm05.c7",
+        "crc": "4169eba8",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "cm06.c8",
+        "crc": "7031660c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "cm02.c2",
+        "crc": "885887c3",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "cm01.c1",
+        "crc": "26f73bd7",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "cm07.n5",
+        "crc": "2738c88d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "cm08.n6",
+        "crc": "b3fbd4ac",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "cm.m9",
+        "crc": "db9c59a5",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "cm.m8",
+        "crc": "2386bc68",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "cm.p3",
+        "crc": "6ac41516",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Cheeky Mouse.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 12,
+    "id": 3
+  },
+  {
+    "key": "cosmica",
+    "name": "Cosmic Alien",
+    "rom_filename": "Cosmic Alien.rom",
+    "set": "cosmica",
+    "zips": [
+      "cosmica.zip"
+    ],
+    "size": 49184,
+    "crc32": "4dbf5cd4",
+    "sha256": "d2f4032e4e6a93b5f0648e696a8618a35f1ce54a0cf9afea6a0962aa9777d7f3",
+    "config": [
+      14,
+      16,
+      0,
+      0,
+      255,
+      255,
+      255,
+      254,
+      255,
+      254,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      12,
+      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      254
+    ],
+    "parts": [
+      {
+        "name": "ii-1.e3",
+        "crc": "535ee0c5",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ii-2.e4",
+        "crc": "ed3cf8f7",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ii-3.e5",
+        "crc": "6a111e5e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ii-4.e6",
+        "crc": "c9b5ca2a",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ii-5.e7",
+        "crc": "43666d68",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 22528
+      },
+      {
+        "name": "9.e2",
+        "crc": "ea4ee931",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "8.k3",
+        "crc": "acbd4e98",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "ii-7.n2",
+        "crc": "aa6c6079",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "ii-6.n1",
+        "crc": "431e866c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "u7910.d9",
+        "crc": "dfb60f19",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Cosmic Alien.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 14,
+    "id": 4
+  },
+  {
+    "key": "cosmica1",
+    "name": "Cosmic Alien (First Version)",
+    "rom_filename": "Cosmic Alien (First Version).rom",
+    "set": "cosmica1",
+    "zips": [
+      "cosmica1.zip",
+      "cosmica.zip"
+    ],
+    "size": 49184,
+    "crc32": "95b5acce",
+    "sha256": "b04e5ca49c75e1efed0a34a3b2be65e8b77acb08a6483a66d4b02a7e9472ee16",
+    "config": [
+      14,
+      16,
+      0,
+      0,
+      255,
+      255,
+      255,
+      254,
+      255,
+      254,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      12,
+      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      254
+    ],
+    "parts": [
+      {
+        "name": "1.e3",
+        "crc": "2e44f50e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "2.e4",
+        "crc": "9e5c5281",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "3.e5",
+        "crc": "9e1309db",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "4.e6",
+        "crc": "ba4a9295",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "5.e7",
+        "crc": "2106c82a",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 22528
+      },
+      {
+        "name": "9.e2",
+        "crc": "ea4ee931",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "8.k3",
+        "crc": "acbd4e98",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "7.n2",
+        "crc": "ee3e86fc",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "6.n1",
+        "crc": "81c86ca0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "u7910.d9",
+        "crc": "dfb60f19",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Cosmic Alien/Cosmic Alien (First Version).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 14,
+    "id": 5
+  },
+  {
+    "key": "cosmica22",
+    "name": "Cosmic Alien (Version II, Set 2)",
+    "rom_filename": "Cosmic Alien (Version II, Set 2).rom",
+    "set": "cosmica22",
+    "zips": [
+      "cosmica22.zip",
+      "cosmica.zip"
+    ],
+    "size": 49184,
+    "crc32": "97d631fa",
+    "sha256": "4bf59c44c2d970fad3d9ca386375d8ef1439686fba3c6d431a6b9633084d6a60",
+    "config": [
+      14,
+      16,
+      0,
+      0,
+      255,
+      255,
+      255,
+      254,
+      255,
+      254,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      12,
+      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      254
+    ],
+    "parts": [
+      {
+        "name": "1.e3",
+        "crc": "535ee0c5",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "2-ii-2.e4",
+        "crc": "6c9907e8",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "3-ii-3.e5",
+        "crc": "c7205278",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "4-ii-4.e6",
+        "crc": "c7765ecd",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "5-ii-5.e7",
+        "crc": "5f60242f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 22528
+      },
+      {
+        "name": "9-9.e2",
+        "crc": "ea4ee931",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "8-8.ic10",
+        "crc": "acbd4e98",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "7.n2",
+        "crc": "aa6c6079",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "6.n1",
+        "crc": "431e866c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "u7910.d9",
+        "crc": "dfb60f19",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Cosmic Alien/Cosmic Alien (Version II, Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 14,
+    "id": 6
+  },
+  {
+    "key": "cosmica23",
+    "name": "Cosmic Alien (Version II, Set 3)",
+    "rom_filename": "Cosmic Alien (Version II, Set 3).rom",
+    "set": "cosmica23",
+    "zips": [
+      "cosmica23.zip",
+      "cosmica.zip"
+    ],
+    "size": 49184,
+    "crc32": "c6489d52",
+    "sha256": "40fa6673fd5d3b4dbafa41c0f08e6d7bb66691a1fe9a2f91b170ed1392a666a1",
+    "config": [
+      14,
+      16,
+      0,
+      0,
+      255,
+      255,
+      255,
+      254,
+      255,
+      254,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      12,
+      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      254
+    ],
+    "parts": [
+      {
+        "name": "1-al2019-2516.e3",
+        "crc": "2303333f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "2-al202a-2516.e4",
+        "crc": "20710582",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "3-al2019-2516.e5",
+        "crc": "b25d24b4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "4-2516.e6",
+        "crc": "51834cd9",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "5-al2019-2516.e7",
+        "crc": "e2b6680f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 22528
+      },
+      {
+        "name": "9-4708-2708.e2",
+        "crc": "ea4ee931",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "8-2708.k3",
+        "crc": "acbd4e98",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "7-2716.n2",
+        "crc": "aa6c6079",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "6-2516.n1",
+        "crc": "431e866c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "mmi-6331.d9",
+        "crc": "dfb60f19",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Cosmic Alien/Cosmic Alien (Version II, Set 3).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 14,
+    "id": 7
+  },
+  {
+    "key": "cosmica2a",
+    "name": "Cosmic Alien (Early Version II?)",
+    "rom_filename": "Cosmic Alien (Early Version II-).rom",
+    "set": "cosmica2a",
+    "zips": [
+      "cosmica2a.zip",
+      "cosmica.zip"
+    ],
+    "size": 49184,
+    "crc32": "1c32fa75",
+    "sha256": "8c9bd7c029c2f0d55e441fa2844091c6c4b24e49b6efda8369d897bc841b915d",
+    "config": [
+      14,
+      16,
+      0,
+      0,
+      255,
+      255,
+      255,
+      254,
+      255,
+      254,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      12,
+      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      254
+    ],
+    "parts": [
+      {
+        "name": "a-1.e2",
+        "crc": "8a401b22",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "b-2.d3",
+        "crc": "c8bf86b1",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "c-3.e3",
+        "crc": "699c849e",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "d-4.d4",
+        "crc": "168e38da",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "e-5.e4",
+        "crc": "80cc1fb8",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "f-6.d5",
+        "crc": "0dc464f7",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "g-7.e5",
+        "crc": "d5381c54",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "h-8.d6",
+        "crc": "2175fe6f",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "i-9.e6",
+        "crc": "3bb57720",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "j-0.d7",
+        "crc": "4ff70f45",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 22528
+      },
+      {
+        "name": "9-9.e2",
+        "crc": "ea4ee931",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "8-8.k3",
+        "crc": "acbd4e98",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "l-8.n2",
+        "crc": "aa6c6079",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "k-7.n1",
+        "crc": "431e866c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "u7910.d9",
+        "crc": "dfb60f19",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Cosmic Alien/Cosmic Alien (Early Version II-).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 14,
+    "id": 8
+  },
+  {
+    "key": "devzone",
+    "name": "Devil Zone",
+    "rom_filename": "Devil Zone.rom",
+    "set": "devzone",
+    "zips": [
+      "devzone.zip"
+    ],
+    "size": 49248,
+    "crc32": "8dfcbf66",
+    "sha256": "fe0bbc7558740cacbf394b8d37fcd6b47f55b258d37d74dea1157c91b1b00ec3",
+    "config": [
+      16,
+      20,
+      0,
+      0,
+      255,
+      255,
+      221,
+      255,
+      0,
+      252,
+      128,
+      128,
+      0,
+      128,
+      1,
+      128,
+      0,
+      3,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      11,
+      0,
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      221,
+      0
+    ],
+    "parts": [
+      {
+        "name": "dv1.e3",
+        "crc": "c70faf00",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "dv2.e4",
+        "crc": "eacfed61",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "dv3.e5",
+        "crc": "7973317e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "dv5.e7",
+        "crc": "b71a3989",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "dv4.e6",
+        "crc": "a58c5b8c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "dv6.e8",
+        "crc": "3930fb67",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "db9.e2",
+        "crc": "693855b6",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "dv9.ic12",
+        "crc": "f61c1c45",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "dv8.n2",
+        "crc": "da1cbec1",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "dv7.n1",
+        "crc": "e7562fcf",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "m13.d9",
+        "crc": "36e2aa2a",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32
+      },
+      {
+        "name": "22.ic1",
+        "crc": "df974878",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Devil Zone.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 16,
+    "id": 9
+  },
+  {
+    "key": "devzone2",
+    "name": "Devil Zone (Easier)",
+    "rom_filename": "Devil Zone (Easier).rom",
+    "set": "devzone2",
+    "zips": [
+      "devzone2.zip",
+      "devzone.zip"
+    ],
+    "size": 49248,
+    "crc32": "138db5e6",
+    "sha256": "a969dc6c41cff5f0007d2dcf2adba0b4f2f224c72c177c5ba971aff97e9b522c",
+    "config": [
+      16,
+      20,
+      0,
+      0,
+      255,
+      255,
+      221,
+      255,
+      0,
+      252,
+      128,
+      128,
+      0,
+      128,
+      1,
+      128,
+      0,
+      3,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      11,
+      0,
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      221,
+      0
+    ],
+    "parts": [
+      {
+        "name": "p10_1.e3",
+        "crc": "38bd45a4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "my4_2.e4",
+        "crc": "e1637800",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms6_3.e5",
+        "crc": "c1952e2f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "mx6_5.e7",
+        "crc": "c5394215",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "my1_4.e6",
+        "crc": "5d965d93",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "mz7_6.e8",
+        "crc": "8504e8c9",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "dz9.e2",
+        "crc": "693855b6",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "ic12.sub",
+        "crc": "f61c1c45",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "my8_8.n2",
+        "crc": "18abce02",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "mx3_7.n1",
+        "crc": "c089c9e3",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "ms.d9",
+        "crc": "36e2aa2a",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32
+      },
+      {
+        "name": "ic1.sub",
+        "crc": "df974878",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Devil Zone/Devil Zone (Easier).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 16,
+    "id": 10
+  },
+  {
+    "key": "docastle",
+    "name": "Mr. Do's Castle",
+    "rom_filename": "Mr. Do's Castle.rom",
+    "set": "docastle",
+    "zips": [
+      "docastle.zip"
+    ],
+    "size": 294912,
+    "crc32": "659b321f",
+    "sha256": "6424db739c88ae7854dfaddf2cda1e85dbda520e00c6a775ef9b0b70d4a75b65",
+    "config": [
+      7,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "01p_a1.bin",
+        "crc": "17c6fc24",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "01n_a2.bin",
+        "crc": "1d2fc7f4",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "01l_a3.bin",
+        "crc": "71a70ba9",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "01k_a4.bin",
+        "crc": "479a745e",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "07n_a0.bin",
+        "crc": "f23b5cdb",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "03a_a5.bin",
+        "crc": "0636b8f4",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "09c.bin",
+        "crc": "066f52bc",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "04m_a6.bin",
+        "crc": "3bbc9b26",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "04l_a7.bin",
+        "crc": "3dfaa9d1",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "04j_a8.bin",
+        "crc": "9afb16e9",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "04h_a9.bin",
+        "crc": "af24bce0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Mr. Do's Castle.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 7,
+    "id": 11
+  },
+  {
+    "key": "docastle2",
+    "name": "Mr. Do's Castle (Set 2)",
+    "rom_filename": "Mr. Do's Castle (Set 2).rom",
+    "set": "docastle2",
+    "zips": [
+      "docastle2.zip",
+      "docastle.zip"
+    ],
+    "size": 294912,
+    "crc32": "a86b1cac",
+    "sha256": "b669d3b99c7a052ee24e4071e612596786eae235f81969299a3b7048da75e32f",
+    "config": [
+      7,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "a1",
+        "crc": "0d81fafc",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "a2",
+        "crc": "a13dc4ac",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "a3",
+        "crc": "a1f04ffb",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "a4",
+        "crc": "1fb14aa6",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "a10",
+        "crc": "45f7f69b",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "03a_a5.bin",
+        "crc": "0636b8f4",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "09c.bin",
+        "crc": "066f52bc",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "04m_a6.bin",
+        "crc": "3bbc9b26",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "04l_a7.bin",
+        "crc": "3dfaa9d1",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "04j_a8.bin",
+        "crc": "9afb16e9",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "04h_a9.bin",
+        "crc": "af24bce0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do's Castle/Mr. Do's Castle (Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 7,
+    "id": 12
+  },
+  {
+    "key": "docastleo",
+    "name": "Mr. Do's Castle (Older)",
+    "rom_filename": "Mr. Do's Castle (Older).rom",
+    "set": "docastleo",
+    "zips": [
+      "docastleo.zip",
+      "docastle.zip"
+    ],
+    "size": 294912,
+    "crc32": "24efcd8e",
+    "sha256": "5fd7141e67b1b1659c0cb4e94e5c2fe796e031bb2543a2d38d44b183c5cb51cc",
+    "config": [
+      7,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "c1.bin",
+        "crc": "c9ce96ab",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "c2.bin",
+        "crc": "42b28369",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "c3.bin",
+        "crc": "c8c13124",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "c4.bin",
+        "crc": "7ca78471",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "dorev10.bin",
+        "crc": "4b1925e3",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "03a_a5.bin",
+        "crc": "0636b8f4",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "dorevc9.bin",
+        "crc": "96624ebe",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "dorev6.bin",
+        "crc": "9e335bf8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev7.bin",
+        "crc": "f5d5701d",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev8.bin",
+        "crc": "7143ca68",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev9.bin",
+        "crc": "893fc004",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do's Castle/Mr. Do's Castle (Older).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 7,
+    "id": 13
+  },
+  {
+    "key": "dorodon",
+    "name": "Dorodon",
+    "rom_filename": "Dorodon.rom",
+    "set": "dorodon",
+    "zips": [
+      "dorodon.zip"
+    ],
+    "size": 49920,
+    "crc32": "0dcda992",
+    "sha256": "dc21cfa1c2f24d92d748de15e1d6c5b0edbc230b727f6a8cc23f4e50faaae581",
+    "config": [
+      0,
+      17,
+      1,
+      0,
+      255,
+      127,
+      255,
+      223,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      0,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "dorodon.0",
+        "crc": "460aaf26",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.1",
+        "crc": "d2451eb6",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.2",
+        "crc": "d3c6ee6c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "dorodon.5",
+        "crc": "5eee2b85",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.6",
+        "crc": "395ac25a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.4",
+        "crc": "d70bb50a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.3",
+        "crc": "e44e59e6",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp0",
+        "crc": "8fcf0bc8",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp1",
+        "crc": "3f209be4",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp2",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 160
+      },
+      {
+        "name": "dorodon.bp4",
+        "crc": "f865c135",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp3",
+        "crc": "47b2f0bb",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Dorodon.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 0,
+    "id": 14
+  },
+  {
+    "key": "dorodon2",
+    "name": "Dorodon (Set 2)",
+    "rom_filename": "Dorodon (Set 2).rom",
+    "set": "dorodon2",
+    "zips": [
+      "dorodon2.zip",
+      "dorodon.zip"
+    ],
+    "size": 49920,
+    "crc32": "bf798d26",
+    "sha256": "14ccad43aa5109066c6787f16edd1ca0d776ef0110972c35c0e336ad864d8be3",
+    "config": [
+      0,
+      17,
+      1,
+      0,
+      255,
+      127,
+      255,
+      223,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      0,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "1.3fg",
+        "crc": "4d05d6f8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2.3h",
+        "crc": "27b43b09",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "3.3k",
+        "crc": "38d2f295",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "6.6a",
+        "crc": "2a2d8b9c",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "7.6bc",
+        "crc": "d14f95fa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "5.3t",
+        "crc": "54c04f58",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "4.3r",
+        "crc": "1ebb6493",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp0",
+        "crc": "8fcf0bc8",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp1",
+        "crc": "3f209be4",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp2",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 160
+      },
+      {
+        "name": "dorodon.bp4",
+        "crc": "f865c135",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "name": "dorodon.bp3",
+        "crc": "47b2f0bb",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Dorodon/Dorodon (Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 0,
+    "id": 15
+  },
+  {
+    "key": "dorunrun",
+    "name": "Do! Run Run",
+    "rom_filename": "Do! Run Run.rom",
+    "set": "dorunrun",
+    "zips": [
+      "dorunrun.zip"
+    ],
+    "size": 294912,
+    "crc32": "3280ea5a",
+    "sha256": "caa926ba22f9d0a73ca61103d89bbf32124c8135d2a9eaddefde8b79da373783",
+    "config": [
+      8,
+      1,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "2764.p1",
+        "crc": "95c86f8e",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "2764.l1",
+        "crc": "e9a65ba7",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.k1",
+        "crc": "b1195d3d",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.n1",
+        "crc": "6a8160d1",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "27128.p7",
+        "crc": "8b06d461",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "27128.a3",
+        "crc": "4be96dcf",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "dorunrun.clr",
+        "crc": "d5bab5d5",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16128
+      },
+      {
+        "name": "2764.m4",
+        "crc": "4bb231a0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.l4",
+        "crc": "0c08508a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.j4",
+        "crc": "79287039",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.h4",
+        "crc": "523aa999",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Do! Run Run.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 8,
+    "id": 16
+  },
+  {
+    "key": "dorunrun2",
+    "name": "Do! Run Run (Set 2)",
+    "rom_filename": "Do! Run Run (Set 2).rom",
+    "set": "dorunrun2",
+    "zips": [
+      "dorunrun2.zip",
+      "dorunrun.zip"
+    ],
+    "size": 294912,
+    "crc32": "9fd47a75",
+    "sha256": "5b0b850212d7e7285812e816da125c34ccd49f181b7dee8602869731b9949138",
+    "config": [
+      8,
+      1,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "p1",
+        "crc": "12a99365",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "l1",
+        "crc": "38609287",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "k1",
+        "crc": "099aaf54",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "n1",
+        "crc": "4f8fcbae",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "27128.p7",
+        "crc": "8b06d461",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "27128.a3",
+        "crc": "4be96dcf",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "dorunrun.clr",
+        "crc": "d5bab5d5",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16128
+      },
+      {
+        "name": "2764.m4",
+        "crc": "4bb231a0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.l4",
+        "crc": "0c08508a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.j4",
+        "crc": "79287039",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.h4",
+        "crc": "523aa999",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Do! Run Run/Do! Run Run (Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 8,
+    "id": 17
+  },
+  {
+    "key": "dorunrunc",
+    "name": "Do! Run Run (Do's Castle Hardware, Set 1)",
+    "rom_filename": "Do! Run Run (Do's Castle Hardware, Set 1).rom",
+    "set": "dorunrunc",
+    "zips": [
+      "dorunrunc.zip",
+      "dorunrun.zip"
+    ],
+    "size": 294912,
+    "crc32": "467ccd66",
+    "sha256": "aa4de8e7222a81283169d66a6dccf842a1c30feabbfea326525987ec43649665",
+    "config": [
+      7,
+      1,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "rev-0-1.p1",
+        "crc": "49906ebd",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "rev-0-2.n1",
+        "crc": "dbe3e7db",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "rev-0-3.l1",
+        "crc": "e9b8181a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "rev-0-4.k1",
+        "crc": "a63d0b89",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "rev-0-2.n7",
+        "crc": "6dac2fa3",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "rev-0-5.a3",
+        "crc": "e20795b7",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "dorunrun.clr",
+        "crc": "d5bab5d5",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16128
+      },
+      {
+        "name": "2764.m4",
+        "crc": "4bb231a0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.l4",
+        "crc": "0c08508a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.j4",
+        "crc": "79287039",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.h4",
+        "crc": "523aa999",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Do! Run Run/Do! Run Run (Do's Castle Hardware, Set 1).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 7,
+    "id": 18
+  },
+  {
+    "key": "dorunrunca",
+    "name": "Do! Run Run (Do's Castle Hardware, Set 2)",
+    "rom_filename": "Do! Run Run (Do's Castle Hardware, Set 2).rom",
+    "set": "dorunrunca",
+    "zips": [
+      "dorunrunca.zip",
+      "dorunrun.zip"
+    ],
+    "size": 294912,
+    "crc32": "6dc5420b",
+    "sha256": "2dcbc6ea062d52f4a956d2b31b1b5917818cc383d8c3358dc5bbbb1bfc092ecf",
+    "config": [
+      7,
+      1,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "runrunc_p1",
+        "crc": "a8d789c6",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "runrunc_n1",
+        "crc": "f8c8a9f4",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "runrunc_l1",
+        "crc": "223927ca",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "runrunc_k1",
+        "crc": "5edd6752",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "rev-0-2.n7",
+        "crc": "6dac2fa3",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "rev-0-5.a3",
+        "crc": "e20795b7",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "dorunrun.clr",
+        "crc": "d5bab5d5",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16128
+      },
+      {
+        "name": "2764.m4",
+        "crc": "4bb231a0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.l4",
+        "crc": "0c08508a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.j4",
+        "crc": "79287039",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "2764.h4",
+        "crc": "523aa999",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Do! Run Run/Do! Run Run (Do's Castle Hardware, Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 7,
+    "id": 19
+  },
+  {
+    "key": "douni",
+    "name": "Mr. Do! Vs. Unicorns (Japan)",
+    "rom_filename": "Mr. Do! Vs. Unicorns (Japan).rom",
+    "set": "douni",
+    "zips": [
+      "douni.zip",
+      "docastle.zip"
+    ],
+    "size": 294912,
+    "crc32": "e1068bdc",
+    "sha256": "b3927da84d9b05855d39ec8790adc8f04dc100f99044738aa798cfbb6fe1f129",
+    "config": [
+      7,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "dorev1.bin",
+        "crc": "1e2cbb3c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev2.bin",
+        "crc": "18418f83",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev3.bin",
+        "crc": "7b9e2061",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev4.bin",
+        "crc": "e013954d",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "dorev10.bin",
+        "crc": "4b1925e3",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "03a_a5.bin",
+        "crc": "0636b8f4",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "dorevc9.bin",
+        "crc": "96624ebe",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "dorev6.bin",
+        "crc": "9e335bf8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev7.bin",
+        "crc": "f5d5701d",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev8.bin",
+        "crc": "7143ca68",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dorev9.bin",
+        "crc": "893fc004",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do's Castle/Mr. Do! Vs. Unicorns (Japan).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 7,
+    "id": 20
+  },
+  {
+    "key": "dowild",
+    "name": "Mr. Do's Wild Ride",
+    "rom_filename": "Mr. Do's Wild Ride.rom",
+    "set": "dowild",
+    "zips": [
+      "dowild.zip"
+    ],
+    "size": 294912,
+    "crc32": "fe4feee9",
+    "sha256": "f90535170e8e70540883763a401ca960db3f0ed48e74b68f19624210a5ad1640",
+    "config": [
+      8,
+      1,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "w1",
+        "crc": "097de78b",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "w3",
+        "crc": "fc6a1cbb",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "w4",
+        "crc": "8aac1d30",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "w2",
+        "crc": "0914ab69",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "w10",
+        "crc": "d1f37fba",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "w5",
+        "crc": "b294b151",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "dowild.clr",
+        "crc": "a703dea5",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16128
+      },
+      {
+        "name": "w6",
+        "crc": "57e0208b",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "w7",
+        "crc": "5001a6f7",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "w8",
+        "crc": "ec503251",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "w9",
+        "crc": "af7bd7eb",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Mr. Do's Wild Ride.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 8,
+    "id": 21
+  },
+  {
+    "key": "idsoccer",
+    "name": "Indoor Soccer",
+    "rom_filename": "Indoor Soccer.rom",
+    "set": "idsoccer",
+    "zips": [
+      "idsoccer.zip"
+    ],
+    "size": 393216,
+    "crc32": "f4302a34",
+    "sha256": "d2d7bcc9f8d54f1963e7f2fcd18f329490f86d131f6547a4f83a49cd0bb808aa",
+    "config": [
+      9,
+      0,
+      0,
+      0,
+      255,
+      255,
+      255,
+      255,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      38,
+      41,
+      39,
+      40,
+      42,
+      45,
+      43,
+      44,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10
+    ],
+    "dips": [
+      255,
+      255,
+      255
+    ],
+    "parts": [
+      {
+        "name": "is1",
+        "crc": "9eb76196",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49152
+      },
+      {
+        "name": "is3",
+        "crc": "27bebba3",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "is4",
+        "crc": "dd5ffaa2",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "id01",
+        "crc": "f1c3bf09",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "id02",
+        "crc": "184e6af0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "id03",
+        "crc": "22524661",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "id04",
+        "crc": "e8cd95fd",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "id10",
+        "crc": "6c8b2037",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "id05",
+        "crc": "a57c7a11",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "id_3d.clr",
+        "crc": "a433ff62",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "id06",
+        "crc": "b42a6f4a",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "id07",
+        "crc": "fa2b1c77",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "id08",
+        "crc": "5e97eab9",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "id09",
+        "crc": "a2a69223",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Indoor Soccer.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 9,
+    "id": 22
+  },
+  {
+    "key": "idsoccera",
+    "name": "Indoor Soccer (Set 2)",
+    "rom_filename": "Indoor Soccer (Set 2).rom",
+    "set": "idsoccera",
+    "zips": [
+      "idsoccera.zip",
+      "idsoccer.zip"
+    ],
+    "size": 393216,
+    "crc32": "eea105e5",
+    "sha256": "ef7bd299ed27b3ead299c6c1288285481b480ad45dd859e8618f1fa8d82dc971",
+    "config": [
+      9,
+      0,
+      0,
+      0,
+      255,
+      255,
+      255,
+      255,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      38,
+      41,
+      39,
+      40,
+      42,
+      45,
+      43,
+      44,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10
+    ],
+    "dips": [
+      255,
+      255,
+      255
+    ],
+    "parts": [
+      {
+        "name": "indoor.ic1",
+        "crc": "3bb65dc7",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49152
+      },
+      {
+        "name": "indoor.ic3",
+        "crc": "27bebba3",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "indoor.ic4",
+        "crc": "dd5ffaa2",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "indoor.e10",
+        "crc": "ed086bd1",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "indoor.f10",
+        "crc": "54e5c6fc",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "indoor.h10",
+        "crc": "f0ca1ac8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 32768
+      },
+      {
+        "name": "indoor.e2",
+        "crc": "c4bacc14",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "indoor.e6",
+        "crc": "a57c7a11",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "indoor.d3",
+        "crc": "d9b2550c",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "indoor.p3",
+        "crc": "b42a6f4a",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "indoor.n3",
+        "crc": "fa2b1c77",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "indoor.l3",
+        "crc": "2663405c",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      },
+      {
+        "name": "indoor.k3",
+        "crc": "a2a69223",
+        "size": 32768,
+        "offset": 0,
+        "length": 32768,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Indoor Soccer/Indoor Soccer (Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 9,
+    "id": 23
+  },
+  {
+    "key": "jjack",
+    "name": "Jumping Jack",
+    "rom_filename": "Jumping Jack.rom",
+    "set": "jjack",
+    "zips": [
+      "jjack.zip"
+    ],
+    "size": 294912,
+    "crc32": "8c56be14",
+    "sha256": "9896acb141fa470cba9c1bb12f3d6812dab7c634eb66dc0e83e69cc594baad43",
+    "config": [
+      8,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "j1.bin",
+        "crc": "87f29bd2",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "j3.bin",
+        "crc": "35b0517e",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "j4.bin",
+        "crc": "35bb316a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "j2.bin",
+        "crc": "dec52e80",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "j0.bin",
+        "crc": "ab042f04",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "j5.bin",
+        "crc": "75038ff9",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "bprom1.bin",
+        "crc": "2f0955f2",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "j6.bin",
+        "crc": "5937bd7b",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "j7.bin",
+        "crc": "cf8ae8e7",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "j8.bin",
+        "crc": "84f6fc8c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "j9.bin",
+        "crc": "3f9bb09f",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Jumping Jack.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 8,
+    "id": 24
+  },
+  {
+    "key": "kickridr",
+    "name": "Kick Rider",
+    "rom_filename": "Kick Rider.rom",
+    "set": "kickridr",
+    "zips": [
+      "kickridr.zip"
+    ],
+    "size": 294912,
+    "crc32": "fa556816",
+    "sha256": "ccdaa274e0a5617819df5a21e2895097d448f4ead827a4fff07a74aae65b538b",
+    "config": [
+      8,
+      1,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "k1",
+        "crc": "dfdd1ab4",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "k3",
+        "crc": "412244da",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "k4",
+        "crc": "a67dd2ec",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "k2",
+        "crc": "e193fb5c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "k10",
+        "crc": "6843dbc0",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "k5",
+        "crc": "3f7d7e49",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "kickridr.clr",
+        "crc": "73ec281c",
+        "size": 256,
+        "offset": 0,
+        "length": 256,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16128
+      },
+      {
+        "name": "k6",
+        "crc": "94252ed3",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "k7",
+        "crc": "7ef2420e",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "k8",
+        "crc": "29bed201",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "k9",
+        "crc": "847584d3",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Kick Rider.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 8,
+    "id": 25
+  },
+  {
+    "key": "ladybugb",
+    "name": "Lady Bug (Bootleg)",
+    "rom_filename": "Lady Bug (Bootleg).rom",
+    "set": "ladybugb",
+    "zips": [
+      "ladybugb.zip",
+      "ladybug.zip"
+    ],
+    "size": 49248,
+    "crc32": "f36f3ea3",
+    "sha256": "55c66bcc09c31f6809d0a239b51aeec7db73ed397e9be03d8a93ecfd22d49d61",
+    "config": [
+      0,
+      17,
+      0,
+      1,
+      255,
+      127,
+      255,
+      223,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      0,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "lb1a.cpu",
+        "crc": "ec135e54",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "lb2a.cpu",
+        "crc": "3049c5c6",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "lb3a.cpu",
+        "crc": "b0fef837",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l4.h4",
+        "crc": "ffc424d7",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l5.j4",
+        "crc": "ad6af809",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "lb6a.cpu",
+        "crc": "88c8002a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "l9.f7",
+        "crc": "77b1da1e",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l0.h7",
+        "crc": "aa82e00b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l8.l7",
+        "crc": "8b99910b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l7.m7",
+        "crc": "86a5b448",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "10-2.k1",
+        "crc": "df091e52",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-1.f4",
+        "crc": "40640d8f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-3.c4",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Lady Bug/Lady Bug (Bootleg).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 0,
+    "id": 26
+  },
+  {
+    "key": "ladybugb2",
+    "name": "Coccinelle (Bootleg Of Lady Bug)",
+    "rom_filename": "Coccinelle (Bootleg Of Lady Bug).rom",
+    "set": "ladybugb2",
+    "zips": [
+      "ladybugb2.zip",
+      "ladybug.zip"
+    ],
+    "size": 49248,
+    "crc32": "34840eb7",
+    "sha256": "9ef2e628ce1fd53a39950208d7041ff27af2e67b497ee35a7b63bed97cf8ffac",
+    "config": [
+      0,
+      17,
+      0,
+      1,
+      255,
+      127,
+      255,
+      223,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      0,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "lb1b.cpu",
+        "crc": "35d61e65",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "lb2b.cpu",
+        "crc": "a13e0fe4",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "lb3b.cpu",
+        "crc": "ee8ac716",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l4.h4",
+        "crc": "ffc424d7",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l5.j4",
+        "crc": "ad6af809",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "lb6b.cpu",
+        "crc": "dc906e89",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "l9.f7",
+        "crc": "77b1da1e",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l0.h7",
+        "crc": "aa82e00b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l8.l7",
+        "crc": "8b99910b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "l7.m7",
+        "crc": "86a5b448",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "10-2.k1",
+        "crc": "df091e52",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-1.f4",
+        "crc": "40640d8f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-3.c4",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Lady Bug/Coccinelle (Bootleg Of Lady Bug).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 0,
+    "id": 27
+  },
+  {
+    "key": "magspot",
+    "name": "Magical Spot",
+    "rom_filename": "Magical Spot.rom",
+    "set": "magspot",
+    "zips": [
+      "magspot.zip"
+    ],
+    "size": 49184,
+    "crc32": "f5779480",
+    "sha256": "7fb6d82b7741447dd256a3b9c3063022cd2b2cb1b35b61365b62966cd8da3a1e",
+    "config": [
+      15,
+      20,
+      0,
+      0,
+      127,
+      255,
+      201,
+      254,
+      0,
+      252,
+      0,
+      128,
+      1,
+      128,
+      2,
+      128,
+      0,
+      3,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      11,
+      0,
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      127,
+      201,
+      0
+    ],
+    "parts": [
+      {
+        "name": "ms1.bin",
+        "crc": "59e9019d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms2.bin",
+        "crc": "98b913b1",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms3.bin",
+        "crc": "ea58c124",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms5.bin",
+        "crc": "4302a658",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms4.bin",
+        "crc": "088582ab",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms6.bin",
+        "crc": "e6bf492c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "ms.e2",
+        "crc": "89f23ebd",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 7168
+      },
+      {
+        "name": "ms8.bin",
+        "crc": "9e1d63a2",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "ms7.bin",
+        "crc": "1ab338d3",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "ms.d9",
+        "crc": "36e2aa2a",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Magical Spot.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 15,
+    "id": 28
+  },
+  {
+    "key": "magspot2",
+    "name": "Magical Spot II",
+    "rom_filename": "Magical Spot II.rom",
+    "set": "magspot2",
+    "zips": [
+      "magspot2.zip"
+    ],
+    "size": 49184,
+    "crc32": "2ca386b0",
+    "sha256": "644d275637581206300f646c2c04abd9eca798d66ed1d51350b99ce847fe36c1",
+    "config": [
+      15,
+      20,
+      0,
+      0,
+      127,
+      255,
+      201,
+      254,
+      0,
+      252,
+      0,
+      128,
+      1,
+      128,
+      2,
+      128,
+      0,
+      3,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      11,
+      0,
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      127,
+      201,
+      0
+    ],
+    "parts": [
+      {
+        "name": "ms.e3",
+        "crc": "c0085ade",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms.e4",
+        "crc": "d534a68b",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms.e5",
+        "crc": "25513b2a",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms.e7",
+        "crc": "8836bbc4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms.e6",
+        "crc": "6a08ab94",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ms.e8",
+        "crc": "77c6d109",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "ms.e2",
+        "crc": "89f23ebd",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 7168
+      },
+      {
+        "name": "ms.n2",
+        "crc": "9e1d63a2",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "ms.n1",
+        "crc": "1ab338d3",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "ms.d9",
+        "crc": "36e2aa2a",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Magical Spot II.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 15,
+    "id": 29
+  },
+  {
+    "key": "mrdo",
+    "name": "Mr. Do!",
+    "rom_filename": "Mr. Do!.rom",
+    "set": "mrdo",
+    "zips": [
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "9b4f00a7",
+    "sha256": "d3d477a9014aeb681ad5ca596749e3bc679967254a26a5f97ba35e3cb841b66e",
+    "config": [
+      3,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "a4-01.bin",
+        "crc": "03dcfba2",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "c4-02.bin",
+        "crc": "0ecdd39c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "e4-03.bin",
+        "crc": "358f5dc2",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "f4-04.bin",
+        "crc": "f4190cfc",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "s8-09.bin",
+        "crc": "aa80c5b6",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u8-10.bin",
+        "crc": "d20ec85b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "r8-08.bin",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "n8-07.bin",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u02--2.bin",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "t02--3.bin",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "f10--1.bin",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "j10--4.bin",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "h5-05.bin",
+        "crc": "e1218cc5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "k5-06.bin",
+        "crc": "b1f68b04",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Mr. Do!.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 3,
+    "id": 30
+  },
+  {
+    "key": "mrdobl",
+    "name": "Mr. Do! (Bootleg)",
+    "rom_filename": "Mr. Do! (Bootleg).rom",
+    "set": "mrdobl",
+    "zips": [
+      "mrdobl.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "f8e96fd0",
+    "sha256": "ed936a5777e033b5bd58999dde3f83be8d7babe1114aae8e0adfb757875420f2",
+    "config": [
+      6,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "d1.a4",
+        "crc": "03dcfba2",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d2.c4",
+        "crc": "0ecdd39c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d3.e4",
+        "crc": "afc518e3",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d4.f4",
+        "crc": "f4190cfc",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d9.s8",
+        "crc": "aa80c5b6",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "d10.u8",
+        "crc": "d20ec85b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "d8.r8",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "d7.n8",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "2_18s030.u2",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "1_18s030.t2",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "7603-5.e10",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.j10",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "d5.h5",
+        "crc": "e1218cc5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "d6.k5",
+        "crc": "b1f68b04",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Mr. Do! (Bootleg).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 6,
+    "id": 31
+  },
+  {
+    "key": "mrdofabr",
+    "name": "Mr. Do! (Fabremar Bootleg)",
+    "rom_filename": "Mr. Do! (Fabremar Bootleg).rom",
+    "set": "mrdofabr",
+    "zips": [
+      "mrdofabr.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "221172c9",
+    "sha256": "d0fcd4cdcde6ac3712dcf16575340aab070008db5c9b31370c45550c16cec610",
+    "config": [
+      4,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "md_fabre.a4",
+        "crc": "62593aed",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.b4",
+        "crc": "710058d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.c4",
+        "crc": "467d12d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.f4",
+        "crc": "fce9afeb",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.t8",
+        "crc": "f2dff901",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.u8",
+        "crc": "f3e443bd",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.r8",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.n8",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.u2",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.t2",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.f10n",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.j10",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "md_fabre.h5",
+        "crc": "e1218cc5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "md_fabre.k5",
+        "crc": "b1f68b04",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Mr. Do! (Fabremar Bootleg).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 4,
+    "id": 32
+  },
+  {
+    "key": "mrdofix",
+    "name": "Mr. Do! (Bugfixed)",
+    "rom_filename": "Mr. Do! (Bugfixed).rom",
+    "set": "mrdofix",
+    "zips": [
+      "mrdofix.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "e793e4e3",
+    "sha256": "dede55f78e33df3840cf13366ade5fc38e88f2a5dbe9c51c94a7897ff17e9239",
+    "config": [
+      4,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "d1",
+        "crc": "3dcd9359",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d2",
+        "crc": "710058d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dofix.d3",
+        "crc": "3a7d039b",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dofix.d4",
+        "crc": "32db845f",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d9",
+        "crc": "de4cfe66",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "d10",
+        "crc": "a6c2f38b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "r8-08.bin",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "n8-07.bin",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u02--2.bin",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "t02--3.bin",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "f10--1.bin",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "j10--4.bin",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "h5-05.bin",
+        "crc": "e1218cc5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "k5-06.bin",
+        "crc": "b1f68b04",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Mr. Do! (Bugfixed).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 4,
+    "id": 33
+  },
+  {
+    "key": "mrdot",
+    "name": "Mr. Do! (Taito)",
+    "rom_filename": "Mr. Do! (Taito).rom",
+    "set": "mrdot",
+    "zips": [
+      "mrdot.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "16f4729f",
+    "sha256": "3e00d2b97eac9e377451f87242a43cd80cdc81763959e2eedb071e963cdbbc74",
+    "config": [
+      4,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "d1",
+        "crc": "3dcd9359",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d2",
+        "crc": "710058d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d3",
+        "crc": "467d12d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d4",
+        "crc": "fce9afeb",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d9",
+        "crc": "de4cfe66",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "d10",
+        "crc": "a6c2f38b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "r8-08.bin",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "n8-07.bin",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u02--2.bin",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "t02--3.bin",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "f10--1.bin",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "j10--4.bin",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "h5-05.bin",
+        "crc": "e1218cc5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "k5-06.bin",
+        "crc": "b1f68b04",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Mr. Do! (Taito).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 4,
+    "id": 34
+  },
+  {
+    "key": "mrdoy",
+    "name": "Mr. Do! (Prototype)",
+    "rom_filename": "Mr. Do! (Prototype).rom",
+    "set": "mrdoy",
+    "zips": [
+      "mrdoy.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "6bed609d",
+    "sha256": "9268211d20f3e059d9d2ee2f78461c576b9f80ed19be08e74623546542c6e657",
+    "config": [
+      3,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "dosnow.1",
+        "crc": "d3454e2c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.2",
+        "crc": "5120a6b2",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.3",
+        "crc": "96416dbe",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.4",
+        "crc": "c05051b6",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.9",
+        "crc": "85d16217",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.10",
+        "crc": "61a7f54b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.8",
+        "crc": "2bd1239a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.7",
+        "crc": "ac8ffddf",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u02--2.bin",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "t02--3.bin",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "f10--1.bin",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "j10--4.bin",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "dosnow.5",
+        "crc": "7662d828",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "dosnow.6",
+        "crc": "413f88d1",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Mr. Do! (Prototype).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 3,
+    "id": 35
+  },
+  {
+    "key": "mrdu",
+    "name": "Mr. Du!",
+    "rom_filename": "Mr. Du!.rom",
+    "set": "mrdu",
+    "zips": [
+      "mrdu.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "8f7d2e9a",
+    "sha256": "167967aca6f5dab968dcee6ed4b48df4495db2b193052fb7d8e3597d1c9562e7",
+    "config": [
+      4,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "d1",
+        "crc": "3dcd9359",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d2",
+        "crc": "710058d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d3",
+        "crc": "467d12d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "du4.bin",
+        "crc": "893bc218",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "du9.bin",
+        "crc": "4090dcdc",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "du10.bin",
+        "crc": "1e63ab69",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "r8-08.bin",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "n8-07.bin",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u02--2.bin",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "t02--3.bin",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "f10--1.bin",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "j10--4.bin",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "h5-05.bin",
+        "crc": "e1218cc5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "k5-06.bin",
+        "crc": "b1f68b04",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Mr. Du!.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 4,
+    "id": 36
+  },
+  {
+    "key": "mrlo",
+    "name": "Mr. Lo!",
+    "rom_filename": "Mr. Lo!.rom",
+    "set": "mrlo",
+    "zips": [
+      "mrlo.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "0070e422",
+    "sha256": "62a977286236a843385c21fc4c67bbfe6efc13d837785b02c8526f9e644554f1",
+    "config": [
+      5,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "mrlo01.bin",
+        "crc": "6f455e7d",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "d2",
+        "crc": "710058d8",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "dofix.d3",
+        "crc": "3a7d039b",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "mrlo04.bin",
+        "crc": "49c10274",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "mrlo09.bin",
+        "crc": "fdb60d0d",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "mrlo10.bin",
+        "crc": "0492c10e",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "r8-08.bin",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "n8-07.bin",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u02--2.bin",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "t02--3.bin",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "f10--1.bin",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "j10--4.bin",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "h5-05.bin",
+        "crc": "e1218cc5",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "k5-06.bin",
+        "crc": "b1f68b04",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Mr. Lo!.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 5,
+    "id": 37
+  },
+  {
+    "key": "mrsdyna",
+    "name": "Mrs. Dynamite",
+    "rom_filename": "Mrs. Dynamite.rom",
+    "set": "mrsdyna",
+    "zips": [
+      "mrsdyna.zip"
+    ],
+    "size": 90112,
+    "crc32": "d76048bd",
+    "sha256": "c6a4ef470f8dbc40f31a5332fad9b790c5c00b595d63131e57b93b11e143928e",
+    "config": [
+      2,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "mrsd-8203a-r4.f3",
+        "crc": "c944062c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-8203a-n4.f2",
+        "crc": "d1b9c7bb",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-8203a-m4.f1",
+        "crc": "d25b1dfe",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "mrsd-8203b-k6.f10",
+        "crc": "e33cb26e",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-8203b-l6.f11",
+        "crc": "a327ba05",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-8203b-m2.f7",
+        "crc": "a00ae797",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-8203b-n2.f8",
+        "crc": "81f2bdbd",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-10-1.a2",
+        "crc": "4a819ad4",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-10-2.l3",
+        "crc": "2d926a3a",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-10-3.c1",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16288
+      },
+      {
+        "name": "mrsd-8203a-h6.f4",
+        "crc": "04f8617b",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-8203a-j6.f5",
+        "crc": "1ffb5fc3",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "mrsd-8203a-l6.f6",
+        "crc": "5a0f5030",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Mrs. Dynamite.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 2,
+    "id": 38
+  },
+  {
+    "key": "nomnlnd",
+    "name": "Sengoku No Jieitai",
+    "rom_filename": "Sengoku No Jieitai.rom",
+    "set": "nomnlnd",
+    "zips": [
+      "nomnlnd.zip"
+    ],
+    "size": 49184,
+    "crc32": "a1de0728",
+    "sha256": "7e6fb9331aa6e30833d1f608c9b771041cceb4a6f52a3ebb3709d93eb6acf8c2",
+    "config": [
+      17,
+      16,
+      0,
+      0,
+      255,
+      255,
+      194,
+      254,
+      255,
+      254,
+      128,
+      128,
+      0,
+      128,
+      128,
+      128,
+      0,
+      3,
+      0,
+      2,
+      0,
+      4,
+      0,
+      1,
+      0,
+      11,
+      0,
+      10,
+      0,
+      12,
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      194
+    ],
+    "parts": [
+      {
+        "name": "1.bin",
+        "crc": "ba117ba6",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "2.bin",
+        "crc": "e5ed654f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "3.bin",
+        "crc": "7fc42724",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "5.bin",
+        "crc": "9cc2f1d9",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "4.bin",
+        "crc": "0e8cd46a",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "6.bin",
+        "crc": "ba472ba5",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "nl9.e2",
+        "crc": "9e05f14e",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "nl10.ic4",
+        "crc": "5b13f64e",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "nl11.ic7",
+        "crc": "e717b241",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "nml8.n2",
+        "crc": "739009b4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "nml7.n1",
+        "crc": "d08ed22f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "nml.d9",
+        "crc": "65e911f9",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Sengoku No Jieitai.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 17,
+    "id": 39
+  },
+  {
+    "key": "nomnlndg",
+    "name": "No Man's Land (Gottlieb)",
+    "rom_filename": "No Man's Land (Gottlieb).rom",
+    "set": "nomnlndg",
+    "zips": [
+      "nomnlndg.zip",
+      "nomnlnd.zip"
+    ],
+    "size": 49184,
+    "crc32": "96d8a575",
+    "sha256": "00c23d866b4de1640c68a32bef90e4df602c607fe42a7373cb1bc6d8218c7429",
+    "config": [
+      17,
+      16,
+      0,
+      0,
+      255,
+      255,
+      210,
+      254,
+      255,
+      254,
+      128,
+      128,
+      0,
+      128,
+      128,
+      128,
+      0,
+      3,
+      0,
+      2,
+      0,
+      4,
+      0,
+      1,
+      0,
+      11,
+      0,
+      10,
+      0,
+      12,
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      20,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      13,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      210
+    ],
+    "parts": [
+      {
+        "name": "nml1.e3",
+        "crc": "e212ed91",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "nml2.e4",
+        "crc": "f66ef3d8",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "nml3.e5",
+        "crc": "d422fc8a",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "nml5.e7",
+        "crc": "d58952ac",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "nml4.e6",
+        "crc": "994c9afb",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "nml6.e8",
+        "crc": "01ed2d8c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "nl9.e2",
+        "crc": "9e05f14e",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 3072
+      },
+      {
+        "name": "nl10.ic4",
+        "crc": "5b13f64e",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "name": "nl11.ic7",
+        "crc": "e717b241",
+        "size": 1024,
+        "offset": 0,
+        "length": 1024,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "nml8.n2",
+        "crc": "739009b4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "nml7.n1",
+        "crc": "d08ed22f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 2048
+      },
+      {
+        "name": "nml.d9",
+        "crc": "65e911f9",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Sengoku No Jieitai/No Man's Land (Gottlieb).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 17,
+    "id": 40
+  },
+  {
+    "key": "panic",
+    "name": "Space Panic",
+    "rom_filename": "Space Panic.rom",
+    "set": "panic",
+    "zips": [
+      "panic.zip"
+    ],
+    "size": 49184,
+    "crc32": "59800a3c",
+    "sha256": "4898af31a9dc2006cc8521dbdc213a14f358ef6b8c1ab26b053f576e9ff1c100",
+    "config": [
+      13,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      64,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      0,
+      6,
+      13,
+      12,
+      11,
+      10,
+      9,
+      0,
+      0,
+      14,
+      19,
+      20,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      64
+    ],
+    "parts": [
+      {
+        "name": "spe1",
+        "crc": "70ac0888",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spe2",
+        "crc": "2b910c48",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spe3",
+        "crc": "03810148",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spe4",
+        "crc": "119bbbfd",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.5",
+        "crc": "5b80f277",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.6",
+        "crc": "b73babf0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spe7",
+        "crc": "2894106e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 18432
+      },
+      {
+        "name": "spcpanic.8",
+        "crc": "7da0b321",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 6144
+      },
+      {
+        "name": "spcpanic.11",
+        "crc": "acea9df4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.12",
+        "crc": "e83423d0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.10",
+        "crc": "c9631c2d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.9",
+        "crc": "eec78b4c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.sp",
+        "crc": "35d43d2f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Space Panic.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 13,
+    "id": 41
+  },
+  {
+    "key": "panic2",
+    "name": "Space Panic (Set 2)",
+    "rom_filename": "Space Panic (Set 2).rom",
+    "set": "panic2",
+    "zips": [
+      "panic2.zip",
+      "panic.zip"
+    ],
+    "size": 49184,
+    "crc32": "4f5d4a46",
+    "sha256": "ca9fabc946866965d3668e9a0697f5580ada1de47a779cc117800687603b8c18",
+    "config": [
+      13,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      64,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      0,
+      6,
+      13,
+      12,
+      11,
+      10,
+      9,
+      0,
+      0,
+      14,
+      19,
+      20,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      64
+    ],
+    "parts": [
+      {
+        "name": "spcpanic.1",
+        "crc": "405ae6f9",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.2",
+        "crc": "b6a286c5",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.3",
+        "crc": "85ae8b2e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.4",
+        "crc": "b6d4f52f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.5",
+        "crc": "5b80f277",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.6",
+        "crc": "b73babf0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.7",
+        "crc": "fc27f4e5",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 18432
+      },
+      {
+        "name": "spcpanic.8",
+        "crc": "7da0b321",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 6144
+      },
+      {
+        "name": "spcpanic.11",
+        "crc": "acea9df4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.12",
+        "crc": "e83423d0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.10",
+        "crc": "c9631c2d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.9",
+        "crc": "eec78b4c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.sp",
+        "crc": "35d43d2f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Space Panic/Space Panic (Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 13,
+    "id": 42
+  },
+  {
+    "key": "panic3",
+    "name": "Space Panic (Set 3)",
+    "rom_filename": "Space Panic (Set 3).rom",
+    "set": "panic3",
+    "zips": [
+      "panic3.zip",
+      "panic.zip"
+    ],
+    "size": 49184,
+    "crc32": "4075d666",
+    "sha256": "43930a06578bad22e89ac5bd984ed7f17dc79998112e5ff85dbad7ddaeffd99d",
+    "config": [
+      13,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      64,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      0,
+      6,
+      13,
+      12,
+      11,
+      10,
+      9,
+      0,
+      0,
+      14,
+      19,
+      20,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      64
+    ],
+    "parts": [
+      {
+        "name": "panica.1",
+        "crc": "289720ce",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.2",
+        "crc": "b6a286c5",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.3",
+        "crc": "85ae8b2e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.4",
+        "crc": "b6d4f52f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.5",
+        "crc": "5b80f277",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.6",
+        "crc": "b73babf0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "panica.7",
+        "crc": "3641cb7f",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 18432
+      },
+      {
+        "name": "spcpanic.8",
+        "crc": "7da0b321",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 6144
+      },
+      {
+        "name": "spcpanic.11",
+        "crc": "acea9df4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.12",
+        "crc": "e83423d0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.10",
+        "crc": "c9631c2d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.9",
+        "crc": "eec78b4c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.sp",
+        "crc": "35d43d2f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Space Panic/Space Panic (Set 3).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 13,
+    "id": 43
+  },
+  {
+    "key": "panicger",
+    "name": "Space Panic (German)",
+    "rom_filename": "Space Panic (German).rom",
+    "set": "panicger",
+    "zips": [
+      "panicger.zip",
+      "panic.zip"
+    ],
+    "size": 49184,
+    "crc32": "2ceb5ccb",
+    "sha256": "1002a45d57d3cf1ac6613bee02a52a46a743c243ce8894497689aae0834aaf63",
+    "config": [
+      13,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      64,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      0,
+      6,
+      13,
+      12,
+      11,
+      10,
+      9,
+      0,
+      0,
+      14,
+      19,
+      20,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      64
+    ],
+    "parts": [
+      {
+        "name": "spacepan.001",
+        "crc": "a6d9515a",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spacepan.002",
+        "crc": "cfc22663",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spacepan.003",
+        "crc": "e1f36893",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spacepan.004",
+        "crc": "01be297c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spacepan.005",
+        "crc": "e0d54805",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spacepan.006",
+        "crc": "aae1458e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spacepan.007",
+        "crc": "14e46e70",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 18432
+      },
+      {
+        "name": "spcpanic.8",
+        "crc": "7da0b321",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 6144
+      },
+      {
+        "name": "spcpanic.11",
+        "crc": "acea9df4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.12",
+        "crc": "e83423d0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.10",
+        "crc": "c9631c2d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.9",
+        "crc": "eec78b4c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.sp",
+        "crc": "35d43d2f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Space Panic/Space Panic (German).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 13,
+    "id": 44
+  },
+  {
+    "key": "panich",
+    "name": "Space Panic (Harder)",
+    "rom_filename": "Space Panic (Harder).rom",
+    "set": "panich",
+    "zips": [
+      "panich.zip",
+      "panic.zip"
+    ],
+    "size": 49184,
+    "crc32": "70fd0f14",
+    "sha256": "17e9e5b339d2b0e6be53a8dce78109121fd99a5364d5cba83812aea55f1698f9",
+    "config": [
+      13,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      64,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      128,
+      128,
+      5,
+      4,
+      3,
+      2,
+      1,
+      0,
+      0,
+      6,
+      13,
+      12,
+      11,
+      10,
+      9,
+      0,
+      0,
+      14,
+      19,
+      20,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      64
+    ],
+    "parts": [
+      {
+        "name": "sph1",
+        "crc": "f6e9c6ef",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "sph2",
+        "crc": "58dbc49b",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "sph3",
+        "crc": "c4f275ad",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "sph4",
+        "crc": "6e7785de",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "sph5",
+        "crc": "1916c9b8",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "sph6",
+        "crc": "54b92314",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "sph7",
+        "crc": "8600b881",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 18432
+      },
+      {
+        "name": "spcpanic.8",
+        "crc": "7da0b321",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 6144
+      },
+      {
+        "name": "spcpanic.11",
+        "crc": "acea9df4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.12",
+        "crc": "e83423d0",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.10",
+        "crc": "c9631c2d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "spcpanic.9",
+        "crc": "eec78b4c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "82s123.sp",
+        "crc": "35d43d2f",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Space Panic/Space Panic (Harder).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 13,
+    "id": 45
+  },
+  {
+    "key": "redclash",
+    "name": "Red Clash",
+    "rom_filename": "Red Clash.rom",
+    "set": "redclash",
+    "zips": [
+      "redclash.zip"
+    ],
+    "size": 270336,
+    "crc32": "a64a762f",
+    "sha256": "5b97500cdf1336d3f8b89b1a056dd9e3edd874a3c1bbdcb51263b84e0c21ebdf",
+    "config": [
+      11,
+      16,
+      0,
+      0,
+      255,
+      127,
+      255,
+      247,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      247,
+      255
+    ],
+    "parts": [
+      {
+        "name": "rc1.8c",
+        "crc": "fd90622a",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc2.7c",
+        "crc": "c8f33440",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc3.6c",
+        "crc": "2172b1e9",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc4.5c",
+        "crc": "55c0d1b5",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc5.4c",
+        "crc": "744b5261",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc6.3c",
+        "crc": "fa507e17",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "rc6.12a",
+        "crc": "da9bbcc2",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 14336
+      },
+      {
+        "name": "1.12f",
+        "crc": "43989681",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "2.4a",
+        "crc": "9adabf46",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "3.11e",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 212896
+      },
+      {
+        "name": "rc4.4m",
+        "crc": "483a1293",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc5.5m",
+        "crc": "c45d9601",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc4.4m",
+        "crc": "483a1293",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc5.5m",
+        "crc": "c45d9601",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Red Clash.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 11,
+    "id": 46
+  },
+  {
+    "key": "redclashs",
+    "name": "Red Clash (Suntronics)",
+    "rom_filename": "Red Clash (Suntronics).rom",
+    "set": "redclashs",
+    "zips": [
+      "redclashs.zip",
+      "redclash.zip"
+    ],
+    "size": 270336,
+    "crc32": "0ce086aa",
+    "sha256": "d5557a4abc85aa4e18b8b2d9f54e7634cc98e9a9ef44d93d0d885fb6a9610e35",
+    "config": [
+      11,
+      16,
+      0,
+      0,
+      255,
+      127,
+      255,
+      247,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      247,
+      255
+    ],
+    "parts": [
+      {
+        "name": "1.11c",
+        "crc": "62275f85",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "3.7c",
+        "crc": "c2090318",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "2.9c",
+        "crc": "b60e5ada",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "6.a12",
+        "crc": "da9bbcc2",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 14336
+      },
+      {
+        "name": "1.12f",
+        "crc": "43989681",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "2.4a",
+        "crc": "9adabf46",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "3.11e",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 212896
+      },
+      {
+        "name": "4.3e",
+        "crc": "483a1293",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "5.3d",
+        "crc": "c45d9601",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "4.3e",
+        "crc": "483a1293",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "5.3d",
+        "crc": "c45d9601",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Red Clash/Red Clash (Suntronics).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 11,
+    "id": 47
+  },
+  {
+    "key": "redclasht",
+    "name": "Red Clash (Tehkan, Set 1)",
+    "rom_filename": "Red Clash (Tehkan, Set 1).rom",
+    "set": "redclasht",
+    "zips": [
+      "redclasht.zip",
+      "redclash.zip"
+    ],
+    "size": 270336,
+    "crc32": "5e9ba698",
+    "sha256": "76cfab82402d60827488ca5514331344bd23490177918f4a0fedfaa82770e769",
+    "config": [
+      11,
+      16,
+      0,
+      0,
+      255,
+      127,
+      255,
+      247,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      247,
+      255
+    ],
+    "parts": [
+      {
+        "name": "11.11c",
+        "crc": "695e070e",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "13.7c",
+        "crc": "c2090318",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "12.9c",
+        "crc": "b60e5ada",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "6.12a",
+        "crc": "da9bbcc2",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 14336
+      },
+      {
+        "name": "1.12f",
+        "crc": "43989681",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "2.4a",
+        "crc": "9adabf46",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "3.11e",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 212896
+      },
+      {
+        "name": "14.3e",
+        "crc": "483a1293",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "15.3d",
+        "crc": "c45d9601",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "14.3e",
+        "crc": "483a1293",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "15.3d",
+        "crc": "c45d9601",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Red Clash/Red Clash (Tehkan, Set 1).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 11,
+    "id": 48
+  },
+  {
+    "key": "redclashta",
+    "name": "Red Clash (Tehkan, Set 2)",
+    "rom_filename": "Red Clash (Tehkan, Set 2).rom",
+    "set": "redclashta",
+    "zips": [
+      "redclashta.zip",
+      "redclash.zip"
+    ],
+    "size": 270336,
+    "crc32": "2aa66f20",
+    "sha256": "b5c86268bcdfcd0a14191a99a35b790b71ff822a5a870b2311a5f05c206b3111",
+    "config": [
+      11,
+      16,
+      0,
+      0,
+      255,
+      127,
+      255,
+      247,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      247,
+      255
+    ],
+    "parts": [
+      {
+        "name": "rc1.11c",
+        "crc": "5b62ff5a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "rc3.7c",
+        "crc": "409c4ee7",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "rc2.9c",
+        "crc": "5f215c9a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "rc6.12a",
+        "crc": "da9bbcc2",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 14336
+      },
+      {
+        "name": "1.12f",
+        "crc": "43989681",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "2.4a",
+        "crc": "9adabf46",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "3.11e",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 212896
+      },
+      {
+        "name": "rc4.3e",
+        "crc": "64ca8b63",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc5.3d",
+        "crc": "fce610a2",
+        "size": 4096,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc4.3e",
+        "crc": "64ca8b63",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "rc5.3d",
+        "crc": "fce610a2",
+        "size": 4096,
+        "offset": 2048,
+        "length": 2048,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Red Clash/Red Clash (Tehkan, Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 11,
+    "id": 49
+  },
+  {
+    "key": "snapjack",
+    "name": "Snap Jack",
+    "rom_filename": "Snap Jack.rom",
+    "set": "snapjack",
+    "zips": [
+      "snapjack.zip"
+    ],
+    "size": 49248,
+    "crc32": "05d09bd4",
+    "sha256": "7430cbfd8bd43e89236b162772527fc6883e5a40567a11a4f1213b425b4dffae",
+    "config": [
+      0,
+      0,
+      0,
+      0,
+      255,
+      127,
+      255,
+      247,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      0,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      247,
+      255
+    ],
+    "parts": [
+      {
+        "name": "sj1.c4",
+        "crc": "6b30fcda",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj2.d4",
+        "crc": "1f1088d1",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj3.e4",
+        "crc": "edd65f3a",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj4.h4",
+        "crc": "f4481192",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj5.j4",
+        "crc": "1bff7d05",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj6.k4",
+        "crc": "21793edf",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "sj9.f7",
+        "crc": "ff2011c7",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj0.h7",
+        "crc": "f097babb",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj8.l7",
+        "crc": "b7f105b6",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sj7.m7",
+        "crc": "1cdb03a8",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "10-2.k1",
+        "crc": "cbbd9dd1",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-1.f4",
+        "crc": "5b16fbd2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "10-3.c4",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Snap Jack.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 0,
+    "id": 50
+  },
+  {
+    "key": "spiero",
+    "name": "Super Pierrot (Japan)",
+    "rom_filename": "Super Pierrot (Japan).rom",
+    "set": "spiero",
+    "zips": [
+      "spiero.zip",
+      "dorunrun.zip"
+    ],
+    "size": 294912,
+    "crc32": "68bc2756",
+    "sha256": "aa6a82021c8977729b90ccb161f990bf79f3cf9cf6714adfcb4d5f380f287bbf",
+    "config": [
+      8,
+      1,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      0,
+      1,
+      2,
+      128,
+      4,
+      1,
+      3,
+      2,
+      12,
+      9,
+      11,
+      10,
+      5,
+      6,
+      0,
+      19,
+      13,
+      14,
+      0,
+      20,
+      21,
+      22,
+      22,
+      0,
+      18,
+      17,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      255,
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "fill": "00",
+        "repeat": 131072
+      },
+      {
+        "name": "sp1.bin",
+        "crc": "08d23e38",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "sp3.bin",
+        "crc": "faa0c18c",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sp4.bin",
+        "crc": "639b4e5d",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sp2.bin",
+        "crc": "3a29ccb0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 24576
+      },
+      {
+        "name": "27128.p7",
+        "crc": "8b06d461",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "name": "sp5.bin",
+        "crc": "1b704bb0",
+        "size": 16384,
+        "offset": 0,
+        "length": 16384,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16384
+      },
+      {
+        "name": "bprom1.bin",
+        "crc": "fc1b66ff",
+        "size": 512,
+        "offset": 0,
+        "length": 512,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 15872
+      },
+      {
+        "name": "sp6.bin",
+        "crc": "00f893a7",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sp7.bin",
+        "crc": "173e5c6a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sp8.bin",
+        "crc": "2e66525a",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sp9.bin",
+        "crc": "9c571525",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Do! Run Run/Super Pierrot (Japan).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 8,
+    "id": 51
+  },
+  {
+    "key": "sraider",
+    "name": "Space Raider",
+    "rom_filename": "Space Raider.rom",
+    "set": "sraider",
+    "zips": [
+      "sraider.zip"
+    ],
+    "size": 102400,
+    "crc32": "3eecf0ae",
+    "sha256": "2a157ba9486d4b819f6fa18f6f30c9006259c7a886ef3d069d06bf5ae354e494",
+    "config": [
+      1,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "sraid3.r4",
+        "crc": "0f389774",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sraid2.n4",
+        "crc": "38a48db0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sraid1.m4",
+        "crc": "2f302a4e",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "sraid-s0.k6",
+        "crc": "a0373909",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sraids11.l6",
+        "crc": "ba22d949",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sraid-s7.m2",
+        "crc": "299f8e07",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "sraid-s8.n2",
+        "crc": "57ba8888",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "srpr10-1.a2",
+        "crc": "121fdb99",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "srpr10-2.l3",
+        "crc": "88b67e70",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "srpr10-3.c1",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 16288
+      },
+      {
+        "name": "sraid-s4.h6",
+        "crc": "57173a12",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sraid-s5.j6",
+        "crc": "5a459179",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "sraid-s6.l6",
+        "crc": "ea3aa25d",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 8192
+      },
+      {
+        "name": "sraid-s9.f6",
+        "crc": "2380b90f",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Space Raider.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 1,
+    "id": 52
+  },
+  {
+    "key": "yankeedo",
+    "name": "Yankee DO!",
+    "rom_filename": "Yankee DO!.rom",
+    "set": "yankeedo",
+    "zips": [
+      "yankeedo.zip",
+      "mrdo.zip"
+    ],
+    "size": 106496,
+    "crc32": "243b90f9",
+    "sha256": "f03e39d3d4508ba6add133883c44f7a4ff67aa522d648903f37e49380dd02810",
+    "config": [
+      3,
+      17,
+      0,
+      0,
+      255,
+      255,
+      255,
+      223,
+      255,
+      255,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      21,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      36,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      223,
+      255
+    ],
+    "parts": [
+      {
+        "name": "a4-01.bin",
+        "crc": "03dcfba2",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "yd_d2.c4",
+        "crc": "7c9d7ce0",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "e4-03.bin",
+        "crc": "358f5dc2",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "f4-04.bin",
+        "crc": "f4190cfc",
+        "size": 8192,
+        "offset": 0,
+        "length": 8192,
+        "repeat": 1
+      },
+      {
+        "name": "s8-09.bin",
+        "crc": "aa80c5b6",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u8-10.bin",
+        "crc": "d20ec85b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "r8-08.bin",
+        "crc": "dbdc9ffa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "n8-07.bin",
+        "crc": "4b9973db",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "u02--2.bin",
+        "crc": "238a65d7",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "t02--3.bin",
+        "crc": "ae263dc0",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "f10--1.bin",
+        "crc": "16ee4ca2",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "j10--4.bin",
+        "crc": "ff7fe284",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 49024
+      },
+      {
+        "name": "yd_d5.h5",
+        "crc": "f530b79b",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      },
+      {
+        "name": "yd_d6.k5",
+        "crc": "790579aa",
+        "size": 4096,
+        "offset": 0,
+        "length": 4096,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Mr. Do!/Yankee DO!.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 3,
+    "id": 53
+  },
+  {
+    "key": "zerohour",
+    "name": "Zero Hour",
+    "rom_filename": "Zero Hour.rom",
+    "set": "zerohour",
+    "zips": [
+      "zerohour.zip"
+    ],
+    "size": 266240,
+    "crc32": "a96bb013",
+    "sha256": "327507ed3419377b6144876250f84765e5570ac5880d0274950d8aff2f031412",
+    "config": [
+      10,
+      16,
+      0,
+      0,
+      255,
+      127,
+      255,
+      199,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      199,
+      255
+    ],
+    "parts": [
+      {
+        "name": "ze1_1.c8",
+        "crc": "0dff4b48",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ze2_2.c7",
+        "crc": "cf41b6ac",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ze3_3.c6",
+        "crc": "5ef48b67",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ze4_4.c5",
+        "crc": "25c5872d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ze5_5.c4",
+        "crc": "d7ce3add",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "ze6_6.c3",
+        "crc": "8a93ae6e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "z9",
+        "crc": "17ae6f13",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 14336
+      },
+      {
+        "name": "z1.ic2",
+        "crc": "b55aee56",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "z2.n2",
+        "crc": "9adabf46",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "z3.u6",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 212896
+      },
+      {
+        "name": "z7",
+        "crc": "4c12f59d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "z8",
+        "crc": "6b9a6b6e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/Zero Hour.mra",
+    "status": "test candidate; hardware pending",
+    "variant": 10,
+    "id": 54
+  },
+  {
+    "key": "zerohoura",
+    "name": "Zero Hour (Set 2)",
+    "rom_filename": "Zero Hour (Set 2).rom",
+    "set": "zerohoura",
+    "zips": [
+      "zerohoura.zip",
+      "zerohour.zip"
+    ],
+    "size": 266240,
+    "crc32": "88a1679c",
+    "sha256": "52bcb3f51124b1ff4acdfb5434ea6e947b593f3a1b5811bf475f58a3a9ec764d",
+    "config": [
+      10,
+      16,
+      0,
+      0,
+      255,
+      127,
+      255,
+      199,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      199,
+      255
+    ],
+    "parts": [
+      {
+        "name": "z1_1.c8",
+        "crc": "77418b5d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "z2_2.c7",
+        "crc": "9b23b5ac",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "z3_3.c6",
+        "crc": "7aa25c95",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "z4_4.c5",
+        "crc": "b0a26dea",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "z5_5.c4",
+        "crc": "d7ce3add",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "z6_6.c3",
+        "crc": "8a93ae6e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "z9",
+        "crc": "17ae6f13",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 14336
+      },
+      {
+        "name": "z1.ic2",
+        "crc": "b55aee56",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "z2.n2",
+        "crc": "9adabf46",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "z3.u6",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 212896
+      },
+      {
+        "name": "z7",
+        "crc": "4c12f59d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "z8",
+        "crc": "6b9a6b6e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Zero Hour/Zero Hour (Set 2).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 10,
+    "id": 55
+  },
+  {
+    "key": "zerohouri",
+    "name": "Zero Hour (Bootleg)",
+    "rom_filename": "Zero Hour (Bootleg).rom",
+    "set": "zerohouri",
+    "zips": [
+      "zerohouri.zip",
+      "zerohour.zip"
+    ],
+    "size": 266240,
+    "crc32": "c69d195f",
+    "sha256": "948e58d934d3dc537bf45ffc8fe863c181df61035f9b05c560bf6ea09c80f0c5",
+    "config": [
+      10,
+      16,
+      0,
+      0,
+      255,
+      127,
+      255,
+      199,
+      255,
+      252,
+      128,
+      128,
+      128,
+      0,
+      1,
+      128,
+      3,
+      2,
+      4,
+      1,
+      5,
+      19,
+      20,
+      0,
+      11,
+      10,
+      12,
+      9,
+      13,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      17,
+      18,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dips": [
+      199,
+      255
+    ],
+    "parts": [
+      {
+        "name": "zhi.c8",
+        "crc": "0dff4b48",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "zhi.c7",
+        "crc": "dcfefb4c",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "zhi.c6",
+        "crc": "ddc66d36",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "zhi.c5",
+        "crc": "25c5872d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "zhi.c4",
+        "crc": "d7ce3add",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "zhi.c3",
+        "crc": "29dee5e4",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 20480
+      },
+      {
+        "name": "zhi.k7",
+        "crc": "17ae6f13",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 14336
+      },
+      {
+        "name": "z1.ic2",
+        "crc": "b55aee56",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "z2.n2",
+        "crc": "9adabf46",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "name": "z3.u6",
+        "crc": "27fa3a50",
+        "size": 32,
+        "offset": 0,
+        "length": 32,
+        "repeat": 1
+      },
+      {
+        "fill": "00",
+        "repeat": 212896
+      },
+      {
+        "name": "zhi.k4",
+        "crc": "4c12f59d",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      },
+      {
+        "name": "zhi.k5",
+        "crc": "6b9a6b6e",
+        "size": 2048,
+        "offset": 0,
+        "length": 2048,
+        "repeat": 1
+      }
+    ],
+    "mra": "gamedb/mra/_alternatives/_Zero Hour/Zero Hour (Bootleg).mra",
+    "status": "test candidate; hardware pending",
+    "variant": 10,
+    "id": 56
+  }
+]

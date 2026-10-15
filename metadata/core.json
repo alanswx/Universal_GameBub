@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "id": "alanswx.Universal",
+    "name": "Universal Arcade",
+    "author": "Alan Steremberg",
+    "version": "0.2.0-test1",
+    "license": "See component notices"
+  },
+  "bitstreams": [
+    {
+      "target": "gamebub_rev4",
+      "filename": "Universal-gamebub_rev4.bit"
+    }
+  ]
+}
